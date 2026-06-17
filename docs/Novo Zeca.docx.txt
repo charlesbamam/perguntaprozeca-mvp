@@ -1,0 +1,95 @@
+Novo Zeca
+Não é diretório, é experiência conversacional e inteligência de negócio 
+Aquecer I chip dó WhatsApp ⚠️
+Incubar no Calgary Platform?
+UX do site
++ cupom para negócios (prova de ROÍ)
++ Chat IA assistente concierge 
++ Hub de influenciadores 
+O usuário não quer procurar. O usuário quer perguntar.
+Um concierge automatizado da comunidade brasileira.
+recomendação contextual,
+descoberta conversacional,
+IA social,
+concierge automatizado,
+indicação orientada por confiança,
+Pense no Zeca como mistura de:
+ChatGPT
+grupo de WhatsApp
+concierge local
+indicação humana (plantão humano)
+influência social
+ranking patrocinado
+O Zeca NÃO pode parecer:
+robótico,
+vendido,
+catálogo patrocinado disfarçado.
+O sistema precisa:
+parecer útil primeiro,
+comercial depois.
+Senão a confiança morre.
+O influenciador parceiro pode entrar no seu login e indicar produtos e serviços para o Zeca recomendar 
+Como o Zeca prova ao cliente ou influenciador parceiro que recomendou suas indicações??
+Valor para entregar ao parceiro/cliente
+exposição,
+prioridade,
+geração de leads,
+influência.
+Fluxo inicial
+Usuário pergunta →
+IA interpreta →
+Busca na tabela →
+Ordena score →
+Responde.
++ Comunidade??? Para alimentar recomendações?
+Zeca como concierge de qualquer brasileiro que vai viajar pro canadá? mesmo a passeio?
+Oferecer serviços aos influenciadores- mídia kit, …
+Blog - SEO com vídeos dos influenciadores, artigos, filtro por assunto, cidade etc.
+Sistema de cupons
+Fazer site pro influenciador participar do hub?
+Sistema de avaliações para empresas que pagam com pontos aos que fazem comentários … podem ser trocados por cupons etc
+WhatsApp do Zeca - fale com o Zeca
+WhatsApp grupo do Zeca - promoções etc
+MVP goals
+O que realmente importa agora
+1. As pessoas perguntam?
+2. Elas voltam?
+3. Elas seguem a recomendação?
+4. Os negócios percebem valor?
+Exemplo simples
+Usuário pergunta:
+“Preciso de um eletricista urgente.”
+Num diretório:
+aparecem 50 nomes aleatórios.
+No Zeca:
+ele pode aprender:
+quem responde rápido,
+quem atende emergência,
+quem recebe menos reclamação,
+quem resolve no mesmo dia.
+Para copiar dos grandes
+Amazon não venceu porque tinha produtos
+Amazon venceu porque:
+sabia quais produtos as pessoas realmente escolhiam.
+⸻
+TikTok não venceu porque tinha vídeos
+TikTok venceu porque:
+entendeu comportamento melhor que os outros.
+Um exemplo real do futuro
+Imagina isso:
+Usuário:
+“Conhece uma faxineira brasileira?”
+O Zeca responde:
+“A Ana tem sido uma das profissionais mais bem avaliadas por famílias brasileiras no NW de Calgary e costuma responder rápido.”
+Isso NÃO é:
+lista.
+Isso é:
+confiança contextual.
+———
+MVP
+O que vocês realmente precisam validar primeiro
+Não é:
+trust engine.
+É:
+“As pessoas querem perguntar para o Zeca?”
+Só isso.

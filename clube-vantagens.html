@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cupom e cashback exclusivos para membros - Pergunta pro Zeca</title>
+  <meta name="description" content="Aproveite cupons de desconto e cashback exclusivos para brasileiros em restaurantes, saúde, turismo e muito mais no Canadá e EUA.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="shortcut icon" href="icones/zecafavicon.ico" type="image/x-icon">
+  <style>
+    /* Estilos Específicos do Catálogo */
+    .catalog-title-section {
+      padding: 40px 0 20px 0;
+    }
+    
+    .catalog-title-section h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--color-black);
+    }
+    
+    /* Barra de Filtros */
+    .filters-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .filter-select {
+      padding: 12px 40px 12px 20px;
+      border: 1.5px solid var(--color-lime-bg);
+      border-radius: var(--border-radius-pill);
+      background-color: var(--color-white);
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      min-width: 160px;
+      transition: border-color var(--transition-fast);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      background-size: 14px;
+    }
+    
+    .filter-select:focus {
+      border-color: var(--color-black);
+    }
+    
+    .search-input-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+    }
+    
+    .search-input-wrapper input {
+      width: 100%;
+      padding: 12px 48px 12px 20px;
+      border: 1.5px solid var(--color-dark);
+      border-radius: var(--border-radius-pill);
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+    
+    .search-input-wrapper input:focus {
+      border-color: var(--color-black);
+    }
+    
+    .search-input-wrapper .search-icon {
+      position: absolute;
+      right: 18px;
+      left: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* Grid de Cupons */
+    .coupons-grid-section {
+      margin-bottom: 60px;
+    }
+    
+    /* Banner promocional específico */
+    .featured-banner-image.rockies-img {
+      background-image: url('imagens/img-anuncio-1.png');
+    }
+    
+    @media (max-width: 768px) {
+      .filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-select, .search-input-wrapper {
+        width: 100%;
+      }
+      .filters-bar .btn-black {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo-container" id="header-logo-link">
+        <img src="imagens/logo-perguntaprozeca.png" alt="Pergunta pro Zeca" class="logo-img">
+      </a>
+      <div class="header-right-area" style="display: flex; align-items: center; gap: 20px;">
+                <nav class="header-nav">
+          <a href="clube-vantagens.html" class="header-nav-link">Clube de Vantagens</a>
+          <a href="parceiros.html" class="header-nav-link">Parceiros</a>
+          <a href="influenciadores.html" class="header-nav-link">Influenciadores</a>
+        </nav>
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
+          <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
+          Pergunte no Whatsapp
+        </a>
+        <!-- Área do Perfil (Exibida quando logado) -->
+        <div class="user-profile-header" id="user-profile-indicator">
+          <div class="user-avatar" id="user-avatar-initials">U</div>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
+            <span class="user-info-text" id="user-welcome-name">Olá, Membro</span>
+            <button class="user-logout-btn" id="btn-user-logout" type="button">Sair</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Título da Página -->
+    <section class="catalog-title-section">
+      <h1>Cupom e cashback exclusivos para membros</h1>
+    </section>
+
+    <!-- Barra de Filtros -->
+    <section class="filters-section">
+      <div class="filters-bar">
+        <button class="btn btn-black" id="btn-header-join" type="button">Quero participar</button>
+        
+        <select class="filter-select" id="filter-country" aria-label="Filtrar por país">
+          <option value="all">Escolha o país</option>
+          <option value="Canada">Canadá</option>
+          <option value="EUA">Estados Unidos</option>
+        </select>
+        
+        <select class="filter-select" id="filter-city" aria-label="Filtrar por cidade" disabled>
+          <option value="all">Escolha a Cidade</option>
+        </select>
+        
+        <select class="filter-select" id="filter-category" aria-label="Filtrar por categoria">
+          <option value="all">Escolha a Categoria</option>
+          <option value="Restaurantes">Restaurantes</option>
+          <option value="Beleza e Estética">Beleza e Estética</option>
+          <option value="Saúde">Saúde</option>
+          <option value="Trabalho e Emprego">Trabalho e Emprego</option>
+          <option value="Idiomas">Idiomas</option>
+          <option value="Turismo">Turismo</option>
+          <option value="Imóveis">Imóveis</option>
+        </select>
+        
+        <div class="search-input-wrapper">
+          <img src="icones/magnify-glass.svg" class="search-icon" alt="Buscar">
+          <input type="text" id="catalog-search" placeholder="Pesquise aqui" aria-label="Pesquisar cupom">
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner em Destaque -->
+    <section class="promo-banner-section">
+      <div class="featured-banner">
+        <div class="featured-banner-content">
+          <h2>Dia dos ❤️ namorados nas Rockies</h2>
+          <p>Aproveite <strong>20% de cashback</strong> para conhecer as Rocky Mountains com a Two Canada Experience.</p>
+          <button class="btn btn-yellow" id="btn-featured-cupom" type="button">Pegar Cupom</button>
+        </div>
+        <div class="featured-banner-image rockies-img"></div>
+      </div>
+    </section>
+
+    <!-- Grid de Cupons -->
+    <section class="coupons-grid-section">
+      <div class="grid-3" id="coupons-container">
+        <!-- Os cupons serão renderizados dinamicamente pelo JavaScript para permitir filtros completos e abertura de modais -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Pergunta pro Zeca.</p>
+      <div class="footer-links">
+        <a href="clube-vantagens.html">Clube de Vantagens</a>
+        <a href="parceiros.html">Parceiros</a>
+        <a href="influenciadores.html">Influenciadores</a>
+        <a href="#">Media Kit</a>
+        <a href="termos.html">Termos</a>
+        <a href="privacidade.html">Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAIS ================= -->
+
+  <!-- 1. Modal de Login -->
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal-container">
+      <button class="modal-close" id="btn-close-login" aria-label="Fechar modal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="login-modal-content">
+        <div class="lock-icon-wrapper flex-center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h2>Acesse o Clube de Descontos</h2>
+        <p>Entre com sua conta para ver as ofertas exclusivas do Zeca.</p>
+        
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">E-mail</label>
+            <div class="input-icon-wrapper">
+              <svg class="field-icon" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <input type="email" id="login-email" placeholder="seu@email.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="form-group-header">
+              <label for="login-password">Senha</label>
+              <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+            <div class="input-icon-wrapper">
+              <svg class="field-icon" viewBox="0 0 24 24">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+              </svg>
+              <input type="password" id="login-password" placeholder="••••••••" required>
+              <button type="button" class="toggle-pwd" id="btn-toggle-pwd" aria-label="Mostrar/ocultar senha">👁</button>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn-login-submit" id="btn-submit-login">
+            Entrar na minha conta
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+        
+        <div class="divider-text">ou</div>
+        
+        <div class="login-footer-link">
+          Ainda não tem conta? <a href="clube-landing.html#cadastro">Criar conta grátis</a>
+        </div>
+        
+        <p class="login-modal-terms">
+          Ao entrar, você concorda com os <a href="termos.html">Termos de Uso</a> e a <a href="privacidade.html">Política de Privacidade</a> do Zeca.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Modal de Detalhe de Cupom -->
+  <div class="modal-overlay" id="cupom-modal">
+    <div class="modal-container">
+      <button class="modal-close green-close" id="btn-close-cupom" aria-label="Fechar modal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="cupom-modal-content">
+        
+        <div class="cupom-header">
+          <div class="cupom-brand-box" id="cupom-brand">
+            <!-- Injetado via JS -->
+          </div>
+          <div class="cupom-promo-details">
+            <div class="cupom-code" id="cupom-code-text">TPZM10JUN26</div>
+            <h3 class="cupom-title" id="cupom-title-text">CAD$ 10.00 de desconto em drinks</h3>
+          </div>
+        </div>
+        
+        <div class="cupom-info-grid">
+          <div class="cupom-info-item">
+            <span class="info-label">Cliente</span>
+            <span class="info-value" id="cupom-client-name">CHARLES BAMAM MEDEIROS DE SOUZA</span>
+          </div>
+          <div class="cupom-info-item">
+            <span class="info-label">Influenciador</span>
+            <span class="info-value" id="cupom-influencer-name">TwoCanada</span>
+          </div>
+        </div>
+        
+        <div class="cupom-accordion">
+          <div class="accordion-title id-accordion-trigger" id="accordion-trigger">
+            <span>Informações importantes</span>
+            <img src="icones/down.svg" alt="Seta" style="width: 12px; height: 12px; transition: transform var(--transition-fast);">
+          </div>
+          <div class="accordion-content" id="accordion-content">
+            <div class="cupom-tags-row">
+              <span class="cupom-tag expiry" id="cupom-expiry-tag">Encerra em 23/06/2026</span>
+              <span class="cupom-tag type">Usar presencialmente</span>
+            </div>
+            <ul class="cupom-rules-list">
+              <li>Não pode ser usado em conjunto com qualquer outra oferta.</li>
+              <li>Disponível enquanto durarem os stocks.</li>
+              <li>Todas as marcas reservam-se o direito de remover qualquer oferta sem aviso prévio.</li>
+              <li>Limitado a uma por pessoa.</li>
+              <li>Para os Termos e Condições completos, por favor visite o site.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="cupom-action-row">
+          <div class="qr-code-box flex-center" style="background-color: #ffffff; padding: 4px;">
+            <img id="cupom-qrcode-img" src="icones/qr-code.svg" alt="QR Code" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.onerror=null; this.src='icones/qr-code.svg';">
+          </div>
+          <div class="cupom-buttons-column" style="display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 200px;">
+            <a href="#" target="_blank" class="btn btn-whatsapp" id="btn-send-whatsapp" style="width: 100%;">
+              <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
+              Salvar no Whatsapp
+            </a>
+            <button class="btn btn-black" id="btn-salvar-print" type="button" style="width: 100%;">
+              Salvar Print / Imprimir
+            </button>
+          </div>
+        </div>
+        
+        <div class="cupom-share-section">
+          <h4>Indique o Clube de Vantagens do Zeca para seus amigos</h4>
+          
+          <div class="social-share-row">
+            <a href="#" class="social-btn" aria-label="Compartilhar no Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Compartilhar no X (Twitter)">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" id="btn-copy-link-anchor" aria-label="Copiar Link">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Compartilhar no Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Compartilhar no WhatsApp">
+              <img src="icones/whatsapp.svg" alt="WhatsApp">
+            </a>
+          </div>
+          
+          <div class="copy-link-wrapper">
+            <input type="text" class="copy-link-input" id="copy-link-input-field" readonly value="https://pergunteprozeca.com/clube-vantagens?cupom=TPZM10">
+            <button class="btn-copy-link" id="btn-copy-link-action" type="button" aria-label="Copiar link de indicação">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <p class="cupom-terms-notice">
+            Ao clicar no botão Inscrever-se, concordo com os <a href="termos.html">Termos de Uso</a> e li a <a href="privacidade.html">Declaração de Privacidade</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

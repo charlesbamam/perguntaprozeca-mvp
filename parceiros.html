@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parcerias para Empresas e Profissionais - Pergunta pro Zeca</title>
+  <meta name="description" content="Anuncie no Zeca e apareça nas recomendações do WhatsApp para brasileiros no Canadá e Estados Unidos no momento em que eles buscam seu serviço.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="shortcut icon" href="icones/zecafavicon.ico" type="image/x-icon">
+  <style>
+    /* Importação da Tipografia Oficial do Design System */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap');
+    
+    /* Variáveis do Design System de Parceiros */
+    :root {
+      --color-brand-yellow: #FFFF00;       /* Palco (Fundo Hero, destaques) */
+      --color-brand-green: #1E8C45;        /* Ação (CTAs principais, ícones) */
+      --color-brand-green-light: #D0FFF7;  /* Cards suaves, chat */
+      --color-black: #111111;              /* Contraste e Headings */
+      --color-white: #FFFFFF;              /* Fundo neutro e cards */
+      --color-gray-100: #2D2D2D;           /* Fundo alternado escuro (#2D2D2D) */
+      --color-gray-400: #9CA3AF;           /* Microcopy e labels secundários */
+      --color-green-cta-text: #0D5C2E;     /* Texto sobre verde claro */
+      
+      --border-radius-sm: 16px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 16px;
+      
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 48px;
+      --space-xl: 80px;
+      --space-2xl: 120px;
+    }
+
+    /* Reset e Tipografia Geral */
+    h1, h2, h3, .font-display {
+      font-family: var(--font-display);
+      color: var(--color-black);
+    }
+
+    body, p, span, li, label, input, select, textarea, button {
+      font-family: var(--font-body);
+    }
+
+    /* Eyebrow de Seção */
+    .legal-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-brand-green);
+      margin-bottom: var(--space-xs);
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: var(--space-md);
+      line-height: 1.2;
+    }
+
+    .section-intro-text {
+      font-size: 17px;
+      color: var(--color-text-main);
+      line-height: 1.65;
+      max-width: 720px;
+      margin: 0 auto var(--space-lg) auto;
+    }
+
+    /* ================= SEÇÕES COM FUNDOS ALTERNADOS ================= */
+
+    /* 1. Hero Section (Fundo Amarelo) - space-2xl vertical */
+    .section-hero {
+      background-color: #D0FFF7;
+      padding: 112px 0 var(--space-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge-title {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-brand-green);
+      background-color: #A4FFF0;
+      padding: 8px 16px;
+      border-radius: var(--border-radius-pill);
+      margin-bottom: 24px !important;
+    }
+
+    .section-hero .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1.2;
+      padding-bottom: 0;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero-content p {
+      font-size: 17px;
+      color: #333333;
+      margin-bottom: 32px;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .hero-buttons .btn-secondary {
+      border: 2px solid var(--color-black);
+      background-color: var(--color-black);
+      color: var(--color-brand-yellow);
+      border-radius: var(--border-radius-pill);
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 150ms ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .hero-buttons .btn-secondary:hover {
+      background-color: #222222;
+      color: var(--color-brand-yellow);
+    }
+
+    .hero-microcopy {
+      font-size: 13px;
+      color: #555555;
+      font-weight: 500;
+    }
+
+    .hero-image-wrapper {
+      flex: 0.8;
+      display: flex;
+      justify-content: flex-end;
+      align-self: center;
+      z-index: 2;
+    }
+
+    .hero-image {
+      max-width: 100%;
+      height: 440px;
+      display: block;
+      object-fit: contain;
+      vertical-align: bottom;
+    }
+
+    /* Header transparente absoluto nesta página */
+    .site-header--transparent {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    /* 2. Seção de Contexto (Fundo Branco) */
+    .section-context {
+      background-color: var(--color-white);
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+
+    /* Pílulas de categorias e perguntas */
+    .partners-pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 0px 0 var(--space-lg) 0;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .partner-pill {
+      background-color: #FFFF00;
+      color: var(--color-black);
+      padding: 18px;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+      border: none;
+      position: relative;
+      display: inline-block;
+    }
+
+    .partner-pill::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #FFFF00;
+      transition: border-top-color var(--transition-fast);
+    }
+
+    .partner-pill:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      transform: translateY(-1px);
+    }
+
+    .partner-pill:hover::after {
+      border-top-color: var(--color-black);
+    }
+
+    /* Animação de flutuar suavemente */
+    @keyframes floatAnimation {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .whatsapp-badge-bounce,
+    .chatbot-badge-bounce {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #00a33f;
+      color: var(--color-white);
+      padding: 8px 16px;
+      border-radius: 16px;
+      border: none;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 24px;
+      animation: floatAnimation 3s ease-in-out infinite;
+      box-shadow: none;
+    }
+    .chatbot-badge-bounce {
+      margin-bottom: var(--space-lg);
+    }
+    .disclaimer-pill {
+      display: inline-flex;
+      align-items: flex-start;
+      background-color: #d0fff7;
+      color: var(--color-black);
+      padding: 10px 18px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-top: 14px;
+      border: none;
+      max-width: 100%;
+      text-align: left;
+      box-sizing: border-box;
+    }
+    .disclaimer-pill a {
+      color: var(--color-black);
+      text-decoration: underline;
+      font-weight: 700;
+    }
+    .disclaimer-pill a:hover {
+      text-decoration: none;
+    }
+    .exclusive-badge {
+      display: inline-block;
+      background-color: var(--color-black);
+      color: var(--color-brand-yellow);
+      border: none;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    /* 3. Seção de Diferenciação (Card Arredondado flutuante com fundo #D0FFF7) */
+    .section-diff {
+      position: relative;
+      background-color: #D0FFF7;
+      padding: var(--space-xl) 24px;
+      text-align: center;
+      color: var(--color-black);
+      border-radius: 24px;
+      max-width: 1200px;
+      width: calc(100% - 48px);
+      margin: 48px auto;
+      border: none;
+      box-shadow: none;
+    }
+    .zeca-pisca-badge {
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 90px;
+      z-index: 10;
+    }
+    .section-diff .section-title {
+      color: var(--color-black) !important;
+    }
+    .section-diff .section-intro-text {
+      color: var(--color-text-main) !important;
+    }
+
+    .chat-simulator-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    /* Cards de Passos Internos em Diferenciação */
+    .step-card {
+      background-color: #1e1e1e;
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: left;
+      border: 1px solid #333333;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .step-card-badge {
+      font-size: 20px;
+      font-weight: 900;
+      color: #111111;
+      background-color: #FFFF00;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-family: var(--font-display);
+    }
+
+    .step-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #FFFF00;
+      font-family: var(--font-display);
+    }
+
+    .step-card p {
+      font-size: 16px;
+      color: #FFFFFF;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .section-trust .section-title {
+      color: var(--color-white) !important;
+    }
+    .section-trust .section-intro-text {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    /* 4. Seção Como Funciona (Fundo Branco) */
+    .section-how {
+      background-color: var(--color-white);
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+
+    /* Novo Fluxo de Recomendações Ilustrativo/Neo-Brutalista */
+    .flow-steps-vertical {
+      max-width: 860px;
+      margin: 60px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    .flow-step-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      width: 100%;
+    }
+
+    .flow-step-row--even {
+      flex-direction: row-reverse;
+    }
+
+    .flow-step-visual-group {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      flex-shrink: 0;
+      width: 320px;
+    }
+
+    .flow-step-row--even .flow-step-visual-group {
+      flex-direction: row; /* Mantém o número à esquerda do card mesmo na linha reversa */
+    }
+
+    .flow-number-giant {
+      font-family: var(--font-display);
+      font-size: 110px;
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke: 3px var(--color-black);
+      line-height: 1;
+      user-select: none;
+      flex-shrink: 0;
+      margin-right: -10px;
+      z-index: 10;
+    }
+
+    .flow-card-illustrative {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px;
+      background-color: transparent;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+
+    /* Camada de fundo amarelo deslocada (offset) */
+    .flow-card-illustrative::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: -8px;
+      bottom: -8px;
+      background-color: var(--color-brand-yellow);
+      border-radius: 40px;
+      z-index: -1;
+      transition: all 150ms ease;
+    }
+
+    /* Camada da borda preta */
+    .flow-card-illustrative::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 3px solid var(--color-black);
+      border-radius: 40px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .flow-card-illustrative:hover::before {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .flow-card-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--color-black);
+      z-index: 3;
+    }
+
+    .flow-card-title {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-black);
+      text-align: center;
+      line-height: 1.3;
+      z-index: 3;
+    }
+
+    .flow-text-ds {
+      flex: 1;
+      text-align: left;
+    }
+
+    .flow-step-row--even .flow-text-ds {
+      text-align: right;
+    }
+
+    .flow-text-ds h4 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: 12px;
+    }
+
+    .flow-text-ds p {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* 5. Seção de Relevância / Prova de Valor (Fundo Branco com duas colunas) */
+    .section-proof {
+      background-color: #F5F5F5;
+      padding: var(--space-xl) 0;
+    }
+
+    .section-proof-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-black);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-lg) var(--space-xl);
+    }
+
+    .proof-content {
+      flex: 1.2;
+      text-align: left;
+    }
+
+    .proof-content .section-title {
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .proof-desc {
+      font-size: 16px;
+      color: var(--color-text-main);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .proof-highlight {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: 32px;
+    }
+
+    .proof-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .proof-pill {
+      background-color: var(--color-brand-yellow);
+      color: var(--color-black);
+      padding: 12px 24px;
+      border-radius: var(--border-radius-pill);
+      font-size: 15px;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .proof-image-wrapper {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .proof-image {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 24px;
+    }
+
+    /* 6. Seção Para quem é (Fundo Branco) */
+    .section-for-who {
+      background-color: var(--color-white);
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+
+    .for-who-flags {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .for-who-flags img {
+      width: 36px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.08));
+    }
+
+    .btn-black-ds {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      border-radius: var(--border-radius-pill);
+      padding: 14px 32px;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-block;
+      transition: background-color 150ms ease, transform 150ms ease;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-black-ds:hover {
+      background-color: #222222;
+      transform: translateY(-1px);
+      color: var(--color-white);
+    }
+
+    /* 7. Seção de Confiança / Oferta MVP (Fundo Preto) */
+    .section-trust {
+      background-color: var(--color-black);
+      padding: var(--space-xl) 0;
+      text-align: center;
+      color: var(--color-white);
+    }
+
+    .section-trust .legal-eyebrow {
+      color: var(--color-brand-yellow) !important;
+    }
+
+    /* Contêiner de Confiança Horizontal (Layout img 1) */
+    .trust-container-horizontal {
+      background-color: #1e1e1e;
+      border: 1px solid #333333;
+      border-radius: 12px;
+      display: flex;
+      align-items: stretch;
+      padding: 40px 24px;
+      max-width: 1000px;
+      margin: 0 auto 64px auto;
+      text-align: left;
+      box-shadow: none;
+    }
+
+    .trust-column {
+      flex: 1;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .trust-icon-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--color-brand-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .trust-column-icon {
+      width: 24px;
+      height: 24px;
+      color: #111111;
+    }
+
+    .trust-column-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-brand-yellow);
+      margin-bottom: 12px;
+    }
+
+    .trust-column-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .trust-column-divider {
+      width: 1px;
+      background-color: #333333;
+      align-self: stretch;
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .trust-container-horizontal {
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 16px;
+      }
+      .trust-column {
+        padding: 0;
+      }
+      .trust-column-divider {
+        width: 100%;
+        height: 1px;
+      }
+    }
+
+    /* Grid 3x2 de Cards de Benefício */
+    .benefit-mvp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .benefit-mvp-card {
+      background-color: var(--color-white);
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .benefit-mvp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .benefit-mvp-card .card-icon {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 12px;
+      color: var(--color-brand-green);
+      fill: currentColor;
+    }
+
+    .benefit-mvp-card .card-label {
+      color: var(--color-brand-green);
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .benefit-mvp-card .card-headline {
+      color: var(--color-black);
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    /* 8. Seção de Planos (Fundo Branco) */
+    .section-plans {
+      background-color: var(--color-white);
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+
+    .section-plans p {
+      font-size: 16px !important;
+    }
+
+    .plan-price-ds {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--color-black);
+      background-color: #D0FFF7;
+      border-radius: 9999px;
+      padding: 6px 16px;
+      width: fit-content;
+      margin-bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .plans-grid-ds {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto var(--space-md) auto;
+      text-align: left;
+    }
+
+    .plan-card-ds {
+      background-color: var(--color-white);
+      border: 2px solid #E5E7EB;
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      transition: transform 250ms ease, box-shadow 250ms ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .plan-card-ds:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .plan-card-ds.priority {
+      border: 2px solid var(--color-brand-green);
+      box-shadow: 0 12px 36px rgba(30, 140, 69, 0.25);
+    }
+
+    .plan-card-ds.priority:hover {
+      box-shadow: 0 16px 48px rgba(30, 140, 69, 0.35);
+    }
+
+    .plan-badge-ds {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-brand-green);
+      color: var(--color-white);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: var(--border-radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: none;
+    }
+
+    .plan-card-ds h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .plan-stars-ds {
+      color: #2cffc0;
+      font-size: 16px;
+      letter-spacing: -1px;
+      font-weight: normal;
+    }
+
+    .plan-card-ds p.plan-desc {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .plan-features-list {
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-grow: 1;
+    }
+
+    .plan-feature-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .plan-feature-item img {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .plan-btn-outline {
+      border: 2px solid var(--color-black);
+      background-color: transparent;
+      color: var(--color-black);
+      padding: 12px 24px;
+      border-radius: var(--border-radius-pill);
+      font-weight: 700;
+      text-align: center;
+      transition: background-color 150ms ease, color 150ms ease;
+      display: block;
+      font-size: 14px;
+      margin-top: auto;
+      text-decoration: none;
+    }
+
+    .plan-btn-outline:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+
+    .plan-btn-solid {
+      border: 2px solid var(--color-black);
+      background-color: var(--color-black);
+      color: var(--color-white);
+      padding: 12px 24px;
+      border-radius: var(--border-radius-pill);
+      font-weight: 700;
+      text-align: center;
+      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+      display: block;
+      font-size: 14px;
+      margin-top: auto;
+      text-decoration: none;
+    }
+
+    .plan-btn-solid:hover {
+      background-color: var(--color-brand-yellow);
+      color: var(--color-black);
+      border-color: var(--color-black);
+    }
+
+    .plans-notice-ds {
+      font-size: 14px;
+      color: var(--color-gray-400);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.55;
+      font-weight: 400;
+    }
+
+    /* Novos Elementos da Seção de Planos (Recomendações planos-section.md) */
+    .plans-hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 24px 0 12px 0;
+      flex-wrap: wrap;
+    }
+
+    .plans-hero-microcopy {
+      font-size: 12px !important;
+      color: var(--color-text-muted);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .plans-table-wrapper {
+      margin: 56px auto;
+      max-width: 1000px;
+      overflow-x: auto;
+      border: 2px solid var(--color-black);
+      border-radius: 16px;
+      background-color: var(--color-white);
+    }
+
+    .plans-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .plans-table th, .plans-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .plans-table th {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+    }
+
+    .plans-table th:not(:first-child), .plans-table td:not(:first-child) {
+      text-align: center;
+      width: 140px;
+    }
+
+    .plans-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .plans-table tr:nth-child(even) {
+      background-color: #F9FAFB;
+    }
+
+    .plans-table td:first-child {
+      font-weight: 700;
+      color: var(--color-black);
+    }
+
+    .table-check-icon {
+      color: #00A33F;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .table-dash-icon {
+      color: #9CA3AF;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .plans-algorithm-card {
+      background-color: #FFFBEB;
+      border: none;
+      box-shadow: none;
+      border-radius: 16px;
+      padding: 32px;
+      margin: 56px auto 32px auto;
+      max-width: 860px;
+      text-align: left;
+    }
+
+    .plans-algorithm-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-top: 0;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .plans-algorithm-card p {
+      font-size: 15px !important;
+      line-height: 1.65;
+      margin: 0;
+      color: var(--color-text-main);
+    }
+
+    .plans-notice-ds p {
+      font-size: 14px !important;
+    }
+
+    @media (max-width: 768px) {
+      .plans-table-wrapper {
+        margin: 40px 16px;
+      }
+      .plans-algorithm-card {
+        margin: 40px 16px;
+        padding: 24px;
+      }
+    }
+
+    /* 10. Seção de Formulário (Fundo Branco) - max-width 560px centralizado */
+    .section-form {
+      background-color: var(--color-white);
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+
+    .form-container-ds {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: var(--color-white);
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+      text-align: left;
+    }
+
+    #partner-form-ds {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 24px;
+    }
+
+    .form-group-ds {
+      margin-bottom: 0;
+    }
+
+    .form-group-ds.full-width {
+      grid-column: span 2;
+    }
+
+    .form-submit-row {
+      grid-column: span 2;
+    }
+
+    .checkbox-terms-label-ds {
+      grid-column: span 2;
+    }
+
+    .form-group-ds label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--color-black);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .form-input-ds, .form-select-ds, .form-textarea-ds {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 14px;
+      background-color: var(--color-white);
+      transition: border-color 150ms ease;
+      outline: none;
+    }
+
+    .form-input-ds:focus, .form-select-ds:focus, .form-textarea-ds:focus {
+      border: 2px solid var(--color-brand-green);
+      padding: 11px 15px; /* Compensa 1px da borda para não deslocar */
+    }
+
+    .form-textarea-ds:focus {
+      padding: 11px 15px;
+    }
+
+    .form-select-ds {
+      padding-right: 40px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 14px;
+    }
+
+    .form-textarea-ds {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .btn-submit-ds {
+      width: 100%;
+      background-color: var(--color-brand-green);
+      color: var(--color-white);
+      padding: 16px 28px;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: var(--border-radius-pill);
+      transition: background-color 150ms ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-submit-ds:hover {
+      background-color: #176d35;
+    }
+
+    .form-submit-row {
+      margin-top: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .form-submit-row span.microcopy-form {
+      font-size: 13px;
+      color: var(--color-gray-400);
+      font-weight: 400;
+    }
+
+    .checkbox-terms-label-ds {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #555555;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .checkbox-terms-label-ds input {
+      margin-top: 3px;
+      accent-color: var(--color-brand-green);
+    }
+
+    .checkbox-terms-label-ds a {
+      text-decoration: underline;
+      font-weight: 600;
+      color: var(--color-brand-green);
+    }
+
+    /* 11. Seção Final (Fundo Verde Oficial Zeca) */
+    .section-final {
+      background-color: var(--color-brand-green);
+      color: var(--color-white);
+      padding: var(--space-xl) 24px;
+      text-align: center;
+      border-radius: var(--border-radius-lg);
+      margin-bottom: var(--space-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-final h2 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-white);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .section-final p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 600px;
+      margin: 0 auto 32px auto;
+      line-height: 1.6;
+    }
+
+    .section-final .btn-yellow {
+      background-color: var(--color-brand-yellow);
+      color: var(--color-black);
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: var(--border-radius-pill);
+      font-size: 15px;
+      display: inline-block;
+      transition: transform 150ms ease;
+    }
+
+    .section-final .btn-yellow:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Cupons de desconto e ofertas */
+    .cupons-showcase-section {
+      background-color: var(--color-brand-yellow);
+      border: none;
+      border-radius: 16px;
+      padding: 48px 48px 0 48px;
+      margin-bottom: var(--space-xl);
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cupons-showcase-content {
+      flex: 1;
+      text-align: left;
+      align-self: center;
+      padding-bottom: 48px;
+      padding-left: 32px;
+    }
+
+    .cupons-showcase-eyebrow {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--color-black);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .cupons-showcase-content h2 {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: 16px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .cupons-showcase-content p {
+      font-size: 16px;
+      color: var(--color-black);
+      margin-bottom: 28px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .cupons-showcase-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .cupom-pill-demo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-black);
+      background-color: var(--color-white);
+      border: none;
+      padding: 12px 20px;
+      border-radius: var(--border-radius-pill);
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .cupons-showcase-image {
+      width: 400px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-self: flex-end;
+      margin-bottom: 0;
+      gap: 0;
+      border-radius: 16px;
+    }
+
+    .cupons-showcase-image img {
+      width: 100%;
+      height: 440px;
+      object-fit: contain;
+      object-position: bottom left;
+      display: block;
+      margin-bottom: -32px;
+    }
+
+    /* 11. Seção de FAQ */
+    .faq-section {
+      background-color: #d0fff7;
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+    
+    .faq-section .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+      margin-top: 40px;
+    }
+    
+    .faq-card {
+      border: none;
+      border-radius: 16px;
+      padding: 24px;
+      background-color: var(--color-white);
+      box-shadow: none;
+      transition: transform 150ms ease;
+    }
+
+    .faq-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    
+    .faq-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-black);
+    }
+    
+    .faq-card p {
+      font-size: 16px;
+      color: var(--color-text-main);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Acessibilidade focus state global */
+    a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--color-brand-green) !important;
+      outline-offset: 3px !important;
+    }
+
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .section-hero {
+        padding: 120px 0 60px 0;
+      }
+      .section-hero .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-content {
+        padding-bottom: var(--space-md);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-badge-title {
+        justify-content: center;
+      }
+      .hero-image-wrapper {
+        align-self: center;
+        justify-content: center;
+        margin-bottom: 0;
+      }
+      .hero-image {
+        height: 360px;
+      }
+      .benefit-mvp-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .flow-step-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px;
+      }
+      .flow-step-row--even {
+        flex-direction: column !important;
+      }
+      .flow-step-visual-group {
+        width: auto !important;
+        justify-content: center !important;
+      }
+      .flow-text-ds {
+        text-align: center !important;
+        padding: 0 16px;
+      }
+      .flow-step-row--even .flow-text-ds {
+        text-align: center !important;
+      }
+      .chat-simulator-grid {
+        grid-template-columns: 1fr;
+      }
+      .plans-grid-ds {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+      .cupons-showcase-section {
+        flex-direction: column-reverse !important;
+        padding: 40px 32px 0 32px !important;
+        align-items: center !important;
+        gap: 32px !important;
+      }
+      .cupons-showcase-content {
+        padding-bottom: 40px !important;
+        padding-left: 0 !important;
+        width: 100% !important;
+      }
+      .cupons-showcase-image {
+        width: 100% !important;
+        justify-content: center !important;
+        margin-bottom: 0 !important;
+      }
+      .cupons-showcase-image img {
+        height: 280px !important;
+      }
+      .cupons-showcase-list {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      .section-proof-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: var(--space-md) !important;
+      }
+      .proof-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .proof-pills {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-hero {
+        padding-top: 130px;
+      }
+      .hero-content h1 {
+        font-size: 32px;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+      .hero-buttons .btn {
+        width: 100%;
+      }
+      .benefit-mvp-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-container-ds {
+        padding: 24px 16px;
+        max-width: 100%;
+        width: 100%;
+      }
+      #partner-form-ds {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .form-group-ds.full-width, .form-submit-row, .checkbox-terms-label-ds {
+        grid-column: span 1;
+      }
+      .section-title {
+        font-size: 26px;
+      }
+      .section-diff {
+        width: calc(100% - 32px);
+        margin: 32px auto;
+        padding: var(--space-lg) 16px;
+        border-radius: 16px;
+        border: none;
+        box-shadow: none;
+      }
+      .zeca-pisca-badge {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-hero {
+        padding-bottom: 0;
+      }
+      .hero-image {
+        height: 260px;
+      }
+      .chat-bubble-wp {
+        max-width: 100%;
+      }
+    }
+
+    /* Regras de Impressão */
+    @media print {
+      @page {
+        size: 1280px auto;
+        margin: 0;
+      }
+      body {
+        width: 1280px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background-color: var(--color-white) !important;
+        color: var(--color-black) !important;
+      }
+      .container {
+        width: 1200px !important;
+        max-width: 1200px !important;
+        padding: 0 24px !important;
+        margin: 0 auto !important;
+      }
+      .benefit-mvp-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+      .plans-grid-ds, .chat-simulator-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+      }
+      .flow-steps-vertical {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 64px !important;
+      }
+      .flow-step-row {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 60px !important;
+      }
+      .flow-step-row--even {
+        flex-direction: row-reverse !important;
+      }
+      .flow-step-visual-group {
+        display: flex !important;
+        align-items: center !important;
+        gap: 24px !important;
+        width: 320px !important;
+      }
+      .flow-card-illustrative {
+        background-color: transparent !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .flow-card-illustrative::before {
+        background-color: var(--color-brand-yellow) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .section-hero {
+        background-color: #D0FFF7 !important;
+        padding: 48px 0 !important;
+      }
+      .section-hero .container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+      }
+      .hero-content {
+        flex: 1.2 !important;
+        padding-bottom: 0 !important;
+      }
+      .hero-image-wrapper {
+        flex: 0.8 !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-self: center !important;
+      }
+      .hero-image {
+        display: block !important;
+        height: 380px !important;
+      }
+      .section-proof {
+        background-color: var(--color-white) !important;
+      }
+      .section-proof-container {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 60px !important;
+      }
+      .proof-content {
+        flex: 1.2 !important;
+        text-align: left !important;
+      }
+      .proof-image-wrapper {
+        flex: 0.8 !important;
+        display: flex !important;
+      }
+      .proof-image {
+        display: block !important;
+      }
+      .section-diff {
+        background-color: #D0FFF7 !important;
+        color: var(--color-black) !important;
+        border: none !important;
+        border-radius: 24px !important;
+        box-shadow: none !important;
+        width: 1200px !important;
+        margin: 48px auto !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .section-trust {
+        background-color: #F9F9F9 !important;
+        color: var(--color-black) !important;
+      }
+      .section-trust .legal-eyebrow {
+        color: var(--color-brand-green) !important;
+      }
+      .section-trust .section-title {
+        color: var(--color-black) !important;
+      }
+      .section-trust .section-intro-text {
+        color: var(--color-text-muted) !important;
+      }
+      .trust-container-horizontal {
+        display: flex !important;
+        flex-direction: row !important;
+        background-color: var(--color-white) !important;
+        border: 1px solid #E5E7EB !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-shadow: none !important;
+      }
+      .trust-column-divider {
+        display: block !important;
+        width: 1px !important;
+        background-color: #E5E7EB !important;
+      }
+      .trust-icon-circle {
+        background-color: rgba(30, 140, 69, 0.1) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .trust-column-icon {
+        color: var(--color-brand-green) !important;
+      }
+      .trust-column-title {
+        color: var(--color-black) !important;
+      }
+      .trust-column-desc {
+        color: var(--color-text-muted) !important;
+      }
+      .section-final {
+        background-color: var(--color-brand-green) !important;
+      }
+      .site-header {
+        position: relative !important;
+        background-color: transparent !important;
+      }
+      /* Regras de Impressão dos Planos */
+      .plan-card-ds {
+        border: 2px solid #E5E7EB !important;
+        box-shadow: none !important;
+        background-color: var(--color-white) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .plan-card-ds.priority {
+        border: 2px solid var(--color-black) !important;
+        box-shadow: 4px 4px 0px 0px var(--color-black) !important;
+        background-color: var(--color-white) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .plan-badge-ds {
+        background-color: var(--color-brand-yellow) !important;
+        color: var(--color-black) !important;
+        border: 1px solid var(--color-black) !important;
+        top: -14px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .plan-btn-outline {
+        border: 2px solid var(--color-black) !important;
+        color: var(--color-black) !important;
+        background-color: transparent !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .plan-btn-solid {
+        border: 2px solid var(--color-black) !important;
+        color: var(--color-white) !important;
+        background-color: var(--color-black) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .plan-price-ds {
+        color: var(--color-black) !important;
+        background-color: #D0FFF7 !important;
+        border-radius: 9999px !important;
+        padding: 6px 16px !important;
+        width: fit-content !important;
+        display: inline-flex !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      /* Regras de Impressão de Cupons */
+      .cupons-showcase-section {
+        background-color: var(--color-brand-yellow) !important;
+        border: none !important;
+        border-radius: 16px !important;
+        padding: 48px 48px 0 48px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-end !important;
+        gap: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .cupons-showcase-content {
+        flex: 1 !important;
+        padding-bottom: 48px !important;
+        padding-left: 32px !important;
+      }
+      .cupons-showcase-eyebrow {
+        color: var(--color-black) !important;
+      }
+      .cupons-showcase-content h2 {
+        color: var(--color-black) !important;
+      }
+      .cupons-showcase-content p {
+        color: var(--color-black) !important;
+      }
+      .cupom-pill-demo {
+        background-color: var(--color-white) !important;
+        color: var(--color-black) !important;
+        border: none !important;
+        box-shadow: none !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .cupons-showcase-image {
+        width: 400px !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-self: flex-end !important;
+      }
+      .cupons-showcase-image img {
+        width: 100% !important;
+        height: 440px !important;
+        display: block !important;
+        margin-bottom: -32px !important;
+        object-position: bottom left !important;
+      }
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="site-header site-header--transparent">
+    <div class="container">
+      <a href="index.html" class="logo-container" id="header-logo-link">
+        <img src="imagens/logo-perguntaprozeca.png" alt="Pergunta pro Zeca" class="logo-img">
+      </a>
+      <div class="header-right-area" style="display: flex; align-items: center; gap: 20px;">
+                <nav class="header-nav">
+          <a href="clube-vantagens.html" class="header-nav-link">Clube de Vantagens</a>
+          <a href="parceiros.html" class="header-nav-link">Parceiros</a>
+          <a href="influenciadores.html" class="header-nav-link">Influenciadores</a>
+        </nav>
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
+          <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
+          Pergunte no Whatsapp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section (Fundo Verde Água Claro) -->
+  <section class="section-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge-title">
+          Seja parceiro do Zeca
+        </div>
+        <h1>Seu negócio recomendado com a curadoria do Zeca.</h1>
+        <p>O Zeca é o concierge digital que <strong style="color: #00a33f;">conversa</strong> pelo WhatsApp com brasileiros no Canadá e nos Estados Unidos, <strong style="color: #00a33f;">entende</strong> o que eles precisam e <strong style="color: #00a33f;">indica</strong> empresas e profissionais de confiança.</p>
+        <div class="hero-buttons">
+          <a href="#planos" class="btn btn-secondary" id="btn-hero-plans">Veja Planos Exclusivos</a>
+        </div>
+        <div class="hero-microcopy-wrapper" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; text-align: left;">
+          <div style="display: flex; gap: 8px; align-items: center; flex-shrink: 0;">
+            <img src="icones/canada.svg" alt="Canadá" style="width: 32px; height: 32px;">
+            <img src="icones/usa.svg" alt="EUA" style="width: 32px; height: 32px;">
+          </div>
+          <span class="hero-microcopy" style="margin-bottom: 0;">Para empresas e profissionais que atendem brasileiros no Canadá ou nos EUA.</span>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="imagens/zeca-hero-partner.png" alt="Zeca, o concierge digital do Pergunta pro Zeca, personagem animado sorrindo" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Seção de Contexto (Fundo Branco) -->
+  <section class="section-context">
+    <div class="container">
+      <span class="legal-eyebrow">CONTEXTO LOCAL</span>
+      <h2 class="section-title">As pessoas já pedem indicação todos os dias.</h2>
+      <p class="section-intro-text">Quando um brasileiro precisa de um serviço no exterior, ele quase nunca começa abrindo um site de pesquisas na Internet. Ele simplesmente pergunta para alguém.</p>
+      
+      <div class="partners-pills-container">
+        <span class="partner-pill">“Conhece um contador?”</span>
+        <span class="partner-pill">“Tem dentista que fale português?”</span>
+        <span class="partner-pill">“Indica uma faxineira?”</span>
+        <span class="partner-pill">“Sabe de um brasileiro quem faz imposto aqui?”</span>
+        <span class="partner-pill">“Tem alguém confiável para imigração?”</span>
+        <span class="partner-pill">“Conhece um restaurante brasileiro por aqui?”</span>
+      </div>
+      
+      <p class="section-intro-text" style="font-weight: 700; color: var(--color-black); margin-bottom: 0;">O Zeca entra exatamente nesse momento. Ele conversa com a pessoa, entende o que ela precisa e recomenda negócios com curadoria, contexto e confiança.</p>
+      <div class="whatsapp-badge-bounce">
+        <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 18px; height: 18px; margin-right: 6px; flex-shrink: 0; filter: brightness(0) invert(1);">
+        <span>Direto no WhatsApp!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Seção de Diferenciação (Fundo Cinza 100) -->
+  <section class="section-diff">
+    <img src="imagens/zeca-pisca.png" alt="Zeca Pisca" class="zeca-pisca-badge">
+    <div class="container">
+      <span class="legal-eyebrow">DIFERENCIAÇÃO DA MARCA</span>
+      <h2 class="section-title">O Zeca não é um site de busca. O Zeca conversa.</h2>
+      <p class="section-intro-text" style="margin-bottom: 0;">A maioria das plataformas obriga a pessoa a pesquisar, filtrar, comparar e decidir sozinha. O Zeca faz diferente.</p>
+      <div class="chatbot-badge-bounce">
+        <span>Não é um chatbot!</span>
+      </div>
+      
+      <div class="chat-simulator-grid" style="max-width: 900px; margin: 0 auto;">
+        <div class="step-card">
+          <div class="step-card-badge">1</div>
+          <h3>Conversa Onde o Cliente Está</h3>
+          <p>O usuário chama no WhatsApp e escreve como falaria com um amigo. Ele recebe uma orientação simples, direta e personalizada sem precisar abrir aplicativos novos.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card-badge">2</div>
+          <h3>Recomendação no Momento Certo</h3>
+          <p>Quando a conversa do usuário vira uma necessidade de contratação real, seu negócio é exibido diretamente como uma das opções mais qualificadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Seção Como Funciona (Fundo Branco) -->
+  <section class="section-how">
+    <div class="container">
+      <span class="legal-eyebrow">FLUXO DE RECOMENDAÇÕES</span>
+      <h2 class="section-title">Como o Zeca recomenda seu negócio</h2>
+      <p class="section-intro-text">O Zeca não joga nomes aleatórios na conversa. Ele entende a pergunta antes de indicar.</p>
+      
+      <div class="flow-steps-vertical">
+        <!-- Passo 1 -->
+        <div class="flow-step-row flow-step-row--odd">
+          <div class="flow-step-visual-group">
+            <div class="flow-number-giant">1</div>
+            <div class="flow-card-illustrative">
+              <svg class="flow-card-icon" fill="none" stroke="var(--color-black)" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+              <div class="flow-card-title">Chamada</div>
+            </div>
+          </div>
+          <div class="flow-text-ds">
+            <h4>A pessoa chama o Zeca</h4>
+            <p>Um brasileiro chama o Zeca pelo WhatsApp e diz o que precisa.</p>
+          </div>
+        </div>
+        
+        <!-- Passo 2 -->
+        <div class="flow-step-row flow-step-row--even">
+          <div class="flow-step-visual-group">
+            <div class="flow-number-giant">2</div>
+            <div class="flow-card-illustrative">
+              <svg class="flow-card-icon" fill="none" stroke="var(--color-black)" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m-3-3h6"></path>
+              </svg>
+              <div class="flow-card-title">Contexto</div>
+            </div>
+          </div>
+          <div class="flow-text-ds">
+            <h4>O Zeca entende o contexto</h4>
+            <p>O Zeca mapeia o tipo de serviço, a cidade, a urgência e o perfil do usuário.</p>
+          </div>
+        </div>
+        
+        <!-- Passo 3 -->
+        <div class="flow-step-row flow-step-row--odd">
+          <div class="flow-step-visual-group">
+            <div class="flow-number-giant">3</div>
+            <div class="flow-card-illustrative">
+              <svg class="flow-card-icon" fill="none" stroke="var(--color-black)" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+              <div class="flow-card-title">Consulta</div>
+            </div>
+          </div>
+          <div class="flow-text-ds">
+            <h4>Consulta a base</h4>
+            <p>A partir da nossa curadoria, o Zeca busca empresas e profissionais compatíveis.</p>
+          </div>
+        </div>
+        
+        <!-- Passo 4 -->
+        <div class="flow-step-row flow-step-row--even">
+          <div class="flow-step-visual-group">
+            <div class="flow-number-giant">4</div>
+            <div class="flow-card-illustrative">
+              <svg class="flow-card-icon" fill="none" stroke="var(--color-black)" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+              </svg>
+              <div class="flow-card-title">Filtragem</div>
+            </div>
+          </div>
+          <div class="flow-text-ds">
+            <h4>Indica opções boas</h4>
+            <p>Em vez de entregar uma lista interminável, o Zeca recomenda opções mais certeiras!</p>
+          </div>
+        </div>
+        
+        <!-- Passo 5 -->
+        <div class="flow-step-row flow-step-row--odd">
+          <div class="flow-step-visual-group">
+            <div class="flow-number-giant">5</div>
+            <div class="flow-card-illustrative">
+              <svg class="flow-card-icon" fill="none" stroke="var(--color-black)" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 .364l-.707 .707M21 12h-1M4 12H3m.364-6.364l.707 .707M12 18a6 6 0 100-12 6 6 0 000 12z"></path>
+              </svg>
+              <div class="flow-card-title">Decisão</div>
+            </div>
+          </div>
+          <div class="flow-text-ds">
+            <h4>Momento da decisão</h4>
+            <p>Seu negócio aparece quando a intenção de compra está mais forte.</p>
+            <div class="disclaimer-pill">
+              <svg class="disclaimer-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width: 18px; height: 18px; margin-right: 8px; flex-shrink: 0; margin-top: 2px;">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+                <line x1="12" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></line>
+                <line x1="12" y1="12" x2="12" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              </svg>
+              <span>o Zeca também pode indicar sua empresa já oferecendo descontos exclusivos. <a href="#planos">Conheça os planos</a>.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Seção de Relevância / Prova de Valor (Fundo Branco com duas colunas) -->
+  <section class="section-proof">
+    <div class="container section-proof-container">
+      <div class="proof-content">
+        <span class="legal-eyebrow">RELEVÂNCIA</span>
+        <h2 class="section-title">O Zeca aproxima seu negócio de quem já tem intenção.</h2>
+        <p class="proof-desc">Existe uma grande diferença entre anunciar para quem está rolando o feed e ser recomendado para quem acabou de pedir ajuda. Seu cliente pode não saber o nome da sua empresa ainda, mas ele sabe o que precisa.</p>
+        <p class="proof-highlight">O Zeca atua entre a necessidade e a decisão.</p>
+        <div class="proof-pills">
+          <span class="proof-pill">Não é só visibilidade</span>
+          <span class="proof-pill">É curadoria e recomendação no momento certo</span>
+        </div>
+      </div>
+      <div class="proof-image-wrapper">
+        <img src="imagens/relevanvia-zeca.png" alt="O Zeca aproxima seu negócio de quem já tem intenção" class="proof-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Seção Para Quem É (Fundo Branco) -->
+  <section class="section-for-who">
+    <div class="container">
+      <span class="legal-eyebrow">PÚBLICO-ALVO</span>
+      <div class="for-who-flags">
+        <img src="icones/canada.svg" alt="Bandeira do Canadá">
+        <img src="icones/usa.svg" alt="Bandeira dos Estados Unidos">
+      </div>
+      <h2 class="section-title">Para negócios que atendem brasileiros no Canadá ou EUA</h2>
+      <p class="section-intro-text" style="margin-bottom: 36px;">Se você quer ser encontrado por brasileiros na sua cidade, faz total sentido seu negócio na base do Zeca.</p>
+      
+      <div class="partners-pills-container" style="max-width: 900px; margin-bottom: 0;">
+        <span class="partner-pill">Contadores</span>
+        <span class="partner-pill">Corretores de imóveis</span>
+        <span class="partner-pill">Corretores de seguros</span>
+        <span class="partner-pill">Consultores de imigração</span>
+        <span class="partner-pill">Advogados</span>
+        <span class="partner-pill">Dentistas</span>
+        <span class="partner-pill">Clínicas</span>
+        <span class="partner-pill">Psicólogos</span>
+        <span class="partner-pill">Restaurantes</span>
+        <span class="partner-pill">Mercados brasileiros</span>
+        <span class="partner-pill">Cabeleireiros</span>
+        <span class="partner-pill">Manicures</span>
+        <span class="partner-pill">Faxineiras</span>
+        <span class="partner-pill">Eletricistas</span>
+        <span class="partner-pill">Encanadores</span>
+        <span class="partner-pill">Mecânicos</span>
+        <span class="partner-pill">Escolas de idiomas</span>
+        <span class="partner-pill">Serviços financeiros</span>
+        <span class="partner-pill">Agências de viagem</span>
+        <span class="partner-pill">Serviços para recém-chegados</span>
+      </div>
+      <div style="margin-top: 40px;">
+        <a href="#cadastro" class="btn-black-ds" id="btn-for-who-join">Quero fazer parceria com o Zeca</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Seção de Confiança & Oferta MVP (Fundo Preto) -->
+  <section class="section-trust">
+    <div class="container">
+      <span class="legal-eyebrow">CONFIÁVEL E SEGURO</span>
+      <h2 class="section-title">Recomendação com curadoria, não indicação aleatória.</h2>
+      <p class="section-intro-text">O Zeca precisa ser confiável para a comunidade brasileira. Por isso, construímos uma base avaliada com seriedade, clareza e responsabilidade.</p>
+      
+      <div class="trust-container-horizontal">
+        <!-- Coluna 1 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Curadoria</h3>
+          <p class="trust-column-desc">O seu negócio entra em uma base constantemente avaliada, verificada para garantir confiança.</p>
+        </div>
+        <!-- Divisor Vertical -->
+        <div class="trust-column-divider"></div>
+        <!-- Coluna 2 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Contexto</h3>
+          <p class="trust-column-desc">O Zeca considera o que a pessoa precisa de verdade antes de indicar.</p>
+        </div>
+        <!-- Divisor Vertical -->
+        <div class="trust-column-divider"></div>
+        <!-- Coluna 3 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.76 2.24a2.5 2.5 0 00-3.52 0L2.24 9.24a2.5 2.5 0 000 3.52l7 7a2.5 2.5 0 003.52 0l7-7a2.5 2.5 0 000-3.52l-7-7zm-3.18 4.6a1 1 0 111.42-1.42 1 1 0 01-1.42 1.42zm4.84 8.48a1 1 0 11-1.42 1.42 1 1 0 011.42-1.42zm-.61-5.71l-5.66 5.66a1 1 0 11-1.42-1.42l5.66-5.66a1 1 0 111.42 1.42z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Direção</h3>
+          <p class="trust-column-desc">As recomendações são pensadas de forma a facilitar a escolha do usuário, sem exageros.</p>
+        </div>
+      </div>
+
+      <!-- Benefícios de entrar na fase inicial (Grid de 6 cards 3x2) -->
+      <h2 class="section-title">Benefícios de entrar na base inicial do Zeca</h2>
+      <p style="font-size: 15px; color: var(--color-brand-yellow); max-width: 720px; margin: -16px auto 32px auto; font-weight: 600; text-align: center; line-height: 1.5;">Seja um dos primeiros a alcançar os brasileiros que buscam sua empresa conversando com o Zeca</p>
+      <div class="trust-container-horizontal" style="margin-bottom: 32px;">
+        <!-- Coluna 1 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Recomendações</h3>
+          <p class="trust-column-desc">Seu negócio incluído na base de dados inteligente do Zeca.</p>
+        </div>
+        <!-- Divisor Vertical -->
+        <div class="trust-column-divider"></div>
+        <!-- Coluna 2 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Rede inicial</h3>
+          <p class="trust-column-desc">Participe ativamente da construção e validação inicial da rede.</p>
+        </div>
+        <!-- Divisor Vertical -->
+        <div class="trust-column-divider"></div>
+        <!-- Coluna 3 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Prioridade</h3>
+          <p class="trust-column-desc">Ganhe prioridade nas buscas por categoria ou região de atuação.</p>
+          <span class="exclusive-badge">Exclusivo Assinantes</span>
+        </div>
+      </div>
+
+      <div class="trust-container-horizontal" style="margin-bottom: 64px;">
+        <!-- Coluna 1 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Cupons</h3>
+          <p class="trust-column-desc">Disponibilize ofertas e cupons exclusivos para a comunidade.</p>
+          <span class="exclusive-badge">Exclusivo Assinantes</span>
+        </div>
+        <!-- Divisor Vertical -->
+        <div class="trust-column-divider"></div>
+        <!-- Coluna 2 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Inteligência</h3>
+          <p class="trust-column-desc">Entenda em tempo real o que os brasileiros buscam na sua região.</p>
+          <span class="exclusive-badge">Exclusivo Assinantes</span>
+        </div>
+        <!-- Divisor Vertical -->
+        <div class="trust-column-divider"></div>
+        <!-- Coluna 3 -->
+        <div class="trust-column">
+          <div class="trust-icon-circle">
+            <svg class="trust-column-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+          </div>
+          <h3 class="trust-column-title">Expansão</h3>
+          <p class="trust-column-desc">Garanta sua presença antes da expansão para novos territórios.</p>
+          <span class="exclusive-badge">Exclusivo Assinantes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Seção de Planos (Fundo Branco) -->
+  <section class="section-plans" id="planos">
+    <div class="container">
+      <span class="legal-eyebrow">PLANOS PARA EMPRESAS E PROFISSIONAIS</span>
+      <h2 class="section-title">Receba mais visibilidade e conquiste clientes certos com o Zeca</h2>
+      <p class="section-intro-text">Cadastre seu negócio gratuitamente ou amplie sua presença com destaque nas recomendações. O Zeca conecta empresas e profissionais a usuários com intenção real, no contexto certo.</p>
+      
+      <div class="plans-hero-actions">
+        <a href="#plano-destaque" class="plan-btn-solid" style="margin-top: 0; padding: 12px 32px;">Quero mais visibilidade</a>
+        <a href="#plano-presenca" class="plan-btn-outline" style="margin-top: 0; padding: 12px 32px;">Criar perfil gratuito</a>
+      </div>
+      <p class="plans-hero-microcopy">Disponibilidade limitada no plano Premium por categoria e região.</p>
+      
+      <div class="plans-grid-ds">
+        <!-- Plano Premium -->
+        <div class="plan-card-ds priority" id="plano-destaque">
+          <span class="plan-badge-ds">Mais visibilidade</span>
+          <h3>Premium<span class="plan-stars-ds">★★★★</span></h3>
+          <p class="plan-desc">Para quem quer ampliar exposição, gerar mais oportunidades e ocupar posições mais estratégicas nas recomendações do Zeca.</p>
+          
+          <div class="plan-features-list">
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span><strong>Tudo do plano Basic.</strong></span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Prioridade nas recomendações quando houver aderência real com a pergunta do usuário.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Descontos para destaque visual em categorias e espaços estratégicos da plataforma.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Crie e ative cupons, descontos e cashback para aumentar conversão e estimular novas compras.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Pague comissões apenas quando fizer vendas.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Acesso a ações promocionais, integrações e oportunidades exclusivas do ecossistema do Zeca.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Acesse com exclusividade os parceiros do Zeca para novos negócios.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Entre antes em novos formatos, recursos e iniciativas comerciais.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Conte com atendimento prioritário para ativação, ajustes e acompanhamento.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Acesse serviços com descontos exclusivos para o crescimento do seu negócio, do branding ao marketing estratégico.</span>
+            </div>
+          </div>
+          
+          <a href="https://wa.me/5500000000000" target="_blank" class="plan-btn-solid">Falar com um consultor</a>
+          <p style="font-size: 14px !important; color: var(--color-text-main); margin-top: 8px; margin-bottom: 0; text-align: center;">Analisamos categoria e região em até 1 dia útil.</p>
+        </div>
+
+        <!-- Plano Basic -->
+        <div class="plan-card-ds" id="plano-presenca">
+          <span class="plan-badge-ds" style="background-color: var(--color-brand-green-light); border-color: var(--color-black); color: var(--color-black);">Entrada gratuita</span>
+          <h3>Basic</h3>
+          <p class="plan-desc">Para empresas e profissionais que querem entrar no Zeca e começar a receber visibilidade qualificada.</p>
+          
+          <div class="plan-features-list">
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Coloque seu negócio na base de recomendações do Zeca.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Apareça na categoria e na região mais relevantes para o seu serviço.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Seja recomendado quando houver compatibilidade real com a necessidade do usuário.</span>
+            </div>
+            <div class="plan-feature-item">
+              <img src="icones/check_2.svg" alt="Check">
+              <span>Comece a construir histórico e presença dentro da plataforma.</span>
+            </div>
+          </div>
+          
+          <a href="#cadastro" class="plan-btn-outline">Criar perfil gratuito</a>
+          <p style="font-size: 14px !important; color: var(--color-text-main); margin-top: 8px; margin-bottom: 0; text-align: center;">Sem custo para começar.</p>
+        </div>
+      </div>
+
+      <!-- Tabela Comparativa -->
+      <div class="plans-table-wrapper">
+        <table class="plans-table">
+          <thead>
+            <tr>
+              <th>Recurso ou benefício</th>
+              <th>Basic</th>
+              <th>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Perfil da empresa ou profissional no Zeca</td>
+              <td><span class="table-check-icon">✓</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Avaliação inicial do perfil</td>
+              <td><span class="table-check-icon">✓</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Presença em categoria e região</td>
+              <td><span class="table-check-icon">✓</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Recomendação quando houver compatibilidade</td>
+              <td><span class="table-check-icon">✓</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Construção de histórico dentro da plataforma</td>
+              <td><span class="table-check-icon">✓</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Prioridade nas recomendações</td>
+              <td><span class="table-dash-icon">—</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Destaque visual em espaços estratégicos</td>
+              <td><span class="table-dash-icon">—</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Cupons, descontos e cashback</td>
+              <td><span class="table-dash-icon">—</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Ações promocionais exclusivas</td>
+              <td><span class="table-dash-icon">—</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Acesso exclusivo a parceiros do Zeca para novos negócios</td>
+              <td><span class="table-dash-icon">—</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Descontos exclusivos em serviços parceiros (branding a marketing)</td>
+              <td><span class="table-dash-icon">—</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Integrações e formatos especiais</td>
+              <td><span class="table-dash-icon">—</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+            <tr>
+              <td>Atendimento prioritário</td>
+              <td><span class="table-dash-icon">—</span></td>
+              <td><span class="table-check-icon">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Como o Zeca decide -->
+      <div class="plans-algorithm-card">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #000; flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Como o Zeca decide quem aparece primeiro
+        </h3>
+        <p>O Zeca não recomenda apenas quem paga mais. A ordem das recomendações considera a compatibilidade entre a necessidade do usuário, a categoria, a região, a qualidade do perfil e o histórico do parceiro. O plano Premium aumenta sua exposição quando existe aderência real com a busca, ajudando sua empresa a aparecer mais sem comprometer a confiança da recomendação.</p>
+      </div>
+      
+      <div class="plans-notice-ds" style="margin-top: 32px; font-size: 14px; line-height: 1.6; color: var(--color-text-main); text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p style="margin-bottom: 8px;">* O valor do plano Premium varia conforme categoria, cidade e disponibilidade comercial, sob consulta com nosso consultor.</p>
+        <p style="margin: 0;">** Parceiros do plano Premium ganham mais exposição, mas a recomendação final continua baseada em aderência real, contexto da busca e confiança construída na plataforma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Seção de Cupons & Benefícios (Fundo Amarelo) -->
+  <section class="container" style="margin-bottom: var(--space-xl);">
+    <div class="cupons-showcase-section">
+      <!-- Imagem do Zeca à esquerda -->
+      <div class="cupons-showcase-image">
+        <img src="imagens/zeca-promo22.png" alt="Zeca Cupons">
+      </div>
+      
+      <!-- Conteúdo à direita -->
+      <div class="cupons-showcase-content">
+        <span class="cupons-showcase-eyebrow">VÁ ALÉM</span>
+        <h2>Transforme recomendação em oferta real.</h2>
+        <p>Além de constar na base de recomendações, seu negócio pode acelerar a decisão dos clientes oferecendo cupons de desconto e benefícios exclusivos para cadastrados no Clube de Vantagens do Zeca.</p>
+        
+        <div class="cupons-showcase-list">
+          <div class="cupom-pill-demo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #000; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Desconto na primeira consulta</span>
+          </div>
+          <div class="cupom-pill-demo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #000; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Cupom para novos clientes</span>
+          </div>
+          <div class="cupom-pill-demo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #000; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Ofereça condição especial limitada</span>
+          </div>
+          <div class="cupom-pill-demo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #000; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Oferta para recém-chegados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Seção de FAQ (Fundo Branco) -->
+  <section class="faq-section" style="margin-top: var(--space-xl);">
+    <div class="container">
+      <span class="legal-eyebrow">DÚVIDAS COMUNS</span>
+      <h2 class="section-title">Perguntas frequentes</h2>
+      
+      <div class="faq-list">
+        <div class="faq-card">
+          <h3>O Zeca é um diretório de empresas?</h3>
+          <p>Não. O Zeca não é uma lista onde a pessoa entra para pesquisar sozinha. O Zeca conversa pelo WhatsApp, entende a necessidade e recomenda opções com mais contexto.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Meu negócio precisa estar no Canadá ou nos Estados Unidos?</h3>
+          <p>Sim. Nesta fase, o Zeca está focado em negócios e profissionais que atendem brasileiros no Canadá ou nos EUA.</p>
+        </div>
+        <div class="faq-card">
+          <h3>O Zeca garante clientes?</h3>
+          <p>Não. O Zeca não promete clientes garantidos. O que ele oferece é a possibilidade de o seu negócio ser recomendado em conversas reais, quando alguém estiver procurando algo relacionado ao que você oferece.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Como meu negócio pode aparecer nas recomendações?</h3>
+          <p>Seu negócio pode aparecer quando houver compatibilidade entre a pergunta do usuário, sua categoria, sua região, sua disponibilidade e o tipo de parceria escolhida.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Parceiros pagos aparecem sempre primeiro?</h3>
+          <p>Não necessariamente. A prioridade ajuda na visibilidade, mas o Zeca precisa preservar a confiança. A recomendação deve fazer sentido para o usuário.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Posso oferecer desconto ou cupom?</h3>
+          <p>Sim. Cupons e ofertas especiais podem ser usados para gerar mais interesse e facilitar a decisão do usuário.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Quem avalia se meu negócio pode entrar?</h3>
+          <p>A equipe do Zeca faz uma análise inicial para entender se o negócio faz sentido para a base de recomendações.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Seção do Formulário (Fundo Branco) - max-width 560px centralizado -->
+  <section class="section-form" id="cadastro">
+    <div class="container">
+      <span class="legal-eyebrow">CADASTRO DE PARCEIROS</span>
+      <h2 class="section-title">Quero meu negócio recomendado pelo Zeca</h2>
+      <p class="section-intro-text">Preencha o formulário e conte um pouco sobre o seu negócio. A equipe do Zeca vai avaliar as informações e entrar em contato com os próximos passos.</p>
+      
+      <div class="form-container-ds">
+        <form action="#" id="partner-form-ds">
+          <div class="form-group-ds">
+            <label for="p-name">Nome Completo</label>
+            <input type="text" id="p-name" class="form-input-ds" placeholder="Digite seu nome" required>
+          </div>
+          
+          <div class="form-group-ds">
+            <label for="p-business">Nome do Negócio / Empresa</label>
+            <input type="text" id="p-business" class="form-input-ds" placeholder="Ex: Nome da sua empresa" required>
+          </div>
+          
+          <div class="form-group-ds">
+            <label for="p-whatsapp">WhatsApp de Contato</label>
+            <input type="tel" id="p-whatsapp" class="form-input-ds" placeholder="Ex: +1 (403) 555-0199" required>
+          </div>
+          
+          <div class="form-group-ds">
+            <label for="p-email">E-mail Corporativo</label>
+            <input type="email" id="p-email" class="form-input-ds" placeholder="seu@email.com" required>
+          </div>
+
+          <div class="form-group-ds">
+            <label for="p-country">País de Atendimento</label>
+            <select id="p-country" class="form-select-ds" required>
+              <option value="" disabled selected>Escolha o país</option>
+              <option value="Canada">Canadá</option>
+              <option value="EUA">Estados Unidos</option>
+            </select>
+          </div>
+          
+          <div class="form-group-ds">
+            <label for="p-city">Cidade</label>
+            <input type="text" id="p-city" class="form-input-ds" placeholder="Ex: Calgary, Orlando" required>
+          </div>
+          
+          <div class="form-group-ds">
+            <label for="p-category">Categoria do Negócio</label>
+            <select id="p-category" class="form-select-ds" required>
+              <option value="" disabled selected>Escolha a categoria</option>
+              <option value="Contabilidade">Contabilidade / Impostos</option>
+              <option value="Imoveis">Imóveis (Corretor/Aluguel)</option>
+              <option value="Seguros">Seguros</option>
+              <option value="Imigracao">Imigração / Vistos</option>
+              <option value="Saude">Saúde / Bem-Estar</option>
+              <option value="Alimentacao">Restaurantes / Alimentação</option>
+              <option value="Servicos">Serviços Domésticos (Limpeza/Manutenção)</option>
+              <option value="Outros">Outros Serviços</option>
+            </select>
+          </div>
+          
+          <div class="form-group-ds">
+            <label for="p-lang">Atende em Português?</label>
+            <select id="p-lang" class="form-select-ds" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="Sim">Sim, atendemos em português</option>
+              <option value="Nao">Não, apenas em inglês/espanhol</option>
+            </select>
+          </div>
+
+          <div class="form-group-ds">
+            <label for="p-social">Site ou Instagram comercial</label>
+            <input type="text" id="p-social" class="form-input-ds" placeholder="Ex: instagram.com/seunegocio" required>
+          </div>
+          
+          <div class="form-group-ds">
+            <label for="p-type">Parceria Desejada</label>
+            <select id="p-type" class="form-select-ds" required>
+              <option value="" disabled selected>Escolha a opção</option>
+              <option value="Base">Parceiro Basic (Apenas base inicial)</option>
+              <option value="Prioridade">Parceiro Premium (Destaque e Ofertas)</option>
+            </select>
+          </div>
+
+          <div class="form-group-ds">
+            <label for="p-cupom">Gostaria de oferecer cupons no clube do Zeca?</label>
+            <select id="p-cupom" class="form-select-ds" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="Sim">Sim, tenho interesse em disponibilizar cupons</option>
+              <option value="Nao">Não tenho interesse no momento</option>
+            </select>
+          </div>
+
+          <div class="form-group-ds full-width">
+            <label for="p-message">Mensagem adicional / Breve descrição</label>
+            <textarea id="p-message" class="form-textarea-ds" placeholder="Conte brevemente sobre o seu negócio e público-alvo..."></textarea>
+          </div>
+          
+          <div class="form-submit-row">
+            <button type="submit" class="btn-submit-ds" id="btn-submit-partner">Enviar meu negócio para análise</button>
+            <span class="microcopy-form">A entrada na base de parceiros está sujeita à análise da equipe do Zeca.</span>
+          </div>
+          
+          <label class="checkbox-terms-label-ds" for="p-agree">
+            <input type="checkbox" id="p-agree" required>
+            <span>Ao enviar este formulário, autorizo o Pergunta pro Zeca a entrar em contato comigo por e-mail ou WhatsApp para tratar sobre oportunidades de parceria, conforme a <a href="privacidade.html">Política de Privacidade</a>.</span>
+          </label>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Seção Final (Fundo Verde Oficial) -->
+  <section class="container" style="margin-bottom: var(--space-xl);">
+    <div class="section-final">
+      <h2>Seu próximo cliente pode perguntar ao Zeca.</h2>
+      <p>A comunidade brasileira já pede indicações todos os dias. Se você tem um negócio no Canadá ou nos EUA e quer ser encontrado de um jeito mais natural e conversacional, este é o momento de entrar.</p>
+      <a href="#cadastro" class="btn-yellow" id="btn-closing-cta">Quero que o Zeca me ajude a ir mais longe!</a>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Pergunta pro Zeca.</p>
+      <div class="footer-links">
+        <a href="clube-vantagens.html">Clube de Vantagens</a>
+        <a href="parceiros.html">Parceiros</a>
+        <a href="influenciadores.html">Influenciadores</a>
+        <a href="#">Media Kit</a>
+        <a href="termos.html">Termos</a>
+        <a href="privacidade.html">Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

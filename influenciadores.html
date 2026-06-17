@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influenciadores do Zeca - Seja Influenciador Parceiro da Comunidade Brasileira no Canadá e EUA</title>
+  <meta name="description" content="Participe do ecossistema do Zeca como influenciador parceiro. Ajude brasileiros no Canadá e nos EUA a encontrar recomendações confiáveis e novas oportunidades de parceria.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Influenciadores do Zeca">
+  <meta property="og:description" content="Transforme sua influência em uma rede viva de confiança para brasileiros no Canadá e EUA.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Montserrat + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="shortcut icon" href="icones/zecafavicon.ico" type="image/x-icon">
+
+  <style>
+    /* ─── Design System Tokens ─────────────────────────────────────── */
+    :root {
+      --brand-yellow:      #2cffc0;
+      --brand-green:       #1E8C45;
+      --brand-green-light: #D0FFF7;
+      --brand-green-text:  #0D5C2E;
+      --black:             #111111;
+      --white:             #FFFFFF;
+      --gray-100:          #F5F5F5;
+      --gray-400:          #9CA3AF;
+      --gray-600:          #4B5563;
+      --border:            #E5E7EB;
+
+      --sp-xs:   8px;
+      --sp-sm:   16px;
+      --sp-md:   24px;
+      --sp-lg:   48px;
+      --sp-xl:   80px;
+      --sp-2xl:  120px;
+
+      --radius-md: 16px;
+      --radius-lg: 16px;
+      --radius-pill: 999px;
+
+      --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+
+      --transition-fast: 150ms ease;
+      --transition-base: 200ms ease;
+    }
+
+    /* ─── Reset / Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: var(--black);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul, ol { list-style: none; }
+
+    /* ─── Container ────────────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--sp-md);
+    }
+
+    /* ─── Header ───────────────────────────────────────────────────── */
+    /* Header transparente absoluto — idêntico ao parceiros.html */
+    .site-header--transparent {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    /* ─── Typography helpers ───────────────────────────────────────── */
+    .eyebrow {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--brand-green-text);
+      background: rgba(30, 140, 69, 0.12);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: var(--sp-sm);
+    }
+    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+    h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; }
+    h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 700; line-height: 1.2; }
+    h3 { font-size: 18px; font-weight: 700; line-height: 1.3; }
+    .section-lead {
+      font-size: 17px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      max-width: 680px;
+    }
+
+    /* ─── CTA Buttons ──────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+    .btn-primary:hover { background: #222; transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      background: transparent;
+      color: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 28px;
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--black);
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+    .btn-outline:hover { background: rgba(0,0,0,0.05); }
+    .btn-green {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-xs);
+      background: var(--brand-green);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+    .btn-green:hover { background: #166d35; transform: translateY(-1px); }
+    .btn-green-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      background: transparent;
+      color: var(--brand-green);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 28px;
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--brand-green);
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+    .btn-green-outline:hover { background: rgba(30,140,69,0.06); }
+
+    /* ─── Focus visible ────────────────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--brand-green);
+      outline-offset: 3px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: HERO — fundo amarelo                                     */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .hero {
+      background: var(--brand-yellow);
+      padding: 160px 0 var(--sp-xl);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero .container {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .hero-copy { flex: 1 1 640px; padding-bottom: 0; }
+    .hero-copy .eyebrow {
+      background: var(--brand-green-light);
+      color: var(--brand-green-text);
+    }
+    .hero-copy h1 { margin-bottom: var(--sp-sm); color: var(--black); }
+    .hero-copy .sub {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+      width: 100%;
+      margin-bottom: var(--sp-md);
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-sm); }
+    .hero-microcopy {
+      margin-top: var(--sp-sm);
+      font-size: 13px;
+      color: #555;
+    }
+    .hero-visual {
+      flex: 0 0 500px;
+      position: relative;
+      align-self: center;
+      overflow: hidden;
+    }
+    .hero-visual img {
+      width: 100%;
+      max-width: 500px;
+      object-fit: contain;
+      vertical-align: bottom;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: CONTEXTO — fundo branco                                  */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-context {
+      background: var(--white);
+      padding: var(--sp-xl) 0;
+    }
+    .context-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-xl);
+      align-items: center;
+    }
+    .context-bubbles {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-sm);
+    }
+    .bubble {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: transform var(--transition-fast);
+    }
+    .bubble:hover {
+      transform: translateX(4px);
+    }
+    .bubble-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .avatar-1 { background: linear-gradient(135deg, #FF6B6B, #FF8E53); }
+    .avatar-2 { background: linear-gradient(135deg, #4E54C8, #8F94FB); }
+    .avatar-3 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+    .avatar-4 { background: linear-gradient(135deg, #FC466B, #3F5EFB); }
+    .avatar-5 { background: linear-gradient(135deg, #f857a6, #ff5858); }
+
+    .bubble-text {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px 16px 16px 16px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--black);
+      line-height: 1.5;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      max-width: 340px;
+      position: relative;
+    }
+    .bubble-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+    .bubble-meta-channel {
+      font-weight: 600;
+      color: #b5179e; /* Cor do Instagram Direct */
+    }
+    .bubble.reply { flex-direction: row-reverse; }
+    .bubble.reply .bubble-text {
+      background: #DCF8C6;
+      border-radius: 16px 0 16px 16px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: DIFERENCIAÇÃO — fundo gray-100                          */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-diferencial {
+      background: #2cffc0;
+      padding: var(--sp-xl) 0;
+      position: relative;
+    }
+    .diff-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-md);
+      margin-top: var(--sp-lg);
+    }
+    .diff-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--sp-md);
+      box-shadow: var(--shadow-sm);
+    }
+    .diff-card .diff-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--sp-xs);
+    }
+    .diff-card.old .diff-label { color: var(--gray-400); }
+    .diff-card.new .diff-label { color: var(--brand-green); }
+    .diff-card h3 { font-size: 18px; margin-bottom: 6px; }
+    .diff-card p { font-size: 14px; color: var(--gray-600); line-height: 1.5; }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: COMO FUNCIONA — fundo branco                             */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-steps {
+      background: var(--white);
+      padding: var(--sp-xl) 0;
+    }
+    .steps-header { text-align: center; margin-bottom: var(--sp-lg); }
+    .steps-track {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+    }
+    .steps-track + .steps-track {
+      margin-top: var(--sp-xl);
+    }
+    .step-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 var(--sp-sm);
+      cursor: default;
+      transition: transform var(--transition-base);
+    }
+    .step-item:hover { transform: translateY(-4px); }
+    .step-connector {
+      flex: 0 0 40px;
+      display: flex;
+      align-items: flex-start;
+      padding-top: 24px;
+    }
+    .step-connector-line {
+      width: 100%;
+      height: 2px;
+      border-top: 2px solid var(--brand-green);
+      opacity: 0.5;
+      position: relative;
+    }
+    .step-connector-line::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -5px;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid var(--brand-green);
+      border-right: 2px solid var(--brand-green);
+      transform: rotate(45deg);
+    }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--sp-sm);
+    }
+    .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: CURADOR OFICIAL — fundo amarelo (segundo pico)           */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-curador {
+      background: var(--white);
+      padding: var(--sp-xl) 0;
+    }
+    .sec-curador .container {
+      background: var(--brand-yellow);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-xl) var(--sp-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .curador-header { text-align: center; margin-bottom: var(--sp-lg); }
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-md);
+    }
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid #E5E7EB;
+      border-radius: var(--radius-md);
+      padding: var(--sp-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .benefit-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 16px;
+      background: rgba(30, 140, 69, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--sp-sm);
+    }
+    .benefit-icon svg { stroke: var(--brand-green); }
+    .benefit-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--brand-green);
+      margin-bottom: var(--sp-xs);
+    }
+    .benefit-card h3 { font-size: 17px; color: var(--black); margin-bottom: 8px; }
+    .benefit-card p { font-size: 14px; color: var(--gray-600); line-height: 1.5; }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: DIFERENCIAL (escura) — preto                             */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-dark {
+      background: var(--white);
+      padding: var(--sp-xl) 0;
+      text-align: center;
+    }
+    .sec-dark .container {
+      background: var(--black);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-xl) var(--sp-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .sec-dark h2 { color: var(--brand-yellow); margin-bottom: var(--sp-md); }
+    .sec-dark .dark-points {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--sp-sm) var(--sp-lg);
+      margin-bottom: var(--sp-lg);
+    }
+    .dark-point {
+      font-size: 16px;
+      color: #cccccc;
+      position: relative;
+      padding-left: 20px;
+    }
+    .dark-point::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: var(--brand-yellow);
+      border-radius: 50%;
+    }
+    .dark-impact {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 800;
+      color: var(--white);
+      max-width: 700px;
+      margin: 0 auto var(--sp-lg);
+      line-height: 1.3;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: MONETIZAÇÃO — fundo branco                               */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-money {
+      background: var(--white);
+      padding: var(--sp-xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .sec-money .container {
+      position: relative;
+      z-index: 2;
+    }
+    .money-header {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    .money-header-visual {
+      flex: 0 0 320px;
+      max-width: 100%;
+    }
+    .money-header-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .money-header-info {
+      flex: 1;
+      text-align: left;
+    }
+    .coin-wrapper {
+      position: absolute;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .floating-coin {
+      position: absolute;
+      bottom: -60px;
+      background: radial-gradient(circle at 30% 30%, #ffd700, #daa520);
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      color: #8b6508;
+      border: 1px solid #c59b27;
+      opacity: 0;
+      animation: floatUp 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% {
+        bottom: -60px;
+        transform: translateX(0) rotate(0deg) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+        transform: translateX(var(--drift-x)) rotate(45deg) scale(1);
+      }
+      90% {
+        opacity: 0.8;
+      }
+      100% {
+        bottom: 110%;
+        transform: translateX(calc(var(--drift-x) * 2)) rotate(var(--rot)) scale(0.8);
+        opacity: 0;
+      }
+    }
+    .money-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-md);
+      margin-top: var(--sp-lg);
+    }
+    .money-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: var(--sp-md);
+      border: 1px solid #2cffc0;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .money-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .money-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--brand-green);
+      margin-bottom: var(--sp-xs);
+    }
+    .money-card h3 { font-size: 16px; color: var(--black); margin-bottom: 8px; }
+    .money-card p { font-size: 14px; color: var(--gray-600); line-height: 1.5; }
+    .money-disclaimer {
+      margin-top: var(--sp-lg);
+      padding: var(--sp-sm) var(--sp-md);
+      background: var(--gray-100);
+      border-left: 4px solid var(--brand-green);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 13px;
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* ─── Simulador de Ganhos ──────────────────────────────────────── */
+    .sec-simulator {
+      background: #feffe9;
+      padding: var(--sp-xl) 0;
+    }
+    .earnings-simulator {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-xl);
+      align-items: start;
+    }
+    .earnings-copy .eyebrow { margin-bottom: var(--sp-sm); }
+    .earnings-copy h3 {
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: var(--sp-sm);
+    }
+    .earnings-copy > p {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: var(--sp-md);
+    }
+    .earnings-mini {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: var(--sp-sm) var(--sp-md);
+      border-left: 4px solid var(--brand-green);
+      box-shadow: var(--shadow-sm);
+    }
+    .earnings-mini strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .earnings-mini p {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .earnings-card {
+      background: var(--white);
+      border: 2px solid var(--brand-green);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-lg) var(--sp-md);
+      box-shadow: 0 10px 30px rgba(30, 140, 69, 0.08);
+    }
+    .earnings-card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: var(--sp-md);
+    }
+    .earnings-slider label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: var(--sp-sm);
+    }
+    .earnings-slider input[type='range'] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(to right, var(--brand-green) 0%, var(--brand-green) 33%, var(--border) 33%, var(--border) 100%);
+      outline: none;
+      cursor: pointer;
+    }
+    .earnings-slider input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--brand-green);
+      cursor: pointer;
+      transition: box-shadow 150ms ease;
+    }
+    .earnings-slider input[type='range']:focus-visible::-webkit-slider-thumb {
+      box-shadow: 0 0 0 4px rgba(30,140,69,0.25);
+    }
+    .earnings-slider input[type='range']::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--brand-green);
+      cursor: pointer;
+    }
+    .earnings-range-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      margin-bottom: var(--sp-md);
+    }
+    .earnings-range-labels span { font-size: 11px; color: var(--gray-400); font-weight: 600; }
+    .earnings-result {
+      background: var(--brand-green-light);
+      border-radius: var(--radius-md);
+      padding: var(--sp-md);
+      margin-bottom: var(--sp-md);
+      text-align: center;
+      border: 1px solid rgba(30, 140, 69, 0.15);
+    }
+    .earnings-result-intro { font-size: 13px; color: var(--gray-600); margin-bottom: var(--sp-xs); }
+    .earnings-result-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-green);
+      margin-bottom: 4px;
+    }
+    .earnings-result-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 800;
+      color: var(--brand-green);
+      line-height: 1.2;
+      margin-bottom: var(--sp-xs);
+    }
+    .earnings-annual { font-size: 13px; color: var(--gray-600); }
+    .earnings-annual strong { color: var(--black); font-weight: 700; }
+    .earnings-note {
+      font-size: 12px;
+      color: var(--gray-400);
+      text-align: center;
+      margin-bottom: var(--sp-md);
+      line-height: 1.5;
+    }
+    .earnings-cta-microcopy {
+      font-size: 12px;
+      color: var(--gray-400);
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: var(--sp-md);
+    }
+    .earnings-disclaimer {
+      font-size: 12px;
+      color: var(--gray-400);
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: var(--sp-sm);
+      margin-top: var(--sp-sm);
+    }
+    .earnings-disclaimer strong { color: var(--gray-600); }
+    @media (max-width: 1024px) {
+      .earnings-simulator { grid-template-columns: 1fr; gap: var(--sp-lg); }
+    }
+    @media (max-width: 768px) {
+      .earnings-card { padding: var(--sp-md); }
+    }
+
+
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: CONFIANÇA — fundo gray-100                               */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-trust {
+      background: #feffe9;
+      padding: var(--sp-xl) 0;
+      text-align: center;
+    }
+    .trust-principles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-md);
+      margin-top: var(--sp-lg);
+    }
+    .trust-pill {
+      background: var(--white);
+      border: 1px solid #2cffc0;
+      border-radius: var(--radius-lg);
+      padding: var(--sp-md);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+    }
+    .trust-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #f1fde8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .inner-check {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(22, 163, 74, 0.2);
+    }
+    .trust-pill .t-verb {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #00ba3c;
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+    .trust-pill .t-subj {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--black);
+      line-height: 1.2;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: MODELOS (Planos) — fundo branco                          */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-plans {
+      background: var(--white);
+      padding: var(--sp-xl) 0;
+    }
+    .plans-header { text-align: center; margin-bottom: var(--sp-lg); }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-md);
+    }
+    .plan-card {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-lg) var(--sp-md);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-sm);
+    }
+    .plan-card.featured {
+      border-color: var(--brand-green);
+      box-shadow: 0 12px 36px rgba(44, 255, 192, 0.25);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--brand-green);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+    .plan-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .plan-stars {
+      color: #2cffc0;
+      font-size: 16px;
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+    .plan-desc {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .plan-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .plan-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+    .plan-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .plans-disclaimer {
+      margin-top: var(--sp-md);
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: FAQ — fundo branco                                       */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-faq {
+      background: var(--white);
+      padding: var(--sp-xl) 0;
+    }
+    .faq-header { text-align: center; margin-bottom: var(--sp-lg); }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px var(--sp-md);
+      background: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      gap: var(--sp-sm);
+      transition: background var(--transition-fast);
+    }
+    .faq-question:hover { background: var(--gray-100); }
+    .faq-question[aria-expanded="true"] { background: var(--gray-100); }
+    .faq-chevron {
+      flex-shrink: 0;
+      transition: transform var(--transition-base);
+    }
+    .faq-question[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      display: none;
+      padding: 0 var(--sp-md) 18px;
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      background: var(--gray-100);
+    }
+    .faq-answer.open { display: block; }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: FORMULÁRIO — fundo branco                                */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-form {
+      background: var(--white);
+      padding: var(--sp-xl) 0;
+    }
+    .form-wrapper {
+      max-width: 840px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--black);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    .form-header { text-align: center; margin-bottom: var(--sp-lg); }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: var(--sp-md); }
+    .form-group label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .form-group label .req { color: var(--brand-green); margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D1D5DB;
+      border-radius: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--black);
+      background: var(--white);
+      transition: border-color var(--transition-fast);
+      outline: none;
+    }
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      background-size: 16px;
+      padding-right: 44px;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--brand-green);
+      border-width: 2px;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-md); }
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: var(--sp-md);
+    }
+    .form-check input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: var(--brand-green);
+      margin-top: 2px;
+    }
+    .form-check label {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .btn-form {
+      width: 100%;
+      padding: 16px;
+      background: var(--brand-green);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+    .btn-form:hover { background: #166d35; transform: translateY(-1px); }
+    .form-microcopy {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SEÇÃO: CTA FINAL — fundo verde                                  */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .sec-final {
+      background: var(--brand-green);
+      padding: var(--sp-xl) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sec-final::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('imagens/bgsocialmedia-elements.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1; /* Transparência de 90% (Opacidade 10%) */
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .sec-final .container {
+      position: relative;
+      z-index: 2;
+    }
+    .sec-final h2 { color: var(--white); margin-bottom: var(--sp-sm); }
+    .sec-final p { color: rgba(255,255,255,0.9); max-width: 620px; margin: 0 auto var(--sp-lg); line-height: 1.6; font-weight: 500; }
+    .final-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      background: var(--brand-yellow);
+      color: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 16px 36px;
+      border-radius: var(--radius-pill);
+      transition: filter var(--transition-fast), transform var(--transition-fast);
+    }
+    .final-btn:hover { filter: brightness(0.92); transform: translateY(-2px); }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* RODAPÉ                                                          */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .site-footer {
+      background: var(--black);
+      padding: var(--sp-lg) 0;
+    }
+    .site-footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--sp-md);
+    }
+     .site-footer p { font-size: 13px; color: var(--gray-400); }
+    .footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .footer-logo { height: 60px; width: auto; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-md); }
+    .footer-links a { font-size: 13px; color: var(--gray-400); transition: color var(--transition-fast); }
+    .footer-links a:hover { color: var(--white); }
+
+
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* RESPONSIVIDADE                                                  */
+    /* ═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+      .money-grid { grid-template-columns: repeat(2, 1fr); }
+      .plans-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .trust-principles { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --sp-xl: 56px;
+        --sp-2xl: 80px;
+      }
+      .hero .container { flex-direction: column; align-items: flex-start; gap: var(--sp-lg); }
+      .hero-visual {
+        display: block;
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        align-self: center;
+      }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas a { text-align: center; justify-content: center; }
+      .context-inner { grid-template-columns: 1fr; }
+      .diff-cards { grid-template-columns: 1fr; }
+      .steps-track { flex-direction: column; gap: var(--sp-sm); }
+      .steps-track + .steps-track { margin-top: var(--sp-sm); }
+      .step-connector { display: none; }
+      .step-item { text-align: left; display: flex; gap: 14px; padding: 0; }
+      .step-item .step-num { flex-shrink: 0; }
+      .step-item > div { flex: 1; }
+      .step-title, .step-desc { text-align: left; }
+      .sec-curador .container,
+      .sec-dark .container {
+        padding: var(--sp-lg) var(--sp-md) !important;
+        border-radius: var(--radius-md) !important;
+      }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .money-grid { grid-template-columns: 1fr; }
+      .money-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--sp-md);
+      }
+      .money-header-visual {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+      .money-header-info {
+        text-align: center;
+      }
+      .trust-principles { grid-template-columns: repeat(2, 1fr); }
+      .form-row { grid-template-columns: 1fr; }
+      .form-wrapper { padding: var(--sp-md); }
+
+    }
+
+    @media (max-width: 480px) {
+      .trust-principles { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ─── prefers-reduced-motion ───────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ══════════════════════════════════════════════════ -->
+  <header class="site-header site-header--transparent">
+    <div class="container">
+      <a href="index.html" class="logo-container" id="header-logo-link">
+        <img src="imagens/logo-perguntaprozeca.png" alt="Pergunta pro Zeca" class="logo-img">
+      </a>
+      <div class="header-right-area" style="display: flex; align-items: center; gap: 20px;">
+                <nav class="header-nav">
+          <a href="clube-vantagens.html" class="header-nav-link">Clube de Vantagens</a>
+          <a href="parceiros.html" class="header-nav-link">Parceiros</a>
+          <a href="influenciadores.html" class="header-nav-link">Influenciadores</a>
+        </nav>
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
+          <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
+          Pergunte no Whatsapp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ HERO — amarelo ══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="eyebrow">Ideal para Influenciadores</span>
+        <h1>Indique negócios brasileiros confiáveis<br>para sua audiência e ganhe $</h1>
+        <p class="sub">Influenciadores são parceiros-chave do Zeca, conectando brasileiros no Canadá e EUA a confiança — como Influenciadores Parceiros Oficiais.</p>
+        <div class="hero-ctas">
+          <a href="#modelos" class="btn-primary" id="btn-hero-cta-primary">Conhecer os planos</a>
+          <a href="#como-funciona" class="btn-outline" id="btn-hero-cta-secondary">Entender como funciona</a>
+        </div>
+        <p class="hero-microcopy">Para criadores brasileiros que falam com brasileiros no Canadá, nos EUA ou com quem está planejando se mudar.</p>
+      </div>
+      <div class="hero-visual">
+        <img src="imagens/infuencers-002.png" alt="Influenciadores do Zeca">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SIMULADOR DE GANHOS — gray-100 ═══════════════════════════ -->
+  <section class="sec-simulator" id="simulador">
+    <div class="container">
+      <div class="earnings-simulator" id="simulador-ganhos">
+
+        <!-- Coluna esquerda: texto explicativo -->
+        <div class="earnings-copy">
+          <span class="eyebrow">Simulador de ganhos</span>
+          <h3>Quanto sua influência pode gerar com o Zeca?</h3>
+          <p>Sua audiência já confia nas suas recomendações. Use o simulador para visualizar uma estimativa de potencial de ganhos como Influenciador Parceiro Oficial do Zeca, levando brasileiros da sua comunidade para recomendações, cupons e parceiros curados no Canadá e nos EUA.</p>
+          <div class="earnings-mini">
+            <strong>O que conta como indicação qualificada?</strong>
+            <p>Uma indicação qualificada acontece quando uma pessoa chega ao Zeca pelo seu link, cupom ou código e demonstra interesse real em uma recomendação, parceiro, cupom ou serviço disponível.</p>
+          </div>
+        </div>
+
+        <!-- Coluna direita: card interativo -->
+        <div class="earnings-card">
+          <div class="earnings-card-title">Simule por indicações qualificadas</div>
+
+          <div class="earnings-slider">
+            <label for="slider-indicacoes">Quantas pessoas você conseguiria indicar ao Zeca por mês?</label>
+            <input
+              type="range"
+              id="slider-indicacoes"
+              min="0"
+              max="5"
+              step="1"
+              value="2"
+              aria-label="Número de indicações qualificadas por mês"
+              aria-valuemin="10"
+              aria-valuemax="500"
+              aria-valuenow="50"
+            >
+            <div class="earnings-range-labels" aria-hidden="true">
+              <span>10</span>
+              <span>25</span>
+              <span>50</span>
+              <span>100</span>
+              <span>200</span>
+              <span>500</span>
+            </div>
+          </div>
+
+          <div class="earnings-result" aria-live="polite">
+            <p class="earnings-result-intro" id="result-intro">Com <strong>50</strong> indicações qualificadas por mês, seu potencial estimado seria:</p>
+            <div class="earnings-result-label">Potencial estimado</div>
+            <div class="earnings-result-value" id="result-monthly">CAD$ 500/mês</div>
+            <div class="earnings-annual">Em 12 meses: <strong id="result-annual">CAD$ 6.000</strong></div>
+          </div>
+
+          <p class="earnings-note">Baseado em campanhas ativas, indicações qualificadas e oportunidades disponíveis no ecossistema do Zeca.</p>
+
+          <a href="#modelos" class="btn-green" style="width:100%; justify-content:center;" id="btn-simulator-cta">Conhecer os planos</a>
+          
+          <div class="earnings-cta-microcopy">A participação no programa é gratuita e sujeita à análise de perfil.</div>
+
+          <div class="earnings-disclaimer">
+            <strong>Aviso:</strong> esta simulação apresenta apenas uma estimativa de potencial de ganhos e não representa garantia de receita. Os valores reais podem variar conforme campanhas disponíveis, região, qualidade das indicações, conversões geradas, validação pelo Zeca e regras de cada parceiro.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTEXTO — branco ════════════════════════════════════════ -->
+  <section class="sec-context" id="problema">
+    <div class="container">
+      <div class="context-inner">
+        <div>
+          <span class="eyebrow">O problema real</span>
+          <h2>Sua audiência confia em você antes de confiar em qualquer plataforma.</h2>
+          <p class="section-lead" style="margin-top: 16px;">Todos os dias chegam perguntas que você responde manualmente, no direct ou nos comentários. Essa confiança some com o story e se perde nos posts?</p>
+        </div>
+        <div class="context-bubbles">
+          <div class="bubble">
+            <div class="bubble-avatar avatar-1">A</div>
+            <div>
+              <div class="bubble-meta">
+                <span class="bubble-meta-channel">Direct</span> &bull; <span>há 2 min</span>
+              </div>
+              <div class="bubble-text">Você indica um contador brasileiro em Calgary?</div>
+            </div>
+          </div>
+          <div class="bubble" style="margin-left: 12px;">
+            <div class="bubble-avatar avatar-2">B</div>
+            <div>
+              <div class="bubble-meta">
+                <span class="bubble-meta-channel" style="color: #2563EB;">Comentário</span> &bull; <span>há 15 min</span>
+              </div>
+              <div class="bubble-text">Conhece alguém confiável para imigração em Toronto?</div>
+            </div>
+          </div>
+          <div class="bubble">
+            <div class="bubble-avatar avatar-3">M</div>
+            <div>
+              <div class="bubble-meta">
+                <span class="bubble-meta-channel">Direct</span> &bull; <span>há 42 min</span>
+              </div>
+              <div class="bubble-text">Qual cidade é melhor para morar chegando agora?</div>
+            </div>
+          </div>
+          <div class="bubble" style="margin-left: 18px;">
+            <div class="bubble-avatar avatar-4">J</div>
+            <div>
+              <div class="bubble-meta">
+                <span class="bubble-meta-channel">Direct</span> &bull; <span>há 1h</span>
+              </div>
+              <div class="bubble-text">Tem corretor de imóveis confiável que fala português?</div>
+            </div>
+          </div>
+          <div class="bubble">
+            <div class="bubble-avatar avatar-5">L</div>
+            <div>
+              <div class="bubble-meta">
+                <span class="bubble-meta-channel" style="color: #2563EB;">Comentário</span> &bull; <span>há 3h</span>
+              </div>
+              <div class="bubble-text">Que serviço você recomenda pra quem acabou de chegar?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DIFERENCIAÇÃO — gray-100 ════════════════════════════════ -->
+  <section class="sec-diferencial" id="posicionamento">
+    <img src="imagens/agree-zeca.png" alt="Zeca" style="position: absolute; top: -45px; left: 50%; transform: translateX(-50%); width: 90px; height: 90px; z-index: 10;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--sp-lg);">
+        <span class="eyebrow" style="background: rgb(255 255 255 / 63%);">Por que o Zeca é diferente</span>
+        <h2 style="max-width: 600px; margin: 12px auto 0;">O Zeca não está criando mais uma vitrine. Está criando uma rede de confiança.</h2>
+      </div>
+      <div class="diff-cards">
+        <div class="diff-card old">
+          <div class="diff-label">Diretório comum</div>
+          <h3>Lista fria sem contexto</h3>
+          <p>O usuário encontra uma lista de empresas sem saber qual é confiável, em qual cidade ou se ainda está ativo.</p>
+        </div>
+        <div class="diff-card new">
+          <div class="diff-label">Pergunta pro Zeca</div>
+          <h3>Conversa com recomendação contextual</h3>
+          <p>O usuário pergunta no WhatsApp. O Zeca cruza necessidade, cidade, categoria e histórico de confiança para recomendar o que faz mais sentido.</p>
+        </div>
+        <div class="diff-card old">
+          <div class="diff-label">Publi tradicional</div>
+          <h3>Influência que desaparece em 24h</h3>
+          <p>Story some, post para de circular, algoritmo muda. O valor gerado não permanece.</p>
+        </div>
+        <div class="diff-card new">
+          <div class="diff-label">Curadoria no Zeca</div>
+          <h3>Ativo permanente de confiança</h3>
+          <p>Sua recomendação fica dentro da inteligência do Zeca, continuando a ajudar brasileiros mesmo quando você está offline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMO FUNCIONA — branco ═══════════════════════════════════ -->
+  <section class="sec-steps" id="como-funciona">
+    <div class="container">
+      <div class="steps-header">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Como sua influência entra na inteligência do Zeca</h2>
+      </div>
+      <div class="steps-track">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-title">Você entra como Influenciador Parceiro</div>
+            <div class="step-desc">Informa cidade, temas, canais e audiência principal.</div>
+          </div>
+        </div>
+        <div class="step-connector"><div class="step-connector-line"></div></div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-title">Você indica o que conhece</div>
+            <div class="step-desc">Negócios, profissionais e serviços relevantes para sua comunidade.</div>
+          </div>
+        </div>
+        <div class="step-connector"><div class="step-connector-line"></div></div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-title">O Zeca organiza</div>
+            <div class="step-desc">As indicações entram com critérios de localização, avaliação e compatibilidade.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-track">
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-title">O usuário pergunta</div>
+            <div class="step-desc">Um brasileiro chama o Zeca no WhatsApp e conta o que precisa.</div>
+          </div>
+        </div>
+        <div class="step-connector"><div class="step-connector-line"></div></div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div>
+            <div class="step-title">O Zeca recomenda</div>
+            <div class="step-desc">Com base na curadoria, contexto e critérios de confiança.</div>
+          </div>
+        </div>
+        <div class="step-connector"><div class="step-connector-line"></div></div>
+        <div class="step-item">
+          <div class="step-num">6</div>
+          <div>
+            <div class="step-title">Todos ganham</div>
+            <div class="step-desc">Usuário, parceiro, influenciador e plataforma crescem juntos.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CURADOR OFICIAL — amarelo ════════════════════════════════ -->
+  <section class="sec-curador" id="curador">
+    <div class="container">
+      <div class="curador-header">
+        <span class="eyebrow">Seu papel no ecossistema</span>
+        <h2>Por que ser Influenciador Parceiro Oficial<br>da Comunidade do Zeca</h2>
+        <p class="section-lead" style="margin: 16px auto 0;">Ser Influenciador Parceiro Oficial é participar de uma rede de influenciadores brasileiros que ajudam a orientar a comunidade com indicações, conteúdo, contexto local e inteligência prática.</p>
+      </div>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          </div>
+          <div class="benefit-label">Autoridade</div>
+          <h3>Suas recomendações ganham vida além do feed</h3>
+          <p>O que você indica pode continuar gerando valor mesmo depois que o story some ou o post para de circular.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <div class="benefit-label">Referência</div>
+          <h3>Sua autoridade vira referência permanente</h3>
+          <p>O Zeca conecta sua imagem a temas, cidades, categorias e soluções relevantes para sua comunidade.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+          </div>
+          <div class="benefit-label">Escala</div>
+          <h3>Sua audiência recebe ajuda mais rápido</h3>
+          <p>Em vez de responder as mesmas perguntas várias vezes, você direciona para um concierge que conversa e orienta.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="benefit-label">Monetização</div>
+          <h3>Você participa de um ecossistema monetizável</h3>
+          <p>Novas fontes de receita com parceiros, campanhas, cupons, indicações e oportunidades comerciais.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <div class="benefit-label">Dados</div>
+          <h3>Você entende melhor o que sua audiência busca</h3>
+          <p>O Zeca pode ajudar a identificar tendências por cidade, tema ou categoria para criar conteúdo mais relevante.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="benefit-label">Rede</div>
+          <h3>Você se conecta a um ecossistema em crescimento</h3>
+          <p>Negócios, parceiros e outros criadores que servem brasileiros no Canadá e nos EUA.</p>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: var(--sp-lg); flex-wrap: wrap;">
+        <a href="#formulario" class="btn-primary" id="btn-curador-cta">Quero fazer parte</a>
+        <a href="#modelos" class="btn-outline" id="btn-curador-plans" style="background: var(--white);">Conhecer os planos</a>
+      </div>
+    </div>
+  </section>
+<!-- ═══ DIFERENCIAL ESCURO — preto ══════════════════════════════ -->
+
+  <section class="sec-dark" id="diferencial">
+    <div class="container">
+      <h2>Publi termina. Curadoria permanece.</h2>
+      <div class="dark-points">
+        <span class="dark-point">Story some em 24 horas</span>
+        <span class="dark-point">Post depende do algoritmo</span>
+        <span class="dark-point">Vídeo pode desaparecer amanhã</span>
+        <span class="dark-point">Publi é passageira</span>
+      </div>
+      <div class="dark-impact">
+        O Zeca transforma influência em infraestrutura de confiança.
+      </div>
+      <a href="#modelos" class="btn-green" id="btn-dark-cta">Quero fazer parte disso</a>
+    </div>
+  </section>
+
+  <!-- ═══ MONETIZAÇÃO — branco ═════════════════════════════════════ -->
+  <section class="sec-money" id="monetizacao">
+    <div class="container">
+      <div class="money-header">
+        <div class="money-header-visual">
+          <img src="imagens/partner001.png" alt="Influenciador parceiro do Zeca">
+        </div>
+        <div class="money-header-info">
+          <span class="eyebrow">Novas fontes de receita</span>
+          <h2>Novas formas de ganhar dinheiro com sua influência</h2>
+          <p class="section-lead" style="margin-top: 16px; margin-bottom: 32px; font-weight: bold; font-size: 18px;">Sua comunidade tem perguntas — agora você pode lucrar respondendo com o Pergunta Pro Zeca.</p>
+        </div>
+      </div>
+      <div class="money-grid">
+        <div class="money-card">
+          <div class="money-num">01</div>
+          <h3>Comissão por parceiro indicado</h3>
+          <p>Se um negócio indicado por você entrar como parceiro pago, pode haver participação pela indicação.</p>
+        </div>
+        <div class="money-card">
+          <div class="money-num">02</div>
+          <h3>Participação em campanhas</h3>
+          <p>Campanhas com empresas e marcas podem incluir influenciadores parceiros em ações coordenadas.</p>
+        </div>
+        <div class="money-card">
+          <div class="money-num">03</div>
+          <h3>Cupons e ofertas especiais</h3>
+          <p>Distribua benefícios reais à audiência, ajudando parceiros a vender mais e fortalecendo sua autoridade.</p>
+        </div>
+        <div class="money-card">
+          <div class="money-num">04</div>
+          <h3>Página premium no Hub do Zeca</h3>
+          <p>Seu perfil com bio, temas, cidade, links, recomendações e parceiros num espaço próprio na plataforma.</p>
+        </div>
+        <div class="money-card">
+          <div class="money-num">05</div>
+          <h3>Dados para criação de conteúdo</h3>
+          <p>Insights sobre o que brasileiros buscam por cidade, tema ou categoria para criar conteúdo mais estratégico.</p>
+        </div>
+      </div>
+
+
+      <div class="money-disclaimer" style="font-size: 14px; color: var(--gray-700); border-left-color: var(--brand-yellow); background: rgba(255, 222, 89, 0.05); margin-top: var(--sp-lg); line-height: 1.6;">
+        <p style="margin: 0 0 12px 0;"><strong>Remuneração:</strong> O Zeca não remunera influenciadores com recursos próprios. A remuneração acontece por performance, a partir de campanhas, cupons, indicações qualificadas ou vendas confirmadas por parceiros participantes.</p>
+        <p style="margin: 0;"><strong>Transparência:</strong> O Zeca não promete ganho garantido. A monetização depende do modelo de parceria, da participação do influenciador, da qualidade das indicações e das oportunidades comerciais disponíveis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ POR QUE AGORA — gray-100 ════════════════════════════════ -->
+  <section style="background: #feffe9; padding: var(--sp-xl) 0;" id="por-que-agora">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow">Fase inicial</span>
+      <h2 style="max-width:600px; margin:0 auto var(--sp-md);">Os primeiros influenciadores parceiros vão ajudar a construir a base de confiança do Zeca</h2>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-md); margin-top: var(--sp-lg);" class="pq-agora-grid">
+        <div style="background: var(--white); border-radius: var(--radius-md); padding: var(--sp-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px; display: inline-block;">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          <h3 style="font-size:16px; margin-bottom:8px;">Participar da formação da rede</h3>
+          <p style="font-size:14px; color: var(--gray-600); line-height:1.5;">Ajude a construir a base de influenciadores parceiros desde o início.</p>
+        </div>
+        <div style="background: var(--white); border-radius: var(--radius-md); padding: var(--sp-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px; display: inline-block;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+          </svg>
+          <h3 style="font-size:16px; margin-bottom:8px;">Prioridade em campanhas</h3>
+          <p style="font-size:14px; color: var(--gray-600); line-height:1.5;">Primeiros influenciadores parceiros têm acesso prioritário às oportunidades futuras.</p>
+        </div>
+        <div style="background: var(--white); border-radius: var(--radius-md); padding: var(--sp-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px; display: inline-block;">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+          <h3 style="font-size:16px; margin-bottom:8px;">Reconhecimento como fundador</h3>
+          <p style="font-size:14px; color: var(--gray-600); line-height:1.5;">Seja reconhecido como um dos primeiros Influenciadores Parceiros Oficiais do ecossistema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONFIANÇA E PRINCÍPIOS — gray-100 (já está no bloco acima como sequência, usar white aqui) ═══════ -->
+  <section class="sec-trust" id="confianca">
+    <div class="container">
+      <span class="eyebrow">Princípios de curadoria</span>
+      <h2>O Zeca precisa ser confiável antes de ser comercial</h2>
+      <p class="section-lead" style="margin: 16px auto;">A curadoria do influenciador é importante, mas não é o único critério. A recomendação final considera contexto, qualidade, localização, avaliação, compatibilidade e histórico.</p>
+      <div class="trust-principles">
+        <div class="trust-pill">
+          <div class="trust-badge">
+            <div class="inner-check">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div>
+            <div class="t-verb">Influenciador</div>
+            <div class="t-subj">indica</div>
+          </div>
+        </div>
+        <div class="trust-pill">
+          <div class="trust-badge">
+            <div class="inner-check">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div>
+            <div class="t-verb">Comunidade</div>
+            <div class="t-subj">valida</div>
+          </div>
+        </div>
+        <div class="trust-pill">
+          <div class="trust-badge">
+            <div class="inner-check">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div>
+            <div class="t-verb">Zeca</div>
+            <div class="t-subj">organiza</div>
+          </div>
+        </div>
+        <div class="trust-pill">
+          <div class="trust-badge">
+            <div class="inner-check">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div>
+            <div class="t-verb">Usuário</div>
+            <div class="t-subj">decide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MODELOS DE PARTICIPAÇÃO — branco ════════════════════════ -->
+  <section class="sec-plans" id="modelos">
+    <div class="container">
+      <div class="plans-header">
+        <span class="eyebrow">Modelos de participação</span>
+        <h2>Escolha como participar do ecossistema do Zeca</h2>
+        <p class="section-lead" style="margin: 16px auto 0;">Comece gratuitamente como afiliado/influenciador parceiro ou profissionalize sua presença com uma página própria no Hub do Zeca, mais visibilidade, prioridade em campanhas e novos benefícios para monetizar sua influência.</p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-name">Essential<span class="plan-stars">★★★</span></div>
+          <div class="plan-price" style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: var(--brand-green); margin-top: -4px;">Gratuito</div>
+          <div class="plan-desc">Para influenciadores que querem entrar na rede de influenciadores parceiros do Zeca, divulgar campanhas de empresas parceiras e começar a monetizar sua influência sem custo inicial.</div>
+          <ul class="plan-items">
+            <li class="plan-item">Participação gratuita como afiliado/influenciador parceiro do Zeca.</li>
+            <li class="plan-item">Acesso a campanhas e cupons criados por empresas parceiras.</li>
+            <li class="plan-item">Divulgação com cupom, código ou link rastreável.</li>
+            <li class="plan-item">Possibilidade de receber comissão por venda, lead ou cupom validado.</li>
+            <li class="plan-item">Avaliação de perfil pela equipe do Zeca.</li>
+            <li class="plan-item">Entrada na base inicial de influenciadores parceiros.</li>
+            <li class="plan-item">Possibilidade de indicar negócios, profissionais e oportunidades.</li>
+            <li class="plan-item">Elegibilidade para futuras ativações da rede.</li>
+          </ul>
+          <a href="#formulario" class="btn-green-outline" id="btn-plan-inicial" style="margin-top: var(--sp-md);">Quero começar agora</a>
+        </div>
+        <div class="plan-card featured">
+          <div class="plan-badge">Melhor para profissionalizar sua presença</div>
+          <div class="plan-name">Premium<span class="plan-stars">★★★★</span></div>
+          <div class="plan-desc">Para influenciadores que querem fortalecer autoridade, organizar suas recomendações e ter uma página profissional dentro do Hub do Zeca.</div>
+          <ul class="plan-items">
+            <li class="plan-item" style="color: var(--brand-green); font-weight: 700;">Tudo do Essential</li>
+            <li class="plan-item">Página profissional no Hub do Zeca.</li>
+            <li class="plan-item">URL personalizada no domínio do Zeca.</li>
+            <li class="plan-item">Bio, foto, cidade, país e temas principais.</li>
+            <li class="plan-item">Links para Instagram, YouTube, TikTok, WhatsApp ou outros canais.</li>
+            <li class="plan-item">Área para cupons, campanhas e ofertas ativas.</li>
+            <li class="plan-item">Destaque para parceiros, serviços ou oportunidades recomendadas.</li>
+            <li class="plan-item">Prioridade na divulgação de cupons e campanhas disponíveis.</li>
+            <li class="plan-item">Destaque por cidade, tema ou categoria.</li>
+            <li class="plan-item">Acesso prioritário a oportunidades com marcas e parceiros.</li>
+            <li class="plan-item">Participação em cupons, ativações e ações promocionais.</li>
+            <li class="plan-item">Relatórios básicos de interesse da comunidade.</li>
+            <li class="plan-item">Dados simples de visualizações, cliques e campanhas.</li>
+            <li class="plan-item">Uso da página como link da bio, mídia kit simples ou vitrine profissional.</li>
+            <li class="plan-item">Prioridade em convites e oportunidades comerciais.</li>
+          </ul>
+          <a href="#formulario" class="btn-green" id="btn-plan-pro" style="margin-top: var(--sp-md);">Falar com a equipe de vendas</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Alliance<span class="plan-stars">★★★★★</span></div>
+          <div class="plan-price" style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: var(--brand-green); margin-top: -4px;">Parceria especial sob análise</div>
+          <div class="plan-desc">Para influenciadores estratégicos que podem ajudar o Zeca a crescer, cocriar campanhas, participar de oportunidades especiais e fortalecer a rede de confiança para brasileiros no Canadá e nos EUA.</div>
+          <ul class="plan-items">
+            <li class="plan-item"><strong>Tudo do Premium.</strong></li>
+            <li class="plan-item">Status de parceiro estratégico do Zeca.</li>
+            <li class="plan-item">Participação na construção e expansão do ecossistema.</li>
+            <li class="plan-item">Campanhas, conteúdos, ativações e eventos cocriados.</li>
+            <li class="plan-item">Revenue share em oportunidades selecionadas.</li>
+            <li class="plan-item">Acesso antecipado a campanhas e iniciativas especiais.</li>
+            <li class="plan-item">Benefícios em serviços especializados, consultorias, assessorias e eventos de negócios.</li>
+            <li class="plan-item">Relacionamento direto com a equipe do Zeca.</li>
+            <li class="plan-item">Benefícios de autoridade, reputação e posicionamento.</li>
+            <li class="plan-item">Condições personalizadas conforme perfil e potencial de colaboração.</li>
+          </ul>
+          <a href="#formulario" class="btn-green-outline" id="btn-plan-partner" style="margin-top: var(--sp-md);">Quero ser parceiro</a>
+        </div>
+      </div>
+      <p class="plans-disclaimer">Os formatos de participação são definidos conforme perfil, aderência ao público do Zeca, campanhas disponíveis e potencial de colaboração. O Essential é gratuito. O Premium oferece uma presença profissional no Hub do Zeca. O Alliance é uma parceria estratégica especial, sem valor público fixo, avaliada caso a caso.</p>
+      <div class="plans-disclaimer" style="display: flex; align-items: flex-start; gap: 8px; justify-content: center; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 12px; line-height: 1.5;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px; color: var(--brand-green);">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span style="text-align: left;">O Zeca não garante ganhos. Comissões, participações, benefícios e acessos a serviços especializados dependem das campanhas, parceiros, oportunidades disponíveis e regras específicas de cada ação.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FORMULÁRIO — branco ══════════════════════════════════════ -->
+  <section class="sec-form" id="formulario">
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="form-header">
+          <span class="eyebrow">Cadastro</span>
+          <h2>Quero fazer parte</h2>
+          <p style="color: var(--gray-600); margin-top:12px; line-height:1.6;">Preencha o formulário e conte um pouco sobre sua audiência, seus temas e sua relação com brasileiros no Canadá ou nos Estados Unidos. A equipe do Zeca vai analisar as informações e entrar em contato.</p>
+        </div>
+
+        <form action="#" method="post" id="form-influenciador" novalidate>
+          <div class="form-group">
+            <label for="f-nome">Nome completo <span class="req">*</span></label>
+            <input type="text" id="f-nome" name="nome" required autocomplete="name" placeholder="Seu nome completo">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-whatsapp">WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="f-whatsapp" name="whatsapp" required autocomplete="tel" placeholder="+55 11 99999-0000">
+            </div>
+            <div class="form-group">
+              <label for="f-email">E-mail <span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="seu@email.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-pais">País onde atua <span class="req">*</span></label>
+              <select id="f-pais" name="pais" required>
+                <option value="">Selecione</option>
+                <option>Canadá</option>
+                <option>Estados Unidos</option>
+                <option>Brasil (falando com brasileiros no exterior)</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-cidade">Cidade / região principal <span class="req">*</span></label>
+              <input type="text" id="f-cidade" name="cidade" required placeholder="Ex: Calgary, Toronto, Miami...">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-instagram">Instagram</label>
+              <input type="url" id="f-instagram" name="instagram" placeholder="https://instagram.com/seuperfil">
+            </div>
+            <div class="form-group">
+              <label for="f-youtube">YouTube</label>
+              <input type="url" id="f-youtube" name="youtube" placeholder="https://youtube.com/@seu-canal">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-twitter">Twitter / X</label>
+              <input type="url" id="f-twitter" name="twitter" placeholder="https://x.com/seuperfil">
+            </div>
+            <div class="form-group">
+              <label for="f-tiktok">TikTok</label>
+              <input type="url" id="f-tiktok" name="tiktok" placeholder="https://tiktok.com/@seuperfil">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="f-outras">Outra rede social</label>
+            <input type="text" id="f-outras" name="outras" placeholder="Ex: LinkedIn, Blog pessoal, etc.">
+          </div>
+
+          <div class="form-group">
+            <label for="f-audiencia">Principal público da sua audiência <span class="req">*</span></label>
+            <textarea id="f-audiencia" name="audiencia" required placeholder="Ex: brasileiros recém-chegados no Canadá, pessoas planejando imigrar..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-temas">Temas principais do seu conteúdo <span class="req">*</span></label>
+            <textarea id="f-temas" name="temas" required placeholder="Ex: vida no Canadá, imigração, moradia, emprego..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="f-modelo">Modelo de participação de interesse</label>
+            <select id="f-modelo" name="modelo">
+              <option value="">Selecione</option>
+              <option>Essential</option>
+              <option>Premium</option>
+              <option>Alliance</option>
+              <option>Ainda não sei — quero entender melhor</option>
+            </select>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="f-lgpd" name="lgpd" required>
+            <label for="f-lgpd">Ao enviar este formulário, autorizo o Pergunta pro Zeca a entrar em contato comigo por e-mail ou WhatsApp para tratar sobre oportunidades de parceria, conforme a <a href="privacidade.html" style="color: var(--brand-green); text-decoration: underline;">Política de Privacidade</a>.</label>
+          </div>
+
+          <button type="submit" class="btn-form" id="btn-form-submit">Enviar meu perfil para análise</button>
+          <p class="form-microcopy">A entrada está sujeita à análise da equipe do Zeca.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA FINAL — verde ════════════════════════════════════════ -->
+  <section class="sec-final" id="cta-final">
+    <div class="container">
+      <h2>Sua influência pode virar<br>parte da rede de confiança do Zeca</h2>
+      <p>Brasileiros no Canadá e nos EUA já procuram orientação todos os dias. O Zeca quer organizar essas perguntas, conectar boas recomendações e criar um ecossistema onde usuários, empresas e influenciadores crescem juntos.<br><br>Se você tem uma audiência que confia em você, talvez esteja na hora de transformar essa confiança em algo maior.</p>
+      <a href="#formulario" class="final-btn" id="btn-final-cta">Quero fazer parte</a>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ — branco ══════════════════════════════════════════════ -->
+  <section class="sec-faq" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Perguntas sobre a parceria</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q1" aria-controls="faq-a1">
+            O Zeca vai usar meu nome nas recomendações?
+            <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            Só com sua autorização explícita e dentro dos termos acordados na parceria. Você controla como seu nome e imagem aparecem no ecossistema.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q2" aria-controls="faq-a2">
+            Preciso pagar para participar?
+            <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            Não. O cadastro é gratuito. Modelos avançados com recursos premium podem ter condições específicas definidas após análise do perfil.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q3" aria-controls="faq-a3">
+            O Zeca garante que vou ganhar dinheiro?
+            <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            Não. A monetização depende do modelo de parceria escolhido, da qualidade das indicações, da participação ativa do influenciador e das oportunidades disponíveis.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q4" aria-controls="faq-a4">
+            Posso indicar qualquer empresa?
+            <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            Você pode sugerir empresas e profissionais. A equipe do Zeca analisa cada indicação antes de incluir na base de recomendações. Nem toda indicação é automaticamente aprovada.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q5" aria-controls="faq-a5">
+            Vou precisar divulgar o Zeca obrigatoriamente?
+            <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            Não como obrigação. A curadoria é o núcleo da parceria. Divulgar o Zeca para sua audiência é incentivado e faz parte de alguns modelos, mas não é imposto.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q6" aria-controls="faq-a6">
+            Posso participar mesmo tendo audiência pequena?
+            <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            Sim. O critério principal é a relevância da sua conexão com brasileiros no Canadá ou nos EUA, não o tamanho da audiência. Microcriadores com comunidades engajadas são bem-vindos.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q7" aria-controls="faq-a7">
+            O Zeca substitui meu trabalho como criador?
+            <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
+            Não. O Zeca complementa o que você já faz, dando mais valor às suas recomendações e criando novas oportunidades. Você continua sendo o criador que sua audiência conhece e confia.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q8" aria-controls="faq-a8">
+            Vou receber link, cupom ou código de indicação?
+            <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a8" role="region" aria-labelledby="faq-q8">
+            Está no roadmap da plataforma. Links rastreáveis e códigos de indicação personalizados são previstos para versões futuras, com base nos modelos de parceria ativados.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RODAPÉ ════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <img src="imagens/zeca-002-logo.png" alt="Logo Zeca" class="footer-logo">
+        <p>© 2026 Pergunta pro Zeca.</p>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="clube-vantagens.html">Clube de Vantagens</a>
+        <a href="parceiros.html">Parceiros</a>
+        <a href="influenciadores.html">Influenciadores</a>
+        <a href="#">Media Kit</a>
+        <a href="termos.html">Termos</a>
+        <a href="privacidade.html">Privacidade</a>
+      </nav>
+    </div>
+  </footer>
+
+
+
+  <script>
+    // ─── FAQ Accordion ─────────────────────────────────────────────
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        var answerId = this.getAttribute('aria-controls');
+        var answer = document.getElementById(answerId);
+
+        // Fecha todos
+        document.querySelectorAll('.faq-question').forEach(function(b) {
+          b.setAttribute('aria-expanded', 'false');
+        });
+        document.querySelectorAll('.faq-answer').forEach(function(a) {
+          a.classList.remove('open');
+        });
+
+        // Abre o atual se estava fechado
+        if (!expanded) {
+          this.setAttribute('aria-expanded', 'true');
+          answer.classList.add('open');
+        }
+      });
+    });
+
+
+
+    // ─── Formulário: estado de carregamento ─────────────────────────
+    var formEl = document.getElementById('form-influenciador');
+    var btnSubmit = document.getElementById('btn-form-submit');
+    if (formEl && btnSubmit) {
+      formEl.addEventListener('submit', function(e) {
+        e.preventDefault();
+        btnSubmit.textContent = 'Enviando...';
+        btnSubmit.disabled = true;
+        // Simula envio — substituir por integração real
+        setTimeout(function() {
+          btnSubmit.textContent = 'Cadastro enviado! Em breve entraremos em contato.';
+          btnSubmit.style.background = '#166d35';
+        }, 1500);
+      });
+    }
+
+    // ─── Scroll-reveal suave nos steps ─────────────────────────────
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var steps = document.querySelectorAll('.step-item');
+      steps.forEach(function(el, i) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 400ms ease ' + (i * 80) + 'ms, transform 400ms ease ' + (i * 80) + 'ms';
+      });
+      var stepObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            stepObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      steps.forEach(function(el) { stepObserver.observe(el); });
+    }
+
+    // ─── Simulador de Ganhos ───────────────────────────────────────
+    (function() {
+      var values = [10, 25, 50, 100, 200, 500];
+      var slider = document.getElementById('slider-indicacoes');
+      var resultIntro = document.getElementById('result-intro');
+      var resultMonthly = document.getElementById('result-monthly');
+      var resultAnnual = document.getElementById('result-annual');
+
+      function formatBRL(n) {
+        return n.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+      }
+
+      function updateSliderTrack(idx) {
+        var pct = (idx / (values.length - 1)) * 100;
+        slider.style.background = 'linear-gradient(to right, var(--brand-green) 0%, var(--brand-green) ' + pct + '%, var(--border) ' + pct + '%, var(--border) 100%)';
+      }
+
+      function updateResult() {
+        var idx = parseInt(slider.value);
+        var qty = values[idx];
+        var monthValue = qty * 10;
+        var yearValue = monthValue * 12;
+
+        slider.setAttribute('aria-valuenow', qty);
+        resultIntro.innerHTML = 'Com <strong>' + qty + '</strong> indicações qualificadas por mês, seu potencial estimado seria:';
+        resultMonthly.textContent = 'CAD$ ' + formatBRL(monthValue) + '/mês';
+        resultAnnual.textContent = 'CAD$ ' + formatBRL(yearValue);
+        updateSliderTrack(idx);
+      }
+
+      if (slider) {
+        slider.addEventListener('input', updateResult);
+        updateResult();
+      }
+    }());
+
+    // ─── Animação de Moedas Flutuantes na Seção Monetização ─────────
+    (function() {
+      var section = document.getElementById('monetizacao');
+      if (!section) return;
+
+      var coinWrapper = document.createElement('div');
+      coinWrapper.className = 'coin-wrapper';
+      section.appendChild(coinWrapper);
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            triggerCoinRain();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      observer.observe(section);
+
+      function triggerCoinRain() {
+        var coinCount = 35;
+        for (var i = 0; i < coinCount; i++) {
+          setTimeout(createCoin, i * 80);
+        }
+      }
+
+      function createCoin() {
+        var coin = document.createElement('div');
+        coin.className = 'floating-coin';
+        
+        var left = Math.random() * 100;
+        var duration = 2.5 + Math.random() * 1.5;
+        var size = 24 + Math.random() * 16;
+        var driftX = (Math.random() - 0.5) * 120;
+        var rot = (Math.random() - 0.5) * 720;
+        var delay = Math.random() * 0.2;
+
+        coin.style.left = left + '%';
+        coin.style.width = size + 'px';
+        coin.style.height = size + 'px';
+        coin.style.fontSize = (size * 0.45) + 'px';
+        coin.style.setProperty('--drift-x', driftX + 'px');
+        coin.style.setProperty('--rot', rot + 'deg');
+        coin.style.animationDuration = duration + 's';
+        coin.style.animationDelay = delay + 's';
+        
+        coin.textContent = '$';
+
+        coinWrapper.appendChild(coin);
+
+        setTimeout(function() {
+          coin.remove();
+        }, (duration + delay) * 1000);
+      }
+    }());
+  </script>
+</body>
+</html>

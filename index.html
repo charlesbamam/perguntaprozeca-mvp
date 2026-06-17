@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pergunta pro Zeca - Seu concierge digital para brasileiros no exterior</title>
+  <meta name="description" content="Tire suas dúvidas sobre moradia, emprego, vistos, saúde e serviços no exterior com o Zeca, seu concierge digital inteligente.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="shortcut icon" href="icones/zecafavicon.ico" type="image/x-icon">
+  <style>
+    /* Estilos Específicos da Home */
+    .home-hero {
+      padding: 80px 0 40px 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .home-hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    
+    .home-hero p {
+      color: var(--color-text-muted);
+      font-size: 18px;
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+    
+    /* Caixa de Busca */
+    .search-box-container {
+      width: 100%;
+      max-width: 760px;
+      position: relative;
+      background: var(--color-white);
+      border: 2px solid var(--color-whatsapp);
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+    
+    .search-box-container textarea {
+      width: 100%;
+      height: 120px;
+      border: none;
+      resize: none;
+      outline: none;
+      font-size: 16px;
+      color: var(--color-text-main);
+      background: transparent;
+      padding-bottom: 40px;
+    }
+    
+    .search-box-container textarea::placeholder {
+      color: var(--color-text-muted);
+    }
+    
+    .btn-send-search {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-black);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      transition: background-color var(--transition-fast);
+    }
+    
+    .btn-send-search:hover {
+      background-color: #222;
+    }
+    
+    /* Tags de Sugestão */
+    .tags-container {
+      max-width: 760px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 56px;
+    }
+    
+    .search-tag {
+      background-color: #F3FBE2;
+      color: var(--color-text-main);
+      padding: 10px 20px;
+      border-radius: var(--border-radius-pill);
+      font-size: 13px;
+      font-weight: 500;
+      transition: all var(--transition-fast);
+      border: 1px solid transparent;
+    }
+    
+    .search-tag:hover {
+      background-color: #E2F9D3;
+      border-color: #C5E937;
+      transform: translateY(-1px);
+    }
+    
+    /* Banner de Vantagens (Amarelo) */
+    .home-banner-club {
+      background-color: var(--color-primary-yellow);
+      border-radius: var(--border-radius-lg);
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 760px; /* Largura idêntica à do campo de busca/chat */
+      width: 100%;
+      margin: 0 auto 40px auto;
+      text-align: left;
+      flex-wrap: wrap;
+      gap: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .banner-club-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+      min-width: 280px;
+    }
+    
+    .banner-club-icon {
+      flex: 0 0 15%;
+      max-width: 15%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .banner-club-text h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin: 0;
+      margin-bottom: 4px;
+      line-height: 1.1;
+    }
+    
+    .banner-club-text p {
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.3;
+    }
+    
+    .home-banner-club .btn-black {
+      padding: 14px 28px;
+      font-size: 15px;
+    }
+    
+    @media (max-width: 768px) {
+      .home-hero {
+        padding: 48px 0;
+      }
+      .home-hero h1 {
+        font-size: 32px;
+      }
+      .home-hero p {
+        font-size: 16px;
+      }
+      .home-banner-club {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="site-header site-header--gradient">
+    <div class="container">
+      <a href="index.html" class="logo-container" id="header-logo-link">
+        <img src="imagens/logo-perguntaprozeca.png" alt="Pergunta pro Zeca" class="logo-img">
+      </a>
+      <div class="header-right-area">
+        <nav class="header-nav">
+          <a href="clube-vantagens.html" class="header-nav-link">Clube de Vantagens</a>
+          <a href="parceiros.html" class="header-nav-link">Parceiros</a>
+          <a href="influenciadores.html" class="header-nav-link">Influenciadores</a>
+        </nav>
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
+          <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
+          Pergunte no Whatsapp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Corpo Principal -->
+  <main class="container">
+    <section class="home-hero">
+      <h1>O que você procura hoje?</h1>
+      <p>Pergunta pro Zeca, seu concierge digital para brasileiros no exterior.</p>
+      
+      <!-- Caixa de Busca -->
+      <form action="#" class="search-box-container" id="search-form">
+        <textarea id="search-input" placeholder="Escreva aqui sua Pergunta pro Zeca..." aria-label="Digite sua pergunta"></textarea>
+        <button type="submit" class="btn-send-search" id="btn-submit-search" aria-label="Enviar pergunta">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+      
+      <!-- Tags Sugeridas -->
+      <div class="tags-container">
+        <button class="search-tag" type="button">Apartamento para alugar</button>
+        <button class="search-tag" type="button">Cabeleireiro para crianças</button>
+        <button class="search-tag" type="button">Médico da família</button>
+        <button class="search-tag" type="button">Churrascaria</button>
+        <button class="search-tag" type="button">Petshop</button>
+        <button class="search-tag" type="button">Advogado de Imigração</button>
+        <button class="search-tag" type="button">Professor de Francês</button>
+        <button class="search-tag" type="button">Consultor de Carreira</button>
+        <button class="search-tag" type="button">Playground</button>
+        <button class="search-tag" type="button">Emprego</button>
+        <button class="search-tag" type="button">Comprar um carro</button>
+        <button class="search-tag" type="button">Reformar minha casa</button>
+      </div>
+      
+      <!-- Banner Clube de Vantagens (Amarelo) -->
+      <div class="home-banner-club">
+        <div class="banner-club-left">
+          <div class="banner-club-icon">
+            <img src="icones/promo-icon.png" alt="Desconto" style="width: 100%; max-width: 64px; height: auto; object-fit: contain;">
+          </div>
+          <div class="banner-club-text">
+            <h2>Clube de Vantagens do Zeca</h2>
+            <p>Que tal receber cupons de desconto exclusivos de produtos e serviços parceiros na sua cidade?</p>
+          </div>
+        </div>
+        <a href="clube-landing.html" class="btn btn-black" id="btn-participar-clube">Quero participar</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Pergunta pro Zeca.</p>
+      <div class="footer-links">
+        <a href="clube-vantagens.html">Clube de Vantagens</a>
+        <a href="parceiros.html">Parceiros</a>
+        <a href="influenciadores.html">Influenciadores</a>
+        <a href="#">Media Kit</a>
+        <a href="termos.html">Termos</a>
+        <a href="privacidade.html">Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

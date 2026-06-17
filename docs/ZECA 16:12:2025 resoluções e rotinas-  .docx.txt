@@ -1,0 +1,21 @@
+ZECA 16/12/2025
+resoluções e rotinas:
+- O Zeca tem q ser interativo, mas não tendencioso
+- Na conversa do Zap: “2 randomico.... 2 randomicos entre os premium, ordenado como a gente quiser... mas n tem como "mix and match”” De fato eu não sei tb… podemso começar assim e aprimorar a medida que tivermos mais conhecimento ou as ferramentas aprimorarem.
+- Acesso ao Zap Sem cadastro. Qto mais livre melhor… mas, precisamos monitorar com cudiado o cust da API.
+- rotina na conversa com quem não tiver cadastro: indetificar se a pessoa tem ou não cadastro na plataforma. se não tiver, enviar a mensagem: vi que você não tem cadastro na plataforma? para continuar, vamos fazer sua conta? é rapidinho. Clica aqui (ou: responde …)
+- eu tirei o prompt que o @⁨Charles Bamam 🇨🇦🇧🇷⁩  tinha usado pq parece q no n8n eh meio diferente a estrutura: não sabia… vou ver isso. Ah, o prompt sempre vai ser ajustado. É inevitável.
+- Quais as telas que eu preciso fazer ainda?
+- 
+>>> oh, esses sao todos os campos q salvamos hj dos usuarios no nosso banco...  @⁨Charles Bamam 🇨🇦🇧🇷⁩ - isso pode te ajudar a criar a inteligencia do Zeca... eu posso criar qualquer ferramenta que vc precisar pra ler qualquer dessas informacoes ai... 
+isso vai mudar um pouco ainda, mas ta quase tudo ai...
+- Igor, tá ficando muuuuito alem da imaginacao a aplicacao toda do Zeca. Parabens e obrigado! Uma pergunta: qual vai ser a interface entre nós e os clientes/usuários para eniar essas mensagens proativas e sms?
+- Igor, tnho uma pessoa probono p te ajudar com código. Vc pode treinar ele como entender e pedir p fazer as coisas que possa te desafogar. É meu primo, estudante de ciencias da computacao na UFRN.
+- E @⁨Matheus Pessanha 🇨🇦⁩ um pensamento... o zeca vai atingir os brasileiros rapidamente... sera q faria sentido um mercadinho brasileiro do zeca em cada cidade? N faco ideia de como fariamos, nada.. so uma ideia... WOOOOOOOWWWW
+- 
+Fala man! Blz? So p ter uma ideia aqui.. sabe dizer qd c consegue terminar os wireframes do site 100%?
+De tdas as paginas e tal? 
+E tbm o ajuste da parte da AI no n8n... toda a inteligencia la hj eu q coloquei.. n sei se vai fazer algum ajuste ainda ou se eu msm faço aqui.. eu posso fazer tb, mas acho q como vc trouxe a parte AI do projeto acho q seria legal vc assumir a parte da AI...
+Sao 2 coisas q hj estao me bloqueando no desenvolvimento.  Daqui mais umas 2 semanas devo terminar o backend 100%
+>>> Igor, então preciso entender quais as telas que ainda preciso fazer.
+>>> sobre a IA no N8N, eu vou ter que entrar lá p ver.. não consegui acesso.

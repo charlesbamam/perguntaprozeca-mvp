@@ -94,6 +94,119 @@
       background-image: url('imagens/img-anuncio-1.png');
     }
     
+    /* Modal Convite Zeca */
+    .invite-modal-content {
+      background-color: var(--color-white);
+      border-radius: var(--border-radius-lg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .invite-modal-header {
+      background-color: #FAFF00;
+      padding: 30px 20px 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .invite-img {
+      max-height: 250px;
+      object-fit: contain;
+      margin-bottom: 0;
+    }
+
+    .invite-modal-body {
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .invite-modal-subtitle {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #111;
+      margin-bottom: 16px;
+    }
+
+    .invite-modal-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--color-black);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .invite-modal-text {
+      font-size: 15px;
+      color: #222;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .btn-invite-action {
+      background-color: var(--color-black);
+      color: #FAFF00;
+      padding: 18px 40px;
+      border-radius: var(--border-radius-pill);
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition-fast), background-color var(--transition-fast);
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .btn-invite-action:hover {
+      transform: scale(1.03);
+      background-color: #222;
+    }
+
+    .btn-invite-login {
+      background: none;
+      border: none;
+      color: var(--color-black);
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      margin-top: 24px;
+      text-decoration: none;
+    }
+
+    .invite-modal-close {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+      font-weight: 900;
+      font-size: 20px;
+      color: var(--color-black);
+    }
+
     @media (max-width: 768px) {
       .filters-bar {
         flex-direction: column;
@@ -377,6 +490,27 @@
           <p class="cupom-terms-notice">
             Ao clicar no botão Inscrever-se, concordo com os <a href="termos.html">Termos de Uso</a> e li a <a href="privacidade.html">Declaração de Privacidade</a>.
           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Modal de Convite (Popup Zeca) -->
+  <div class="modal-overlay" id="invite-modal">
+    <div class="modal-container" style="max-width: 480px; position: relative; overflow: visible;">
+      <button class="invite-modal-close" id="btn-close-invite" aria-label="Fechar modal" onclick="closeModal(document.getElementById('invite-modal'))">
+        X
+      </button>
+      <div class="invite-modal-content">
+        <div class="invite-modal-header">
+          <img src="imagens/zeca-promo22.png" alt="Zeca" class="invite-img">
+        </div>
+        <div class="invite-modal-body">
+          <span class="invite-modal-subtitle">É gratuito!</span>
+          <h2 class="invite-modal-title">Tenha acesso gratuito<br>a cupons promocionais</h2>
+          <p class="invite-modal-text">Crie sua conta gratuitamente no Clube de Vantagens e tenha acesso instantâneo a dezenas de descontos exclusivos no Canadá e EUA.</p>
+          <a href="clube-landing.html#cadastro" class="btn-invite-action" id="btn-create-account-invite">Criar conta grátis</a>
+          <button class="btn-invite-login" onclick="closeModal(document.getElementById('invite-modal')); openModal(document.getElementById('login-modal'));">Já tenho uma conta</button>
         </div>
       </div>
     </div>

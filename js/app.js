@@ -514,6 +514,15 @@ function initCatalogPage() {
     // Abre o cupom do Two Canada Experience (ID 6 na base de dados)
     handleCouponGrab(6);
   });
+
+  // Lógica do Modal de Convite (Popup)
+  setTimeout(() => {
+    const cadastrado = localStorage.getItem("zeca_cliente_nome");
+    const inviteModal = document.getElementById("invite-modal");
+    if (!cadastrado && inviteModal) {
+      openModal(inviteModal);
+    }
+  }, 3000);
 }
 
 // Filtra e Renderiza os cupons conforme o estado dos filtros

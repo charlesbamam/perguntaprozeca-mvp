@@ -118,9 +118,10 @@
       </a>
       <div class="header-right-area" style="display: flex; align-items: center; gap: 20px;">
                 <nav class="header-nav">
-          <a href="clube-vantagens.html" class="header-nav-link">Clube de Vantagens</a>
+          <a href="clube-vantagens.html" class="header-nav-link active">Clube de Vantagens</a>
           <a href="parceiros.html" class="header-nav-link">Parceiros</a>
           <a href="influenciadores.html" class="header-nav-link">Influenciadores</a>
+          <a href="hub-influenciadores.html" class="header-nav-link">Hub</a>
         </nav>
         <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
           <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
@@ -202,9 +203,10 @@
     <div class="container">
       <p>© 2026 Pergunta pro Zeca.</p>
       <div class="footer-links">
-        <a href="clube-vantagens.html">Clube de Vantagens</a>
+        <a href="clube-vantagens.html" style="font-weight: 700; color: var(--color-black);">Clube de Vantagens</a>
         <a href="parceiros.html">Parceiros</a>
         <a href="influenciadores.html">Influenciadores</a>
+        <a href="hub-influenciadores.html">Hub</a>
         <a href="#">Media Kit</a>
         <a href="termos.html">Termos</a>
         <a href="privacidade.html">Privacidade</a>
@@ -217,7 +219,7 @@
   <!-- 1. Modal de Login -->
   <div class="modal-overlay" id="login-modal">
     <div class="modal-container">
-      <button class="modal-close" id="btn-close-login" aria-label="Fechar modal">
+      <button class="modal-close" id="btn-close-login" aria-label="Fechar modal" onclick="closeModal(document.getElementById('login-modal'))">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
       <div class="login-modal-content">
@@ -280,7 +282,7 @@
   <!-- 2. Modal de Detalhe de Cupom -->
   <div class="modal-overlay" id="cupom-modal">
     <div class="modal-container">
-      <button class="modal-close green-close" id="btn-close-cupom" aria-label="Fechar modal">
+      <button class="modal-close green-close" id="btn-close-cupom" aria-label="Fechar modal" onclick="closeModal(document.getElementById('cupom-modal'))">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
       <div class="cupom-modal-content">

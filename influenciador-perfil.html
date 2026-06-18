@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>As recomendações de Maria Silva - Pergunta pro Zeca</title>
+  <meta name="description" content="Veja produtos, serviços, cupons e conteúdos recomendados por Maria Silva para brasileiros no Canadá e nos EUA.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="shortcut icon" href="icones/zecafavicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --color-brand-yellow: #FFFF00;
+      --color-brand-green: #1E8C45;
+      --color-brand-green-light: #D0FFF7;
+      --color-black: #111111;
+      --color-white: #FFFFFF;
+      --color-gray-100: #2D2D2D;
+      --color-gray-400: #9CA3AF;
+      --color-green-cta-text: #0D5C2E;
+      
+      --border-radius-sm: 16px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 16px;
+      --border-radius-pill: 9999px;
+      
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 48px;
+      --space-xl: 80px;
+      --space-2xl: 120px;
+    }
+
+    h1, h2, h3, h4, .font-display { font-family: var(--font-display); color: var(--color-black); }
+    body, p, span, li, label, input, select, textarea, button { font-family: var(--font-body); }
+
+    .zeca-top-bar {
+      background-color: var(--color-black);
+      color: var(--color-brand-yellow);
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      padding: 6px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+    }
+
+    .site-header--transparent {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    .section-hero {
+      background: linear-gradient(135deg, #444444 0%, #111111 100%);
+      padding: 100px 0 80px;
+      text-align: left;
+    }
+    .hero-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--color-brand-yellow);
+      object-fit: cover;
+      margin: 0 auto 16px;
+      background-color: var(--color-white);
+    }
+    .hero-badge-title {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-brand-green);
+      background-color: #A4FFF0;
+      padding: 8px 16px;
+      border-radius: var(--border-radius-pill);
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .hero-subtitle {
+      font-size: 17px;
+      color: #333333;
+      margin: 0 auto 32px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      border: 2px solid var(--color-black);
+      background-color: var(--color-black);
+      color: var(--color-brand-yellow);
+      border-radius: var(--border-radius-pill);
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 150ms ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-secondary:hover { background-color: #222222; color: var(--color-brand-yellow); }
+    
+    .btn-outline {
+      border: 2px solid var(--color-black);
+      background-color: transparent;
+      color: var(--color-black);
+      border-radius: var(--border-radius-pill);
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-block;
+      text-decoration: none;
+      transition: all 150ms ease;
+    }
+    .btn-outline:hover { background-color: var(--color-black); color: var(--color-white); }
+
+    .influencer-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: var(--space-lg) 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .influencer-sidebar { width: 100%; display: flex; flex-direction: column; gap: 24px; }
+    .influencer-main { width: 100%; display: flex; flex-direction: column; gap: 64px; }
+
+    @media(min-width: 992px) {
+      .influencer-layout { flex-direction: row; gap: 64px; padding: var(--space-xl) 24px; }
+      .influencer-sidebar { width: 30%; position: sticky; top: 24px; align-self: flex-start; }
+      .influencer-main { width: 70%; }
+    }
+
+    .card {
+      background-color: var(--color-white);
+      border: 1px solid #E5E7EB;
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+    
+    .sidebar-stat { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .sidebar-stat:last-child { margin-bottom: 0; }
+    .stat-icon { font-size: 24px; line-height: 1; text-align: center; width: 32px; }
+    .stat-info h4 { margin: 0; font-size: 18px; font-weight: 700; color: var(--color-black); }
+    .stat-info p { margin: 0; font-size: 13px; color: var(--color-gray-400); }
+
+    .bio-text { font-size: 15px; color: #4B5563; line-height: 1.6; margin-bottom: 16px; }
+
+    .section-title { font-size: 28px; font-weight: 800; margin-bottom: 24px; }
+    
+    .zeca-banner {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .zeca-banner h3 { color: var(--color-brand-yellow); font-size: 24px; margin-bottom: 16px; }
+    .zeca-banner p { color: #f3f4f6; margin-bottom: 24px; max-width: 500px; font-size: 16px; line-height: 1.6; }
+
+    .coupon-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media(min-width: 768px) { .coupon-grid { grid-template-columns: 1fr 1fr; } }
+    .coupon-card { 
+      border: 2px dashed var(--color-brand-green); 
+      background-color: #f0fdf4; 
+      border-radius: 16px; 
+      padding: 24px; 
+      text-align: center; 
+    }
+    .coupon-card h4 { margin-bottom: 8px; font-size: 18px; }
+    .coupon-card p { font-size: 14px; color: #4B5563; }
+    .coupon-code { 
+      background: var(--color-white); 
+      border: 1px solid #ccc; 
+      font-weight: 800; 
+      font-size: 20px; 
+      padding: 12px; 
+      margin: 16px 0; 
+      border-radius: 8px; 
+      letter-spacing: 2px; 
+    }
+
+    .indication-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media(min-width: 768px) { .indication-grid { grid-template-columns: 1fr 1fr; } }
+    .indication-card { border-radius: 16px; overflow: hidden; border: 1px solid #E5E7EB; background: var(--color-white); }
+    .indication-img { width: 100%; height: 180px; object-fit: cover; background-color: #f3f4f6; }
+    .indication-content { padding: 20px; }
+    .indication-content h4 { margin-bottom: 8px; font-size: 18px; }
+    .indication-content p { font-size: 14px; color: #4B5563; line-height: 1.5; margin-bottom: 16px; }
+    .indication-category { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--color-brand-green); background-color: #E6F4EA; padding: 4px 8px; border-radius: 4px; margin-bottom: 12px; }
+
+    .content-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media(min-width: 768px) { .content-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .content-card { 
+      display: block; 
+      border-radius: 16px; 
+      overflow: hidden; 
+      border: 1px solid #E5E7EB; 
+      text-decoration: none; 
+      color: inherit; 
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast); 
+    }
+    .content-card:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); 
+    }
+    .content-img { width: 100%; height: 120px; object-fit: cover; background-color: #f3f4f6; }
+    .content-info { padding: 16px; }
+    .content-info h5 { margin: 0 0 8px 0; font-size: 14px; line-height: 1.4; }
+    .content-info p { margin: 0; font-size: 12px; color: #6B7280; }
+
+    .transparency-box { 
+      background-color: #f9fafb; 
+      padding: 24px; 
+      border-radius: 16px; 
+      font-size: 14px; 
+      color: #4b5563; 
+      border-left: 4px solid var(--color-brand-yellow); 
+      line-height: 1.6;
+    }
+
+    .partner-cta-section {
+      background-color: #D0FFF7;
+      border-top: 1px solid #E5E7EB;
+      padding: var(--space-xl) 24px;
+      text-align: center;
+    }
+    
+    .btn-green {
+      background-color: var(--color-brand-green);
+      color: var(--color-white);
+      border-radius: var(--border-radius-pill);
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-block;
+      text-decoration: none;
+      transition: all 150ms ease;
+    }
+    .btn-green:hover { background-color: #166b34; }
+
+    /* Estilos Customizados para o Novo Layout */
+    .section-hero {
+      background: linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%) !important;
+      padding: 80px 0 60px !important;
+    }
+    
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    
+    .hero-profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      object-fit: cover;
+    }
+    
+    .hero-badge-alliance {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--border-radius-pill);
+      padding: 6px 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    
+    .hero-badge-alliance img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    
+    .hero-badge-alliance span.stars {
+      color: var(--color-brand-yellow);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    
+    .hero-title-white {
+      color: var(--color-white) !important;
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+    
+    .hero-bio-white {
+      color: #D1D5DB !important;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+    
+    .hero-action-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-hero-outline {
+      border: 1.5px solid #00C24B;
+      background-color: transparent;
+      color: #00C24B;
+      border-radius: var(--border-radius-pill);
+      padding: 10px 24px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 150ms ease;
+      text-decoration: none;
+    }
+    
+    .btn-hero-outline:hover {
+      background-color: #00C24B;
+      color: #FFFFFF;
+    }
+    
+    .hero-info-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+    
+    .hero-info-text svg {
+      color: #00C24B;
+    }
+    
+    .hero-info-text span.followers-count {
+      color: #FFFF00; /* amarelo do zeca */
+      font-weight: 800;
+    }
+    
+    /* Sidebar Cards */
+    .sidebar-profile-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .profile-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .profile-card-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .profile-card-names h4 {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0;
+      color: #111111;
+    }
+    
+    .profile-card-names span {
+      font-size: 13px;
+      font-weight: 700;
+      color: #00C24B;
+    }
+    
+    .profile-location-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #E6F4EA;
+      color: #137333;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: var(--border-radius-pill);
+      align-self: flex-start;
+    }
+    
+    .profile-location-pill svg {
+      color: #137333;
+    }
+    
+    .btn-contact-green {
+      background-color: #00C24B;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: var(--border-radius-pill);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background-color 150ms ease;
+    }
+    
+    .btn-contact-green:hover {
+      background-color: #00a33e;
+    }
+    
+    .alliance-badge-thin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-color: #EEFBCB;
+      border: 1px solid #C5E937;
+      font-size: 10px;
+      font-weight: 800;
+      color: #111111;
+      padding: 6px 12px;
+      border-radius: var(--border-radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      align-self: flex-start;
+    }
+    
+    .alliance-badge-thin span.stars {
+      color: #00C24B; /* estrelas verdes como pedido */
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Card de Links */
+    .links-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #111111;
+    }
+    
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .social-pill-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: #FFFFFF;
+      border: 1.5px solid #00C24B;
+      border-radius: var(--border-radius-pill);
+      padding: 10px 16px;
+      text-decoration: none;
+      transition: background-color 150ms ease;
+    }
+    
+    .social-pill-link:hover {
+      background-color: #F4FBF7;
+    }
+    
+    .social-pill-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .social-pill-link span.handle {
+      font-size: 14px;
+      font-weight: 700;
+      color: #00C24B;
+    }
+    
+    .links-footer-text {
+      font-size: 11px;
+      color: #9CA3AF;
+      text-align: center;
+      margin-top: 16px;
+    }
+    
+    /* Card de Hashtags */
+    .hashtag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 13px;
+      color: #4B5563;
+      line-height: 1.6;
+    }
+    
+    .hashtag-item {
+      font-weight: 500;
+    }
+    
+    /* Card Preto Zeca CTA */
+    .sidebar-black-cta {
+      background-color: #000000;
+      color: #FFFFFF;
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .sidebar-black-cta h4 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin: 0;
+    }
+    
+    .sidebar-black-cta p {
+      font-size: 13px;
+      color: #D1D5DB;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .btn-zeca-white {
+      background-color: #FFFFFF;
+      color: #000000;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px;
+      border-radius: var(--border-radius-pill);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background-color 150ms ease;
+    }
+    
+    .btn-zeca-white:hover {
+      background-color: #F3F4F6;
+    }
+    
+    /* Seção de Recomendações */
+    .recommendations-header {
+      margin-bottom: 24px;
+    }
+    
+    .recommendations-subtitle {
+      font-size: 12px;
+      font-weight: 800;
+      color: #00C24B;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    
+    .recommendations-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: #000000;
+      margin: 0;
+    }
+    
+    .recommendations-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    /* Card Horizontal de Recomendação */
+    .horizontal-coupon-card {
+      display: flex;
+      border: 1.5px solid #00C24B; /* borda verde */
+      border-radius: 20px;
+      background-color: #FFFFFF;
+      overflow: hidden;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    
+    .horizontal-coupon-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+    
+    .card-info-left {
+      flex: 1.2;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    
+    .card-info-left h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0;
+      color: #111111;
+    }
+    
+    .card-info-left .stars {
+      color: #111111;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-top: -8px;
+    }
+    
+    .card-meta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .card-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #2D2D2D;
+    }
+    
+    .card-meta-item svg {
+      color: #00C24B;
+      flex-shrink: 0;
+    }
+    
+    .card-offer-right {
+      width: 45%;
+      background-color: #F8FDE8; /* Fundo amarelo-limão bem claro */
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1.5px solid #00C24B;
+      gap: 16px;
+    }
+    
+    .offer-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111111;
+      line-height: 1.25;
+      margin: 0;
+    }
+    
+    .offer-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #4B5563;
+      font-weight: 600;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .offer-timer {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #D97706;
+      font-weight: 700;
+    }
+    
+    .offer-timer img {
+      width: 13px;
+      height: 13px;
+    }
+    
+    .btn-grab-horizontal {
+      background-color: #111827;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 20px;
+      border-radius: var(--border-radius-sm);
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 150ms ease;
+    }
+    
+    .btn-grab-horizontal:hover {
+      background-color: #1F2937;
+    }
+    
+    @media (max-width: 768px) {
+      .horizontal-coupon-card {
+        flex-direction: column;
+      }
+      .card-offer-right {
+        width: 100%;
+        border-left: none;
+        border-top: 1.5px solid #00C24B;
+      }
+    }
+    .coupon-hidden {
+      display: none !important;
+    }
+    
+    /* Estilos para os filtros de cupons */
+    .filter-select {
+      background-color: var(--color-white);
+      border: 1.5px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-black);
+      outline: none;
+      cursor: pointer;
+      transition: all 150ms ease;
+      min-width: 150px;
+    }
+    
+    .filter-select:hover:not(:disabled) {
+      border-color: var(--color-brand-green);
+    }
+    
+    .filter-select:focus:not(:disabled) {
+      border-color: var(--color-brand-green);
+      box-shadow: 0 0 0 3px rgba(30, 140, 69, 0.15);
+    }
+    
+    .filter-select:disabled {
+      background-color: #F3F4F6;
+      color: var(--color-gray-400);
+      cursor: not-allowed;
+      border-color: #E5E7EB;
+    }
+    
+    /* Mensagem de cupons vazios */
+    .no-results-container {
+      text-align: center;
+      padding: 48px 24px;
+      background-color: #F9FAF5;
+      border: 1.5px dashed #E5E7EB;
+      border-radius: var(--border-radius-md);
+      margin: 24px 0;
+    }
+    
+    .no-results-container h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-black);
+    }
+    
+    .no-results-container p {
+      font-size: 14px;
+      color: #6B7280;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Voltar pro site -->
+  <div class="back-to-hub-container" style="background-color: #111111; padding: 12px 24px; border-bottom: 1px solid #2D2D2D;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 0 24px;">
+      <a href="influenciadores.html" style="color: #9CA3AF; text-decoration: none; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: color 150ms ease;" onmouseover="this.style.color='#00C24B'" onmouseout="this.style.color='#9CA3AF'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Voltar pro site
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="section-hero">
+    <div class="container hero-container">
+      <div style="flex-shrink: 0;">
+        <img src="imagens/inf_hub_twocanada.png" alt="Two Canada" class="hero-profile-img">
+      </div>
+      <div style="flex: 1; min-width: 300px;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+          <div class="hero-badge-alliance">
+            <img src="imagens/ic_zeca_011.png" alt="Zeca">
+            PARCEIROS ALLIANCE
+            <span class="stars">★★★★★</span>
+          </div>
+        </div>
+        <h1 class="hero-title-white">As indicações de Two Canada</h1>
+        <p class="hero-bio-white">Casal BR Pioneiro em Explorar e Compartilhar a vida em Calgary e nas Rocky Mountains.<br>Mostramos como é a vida real de uma família de imigrantes no Canadá. 🍁</p>
+        <div class="hero-action-row">
+          <a href="#indicacoes" class="btn-hero-outline">Ver minhas recomendações</a>
+          <div class="hero-info-text">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Calgary / Canadá</span>
+          </div>
+          <div class="hero-info-text">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span><span class="followers-count">300k</span> seguidores</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="container" style="max-width: 1200px; margin: 24px auto 0 auto; padding: 0 24px;">
+    <div class="breadcrumbs" style="font-size: 14px; color: #111111; font-weight: 500;">
+      <a href="index.html" style="color: #00C24B; text-decoration: none; font-weight: 600;">Início</a>
+      <span style="margin: 0 8px; color: #9CA3AF;">/</span>
+      <a href="hub-influenciadores.html" style="color: #00C24B; text-decoration: none; font-weight: 600;">Influenciadores</a>
+      <span style="margin: 0 8px; color: #9CA3AF;">/</span>
+      <span style="color: #111111;">Two Canada</span>
+    </div>
+  </div>
+
+  <!-- Estrutura Principal -->
+  <div class="influencer-layout" style="padding-top: 24px;">
+    
+    <!-- Sidebar de Estatísticas -->
+    <aside class="influencer-sidebar">
+      
+      <!-- Card 1: sobre -->
+      <div class="card card-sobre" id="card-sobre">
+        <div class="sidebar-profile-card">
+          <div class="profile-card-header">
+            <img src="imagens/inf_hub_twocanada.png" alt="Two Canada" class="profile-card-avatar">
+            <div class="profile-card-names">
+              <h4>Twocanada</h4>
+              <span>@twocanada</span>
+            </div>
+          </div>
+          <div class="profile-location-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Calgary / Canadá</span>
+          </div>
+          <p class="bio-text" style="font-size: 14px; color: #4B5563; line-height: 1.5; margin: 0;" title="Mostramos como é a vida real de uma família de imigrantes no Canadá. &#x1F341;&#10;&#10;A família TWOCANADA já não é formada apenas por dois. Quando deixamos o interior de São Paulo para começar uma nova vida em Calgary, Alberta, éramos só nós dois: Joel e Bruna. Hoje, mais de 6 anos depois, nossa história ganhou novos capítulos com Joshua e Samuel, nossos filhos canadenses, que completam e dão ainda mais sentido à família TWOCANADA.">
+            Mostramos como é a vida real de uma família de imigrantes no Canadá. 🍁<br><br>A família TWOCANADA já não é formada apenas por dois. Quando deixamos o interior de São Paulo para começar uma nova...
+          </p>
+          <div class="alliance-badge-thin">
+            PARCEIROS ALLIANCE <span class="stars">★★★★★</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Links -->
+      <div class="card card-links" id="card-links">
+        <h3 class="links-title">Links</h3>
+        <div class="links-container">
+          <a href="https://youtube.com/@twocanada" target="_blank" class="social-pill-link">
+            <div class="social-pill-icon" style="background-color: #FF0000;">
+              <svg viewBox="0 0 24 24" fill="#FFFFFF" width="16" height="16"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.387.508 9.387.508s7.517 0 9.387-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <span class="handle">twocanada</span>
+          </a>
+          <a href="https://instagram.com/twocanada" target="_blank" class="social-pill-link">
+            <div class="social-pill-icon" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </div>
+            <span class="handle">@twocanada</span>
+          </a>
+          <a href="https://facebook.com/twocanadaa" target="_blank" class="social-pill-link">
+            <div class="social-pill-icon" style="background-color: #1877F2;">
+              <svg viewBox="0 0 24 24" fill="#FFFFFF" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <span class="handle">@twocanadaa</span>
+          </a>
+          <a href="https://twocanada.com" target="_blank" class="social-pill-link">
+            <div class="social-pill-icon" style="background-color: #111111;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <span class="handle">twocanada.com</span>
+          </a>
+        </div>
+        <a href="https://wa.me/14038295233?text=Olá%20Two%20Canada!%20Vi%20suas%20recomendações%20no%20Hub%20do%20Zeca%20e%20gostaria%20de%20entrar%20em%20contato." target="_blank" class="btn-contact-green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Entre em contato
+        </a>
+        <div class="links-footer-text">
+          Dados atualizados pelo influenciador
+        </div>
+      </div>
+
+      <!-- Card 3: Hashtags -->
+      <div class="card card-hashtags" id="card-hashtags">
+        <h3 class="links-title" style="margin-bottom: 12px;">Hashtags</h3>
+        <div class="hashtag-container">
+          <span class="hashtag-item">#canada</span>
+          <span class="hashtag-item">#lifestyle</span>
+          <span class="hashtag-item">#turismo</span>
+          <span class="hashtag-item">#calgary</span>
+          <span class="hashtag-item">#vidareal</span>
+          <span class="hashtag-item">#familia</span>
+          <span class="hashtag-item">#rockymountains</span>
+          <span class="hashtag-item">#vidanocanada</span>
+          <span class="hashtag-item">#aventura</span>
+          <span class="hashtag-item">#alberta</span>
+        </div>
+      </div>
+
+      <!-- Card 4: CTA Zeca (Black Card) -->
+      <div class="sidebar-black-cta card-banner-zeca" id="card-banner-zeca">
+        <h4>O que você procura?</h4>
+        <p>Seja o que for, de cabelereiro à empresas de software, basta perguntar pro Zeca, direto no Whatsapp!</p>
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;">
+          <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
+          Pergunta pro Zeca
+        </a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="influencer-main">
+      
+
+
+      <!-- Produtos e Serviços Indicados -->
+      <section id="indicacoes">
+        <div class="recommendations-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <div class="recommendations-subtitle" style="margin-bottom: 4px;">Aproveite para pegar seus descontos</div>
+            <h1 class="recommendations-title" style="margin: 0;">Recomendações</h1>
+          </div>
+          <div class="recommendations-filters" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <div class="filter-group">
+              <select id="filter-category" class="filter-select">
+                <option value="all">Todas as Categorias</option>
+                <option value="Restaurantes">Restaurante</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Imigração">Imigração</option>
+                <option value="Turismo">Turismo</option>
+                <option value="Comida Caseira">Comida Caseira</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <select id="filter-country" class="filter-select">
+                <option value="all">Todos os Países</option>
+                <option value="Canada">Canadá</option>
+                <option value="EUA">EUA</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <select id="filter-city" class="filter-select" disabled>
+                <option value="all">Todas as Cidades</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="recommendations-container">
+          
+          <!-- Card 1: Pampa -->
+          <div class="horizontal-coupon-card" data-categoria="Restaurantes" data-pais="Canada" data-cidade="Calgary">
+            <div class="card-info-left">
+              <div>
+                <h3>Pampa</h3>
+                <div class="stars">★★★★☆</div>
+              </div>
+              <div class="card-meta-list">
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="meta-categoria">Restaurantes</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span class="meta-cidade">Calgary</span> / <span class="meta-pais">Canadá</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="meta-influenciador">Twocanada</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  <span class="meta-cupons-total">40 cupons disponíveis</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-offer-right">
+              <h4 class="offer-title">CAD$ 10.00 de desconto em drinks</h4>
+              <div class="offer-meta-row">
+                <span>40 cupons disponíveis, 5k usados</span>
+                <span class="offer-timer">
+                  <img src="icones/time-left.svg" alt="Relógio"> 1 dia - 45 seg
+                </span>
+              </div>
+              <button class="btn-grab-horizontal" onclick="handleCouponGrab(1)" type="button">Pegar esse benefício</button>
+            </div>
+          </div>
+
+          <!-- Card 2: Pizza Center -->
+          <div class="horizontal-coupon-card" data-categoria="Restaurantes" data-pais="Canada" data-cidade="Toronto">
+            <div class="card-info-left">
+              <div>
+                <h3>Pizza Center</h3>
+                <div class="stars">★★★☆☆</div>
+              </div>
+              <div class="card-meta-list">
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="meta-categoria">Restaurantes</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span class="meta-cidade">Toronto</span> / <span class="meta-pais">Canadá</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="meta-influenciador">Twocanada</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  <span class="meta-cupons-total">40 cupons disponíveis</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-offer-right">
+              <h4 class="offer-title">20% de desconto em pizzas doces</h4>
+              <div class="offer-meta-row">
+                <span>40 cupons disponíveis, 5k usados</span>
+                <span class="offer-timer">
+                  <img src="icones/time-left.svg" alt="Relógio"> 1 dia - 45 seg
+                </span>
+              </div>
+              <button class="btn-grab-horizontal" onclick="handleCouponGrab(7)" type="button">Pegar esse benefício</button>
+            </div>
+          </div>
+
+          <!-- Card 3: Two Canada Experience -->
+          <div class="horizontal-coupon-card" data-categoria="Turismo" data-pais="Canada" data-cidade="Calgary">
+            <div class="card-info-left">
+              <div>
+                <h3>Two Canada Experience</h3>
+                <div class="stars">★★★☆☆</div>
+              </div>
+              <div class="card-meta-list">
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="meta-categoria">Turismo</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span class="meta-cidade">Calgary</span> / <span class="meta-pais">Canadá</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="meta-influenciador">Twocanada</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  <span class="meta-cupons-total">40 Cupons disponíveis</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-offer-right">
+              <h4 class="offer-title">CAD$ 90.00 de desconto 1º passeio</h4>
+              <div class="offer-meta-row">
+                <span>40 cupons disponíveis, 5k usados</span>
+                <span class="offer-timer">
+                  <img src="icones/time-left.svg" alt="Relógio"> 1 dia - 45 seg
+                </span>
+              </div>
+              <button class="btn-grab-horizontal" onclick="handleCouponGrab(6)" type="button">Pegar esse benefício</button>
+            </div>
+          </div>
+
+          <!-- Card 4: Bolo da Netinha -->
+          <div class="horizontal-coupon-card coupon-hidden" data-categoria="Comida Caseira" data-pais="Canada" data-cidade="Calgary">
+            <div class="card-info-left">
+              <div>
+                <h3>Bolo da Netinha</h3>
+                <div class="stars">★★★☆☆</div>
+              </div>
+              <div class="card-meta-list">
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="meta-categoria">Comida Caseira</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span class="meta-cidade">Calgary</span> / <span class="meta-pais">Canadá</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="meta-influenciador">Twocanada</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  <span class="meta-cupons-total">40 Cupons disponíveis</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-offer-right">
+              <h4 class="offer-title">50% de desconto em bolos Pavê</h4>
+              <div class="offer-meta-row">
+                <span>40 cupons disponíveis, 5k usados</span>
+                <span class="offer-timer">
+                  <img src="icones/time-left.svg" alt="Relógio"> 1 dia - 45 seg
+                </span>
+              </div>
+              <button class="btn-grab-horizontal" onclick="handleCouponGrab(1)" type="button">Pegar esse benefício</button>
+            </div>
+          </div>
+
+          <!-- Card 5: Pampa -->
+          <div class="horizontal-coupon-card coupon-hidden" data-categoria="Imigração" data-pais="EUA" data-cidade="Orlando">
+            <div class="card-info-left">
+              <div>
+                <h3>Pampa</h3>
+                <div class="stars">★★★★☆</div>
+              </div>
+              <div class="card-meta-list">
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="meta-categoria">Imigração</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span class="meta-cidade">Orlando</span> / <span class="meta-pais">EUA</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="meta-influenciador">Twocanada</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  <span class="meta-cupons-total">40 Cupons disponíveis</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-offer-right">
+              <h4 class="offer-title">CAD$ 10.00 de desconto em drinks</h4>
+              <div class="offer-meta-row">
+                <span>40 cupons disponíveis, 5k usados</span>
+                <span class="offer-timer">
+                  <img src="icones/time-left.svg" alt="Relógio"> 1 dia - 45 seg
+                </span>
+              </div>
+              <button class="btn-grab-horizontal" onclick="handleCouponGrab(1)" type="button">Pegar esse benefício</button>
+            </div>
+          </div>
+
+          <!-- Card 6: Zeca Real Estate -->
+          <div class="horizontal-coupon-card coupon-hidden" data-categoria="Real Estate" data-pais="EUA" data-cidade="Dallas">
+            <div class="card-info-left">
+              <div>
+                <h3>Zeca Real Estate</h3>
+                <div class="stars">★★★★☆</div>
+              </div>
+              <div class="card-meta-list">
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="meta-categoria">Real Estate</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span class="meta-cidade">Dallas</span> / <span class="meta-pais">EUA</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="meta-influenciador">Twocanada</span>
+                </div>
+                <div class="card-meta-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  <span class="meta-cupons-total">40 Cupons disponíveis</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-offer-right">
+              <h4 class="offer-title">CAD$ 10.00 de desconto em drinks</h4>
+              <div class="offer-meta-row">
+                <span>40 cupons disponíveis, 5k usados</span>
+                <span class="offer-timer">
+                  <img src="icones/time-left.svg" alt="Relógio"> 1 dia - 45 seg
+                </span>
+              </div>
+              <button class="btn-grab-horizontal" onclick="handleCouponGrab(1)" type="button">Pegar esse benefício</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mensagem de Sem Resultados -->
+        <div id="no-coupons-message" class="no-results-container coupon-hidden">
+          <h3>Nenhum cupom encontrado</h3>
+          <p>Tente ajustar os filtros de categoria, país ou cidade para encontrar outras ofertas.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <button type="button" class="btn-outline" id="btn-load-more" onclick="loadMoreCoupons()" style="min-width: 200px;">Carregar mais</button>
+        </div>
+      </section>
+
+
+
+
+
+
+
+    </main>
+  </div>
+
+  <!-- CTA Parceiros -->
+  <section class="partner-cta-section">
+    <div class="container" style="max-width: 600px; margin: 0 auto;">
+      <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 16px;">Quer que seu negócio apareça nas recomendações de Two Canada?</h2>
+      <p style="color: #4B5563; line-height: 1.6; margin-bottom: 32px;">Empresas e profissionais que atendem brasileiros no Canadá ou nos EUA podem se cadastrar para análise do Zeca.</p>
+      <a href="parceiros.html" class="btn-secondary">Quero ser parceiro do Zeca</a>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="site-footer" style="background-color: #f9fafb; border-top: 1px solid #E5E7EB; padding: 40px 0; text-align: center; margin-top: 0;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 800px; margin: 0 auto; padding: 0 24px;">
+      
+      <!-- Bloco de Transparência -->
+      <div class="footer-transparency" style="width: 100%; border-bottom: 1px solid #E5E7EB; padding-bottom: 20px;">
+        <p style="font-size: 12px; color: #6B7280; line-height: 1.6; margin: 0; text-align: justify;">
+          <strong>Transparência:</strong> Esta página faz parte do Hub de Influenciadores do Zeca. Algumas ofertas podem gerar comissão para a influenciadora se você usar o código, link ou cupom indicado, sem custo extra para você. O Zeca organiza a curadoria, o rastreamento e a validação das campanhas. A prioridade comercial não substitui a confiança e a compatibilidade com a sua necessidade.
+        </p>
+      </div>
+
+      <!-- Bloco de Links e Copyright -->
+      <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 16px;">
+        <p style="margin: 0; color: #6B7280; font-size: 14px;">© 2026 Pergunta pro Zeca.</p>
+        <div class="footer-links" style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="clube-vantagens.html" style="color: var(--color-black); font-weight: 500; text-decoration: none;">Clube de Vantagens</a>
+          <a href="parceiros.html" style="color: var(--color-black); font-weight: 500; text-decoration: none;">Parceiros</a>
+          <a href="influenciadores.html" style="color: var(--color-black); font-weight: 500; text-decoration: none;">Influenciadores</a>
+          <a href="hub-influenciadores.html" style="color: var(--color-black); font-weight: 500; text-decoration: none;">Hub</a>
+          <a href="termos.html" style="color: var(--color-black); font-weight: 500; text-decoration: none;">Termos</a>
+          <a href="privacidade.html" style="color: var(--color-black); font-weight: 500; text-decoration: none;">Privacidade</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= MODAIS ================= -->
+  <!-- 1. Modal de Login -->
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal-container">
+      <button class="modal-close" id="btn-close-login" aria-label="Fechar modal" onclick="closeModal(document.getElementById('login-modal'))">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="login-modal-content">
+        <div class="lock-icon-wrapper flex-center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h2>Acesse o Clube de Descontos</h2>
+        <p>Entre com sua conta para ver as ofertas exclusivas do Zeca.</p>
+        
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">E-mail</label>
+            <div class="input-icon-wrapper">
+              <svg class="field-icon" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <input type="email" id="login-email" placeholder="seu@email.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="form-group-header">
+              <label for="login-password">Senha</label>
+              <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+            <div class="input-icon-wrapper">
+              <svg class="field-icon" viewBox="0 0 24 24">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+              </svg>
+              <input type="password" id="login-password" placeholder="••••••••" required>
+              <button type="button" class="toggle-pwd" id="btn-toggle-pwd" aria-label="Mostrar/ocultar senha">👁</button>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn-login-submit" id="btn-submit-login">
+            Entrar na minha conta
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+        
+        <div class="divider-text">ou</div>
+        
+        <div class="login-footer-link">
+          Ainda não tem conta? <a href="clube-landing.html#cadastro">Criar conta grátis</a>
+        </div>
+        
+        <p class="login-modal-terms">
+          Ao entrar, você concorda com os <a href="termos.html">Termos de Uso</a> e a <a href="privacidade.html">Política de Privacidade</a> do Zeca.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Modal de Detalhe de Cupom -->
+  <div class="modal-overlay" id="cupom-modal">
+    <div class="modal-container">
+      <button class="modal-close green-close" id="btn-close-cupom" aria-label="Fechar modal" onclick="closeModal(document.getElementById('cupom-modal'))">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="cupom-modal-content">
+        
+        <div class="cupom-header">
+          <div class="cupom-brand-box" id="cupom-brand">
+            <!-- Injetado via JS -->
+          </div>
+          <div class="cupom-promo-details">
+            <div class="cupom-code" id="cupom-code-text">TPZM10</div>
+            <h3 class="cupom-title" id="cupom-title-text">CAD$ 10.00 de desconto em drinks</h3>
+          </div>
+        </div>
+        
+        <div class="cupom-info-grid">
+          <div class="cupom-info-item">
+            <span class="info-label">Cliente</span>
+            <span class="info-value" id="cupom-client-name">CHARLES BAMAM MEDEIROS DE SOUZA</span>
+          </div>
+          <div class="cupom-info-item">
+            <span class="info-label">Influenciador</span>
+            <span class="info-value" id="cupom-influencer-name">TwoCanada</span>
+          </div>
+        </div>
+        
+        <div class="cupom-accordion">
+          <div class="accordion-title id-accordion-trigger" id="accordion-trigger">
+            <span>Informações importantes</span>
+            <img src="icones/down.svg" alt="Seta" style="width: 12px; height: 12px; transition: transform var(--transition-fast);">
+          </div>
+          <div class="accordion-content" id="accordion-content">
+            <div class="cupom-tags-row">
+              <span class="cupom-tag expiry" id="cupom-expiry-tag">Encerra em 23/06/2026</span>
+              <span class="cupom-tag type">Usar presencialmente</span>
+            </div>
+            <ul class="cupom-rules-list">
+              <li>Não pode ser usado em conjunto com qualquer outra oferta.</li>
+              <li>Disponível enquanto durarem os stocks.</li>
+              <li>Todas as marcas reservam-se o direito de remover qualquer oferta sem aviso prévio.</li>
+              <li>Limitado a uma por pessoa.</li>
+              <li>Para os Termos e Condições completos, por favor visite o site.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="cupom-action-row">
+          <div class="qr-code-box flex-center" style="background-color: #ffffff; padding: 4px;">
+            <img id="cupom-qrcode-img" src="icones/qr-code.svg" alt="QR Code" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.onerror=null; this.src='icones/qr-code.svg';">
+          </div>
+          <div class="cupom-buttons-column" style="display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 200px;">
+            <a href="#" target="_blank" class="btn btn-whatsapp" id="btn-send-whatsapp" style="width: 100%;">
+              <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
+              Salvar no Whatsapp
+            </a>
+            <button class="btn btn-black" id="btn-salvar-print" type="button" style="width: 100%;">
+              Salvar Print / Imprimir
+            </button>
+          </div>
+        </div>
+        
+        <div class="cupom-share-section">
+          <h4>Indique o Clube de Vantagens do Zeca para seus amigos</h4>
+          
+          <div class="social-share-row">
+            <a href="#" class="social-btn" aria-label="Compartilhar no Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Compartilhar no X (Twitter)">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" id="btn-copy-link-anchor" aria-label="Copiar Link">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Compartilhar no Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Compartilhar no WhatsApp">
+              <img src="icones/whatsapp.svg" alt="WhatsApp">
+            </a>
+          </div>
+          
+          <div class="copy-link-wrapper">
+            <input type="text" class="copy-link-input" id="copy-link-input-field" readonly value="https://pergunteprozeca.com/clube-vantagens?cupom=TPZM10">
+            <button class="btn-copy-link" id="btn-copy-link-action" type="button" aria-label="Copiar link de indicação">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <p class="cupom-terms-notice">
+            Ao clicar no botão Inscrever-se, concordo com os <a href="termos.html">Termos de Uso</a> e li a <a href="privacidade.html">Declaração de Privacidade</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hub de Influenciadores do Zeca - Recomendações e Vantagens</title>
+  <meta name="description" content="Conheça os influenciadores parceiros do Zeca. Encontre recomendações de produtos, serviços e descontos exclusivos para brasileiros no Canadá e EUA.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="shortcut icon" href="icones/zecafavicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --color-brand-yellow: #FFFF00;
+      --color-brand-green: #1E8C45;
+      --color-brand-green-light: #D0FFF7;
+      --color-black: #111111;
+      --color-white: #FFFFFF;
+      --color-gray-100: #F3F4F6;
+      --color-gray-400: #9CA3AF;
+      --color-gray-600: #4B5563;
+      --color-green-cta: #00C24B;
+      --color-green-hover: #00a33e;
+      
+      --border-radius-sm: 12px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 20px;
+      --border-radius-pill: 9999px;
+      
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --transition-fast: 150ms ease;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); color: var(--color-black); }
+    body, p, span, li, label, input, select, textarea, button { font-family: var(--font-body); }
+
+    /* Cabeçalho transparente absoluto — idêntico ao parceiros.html */
+    .site-header--transparent {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+
+
+
+
+    .btn-whatsapp-header {
+      background-color: var(--color-green-cta);
+      color: var(--color-white);
+      border-radius: var(--border-radius-pill);
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      transition: background-color var(--transition-fast);
+    }
+
+    .btn-whatsapp-header:hover {
+      background-color: var(--color-green-hover);
+    }
+
+    .btn-whatsapp-header img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Seção Hero com Fundo Verde Piscina e Imagem Ilustrativa à Direita */
+    .section-hero {
+      background-color: var(--color-brand-green-light);
+      padding: 140px 0 60px 0; /* Padding superior maior para acomodar header absoluto */
+      text-align: left;
+      overflow: hidden;
+    }
+    
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content-left {
+      flex: 1.2;
+      min-width: 300px;
+    }
+
+    .hero-image-right {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      align-self: flex-end;
+      min-width: 300px;
+      margin-bottom: -60px;
+    }
+
+    .hero-img-illustration {
+      width: 100%;
+      max-width: 440px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-black);
+      display: inline-block;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin: 0 0 16px 0;
+      line-height: 1.15;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--color-gray-600);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-pill-black {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      border-radius: var(--border-radius-pill);
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color var(--transition-fast);
+      border: none;
+    }
+
+    .btn-pill-black:hover {
+      background-color: #222222;
+    }
+
+    .btn-pill-outline {
+      background-color: var(--color-white);
+      color: var(--color-black);
+      border: 1.5px solid var(--color-black);
+      border-radius: var(--border-radius-pill);
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color var(--transition-fast);
+    }
+
+    .btn-pill-outline:hover {
+      background-color: var(--color-gray-100);
+    }
+
+    /* Barra de Filtros - Idêntica à de clube-vantagens.html */
+    .filters-section {
+      background-color: var(--color-white);
+      border-bottom: 1px solid #E5E7EB;
+      padding: 24px 0;
+    }
+
+    .filters-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .filter-select {
+      padding: 12px 40px 12px 20px;
+      border: 1.5px solid #00C24B; /* Borda verde do design system */
+      border-radius: var(--border-radius-pill);
+      background-color: var(--color-white);
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      min-width: 160px;
+      transition: border-color var(--transition-fast);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      background-size: 14px;
+    }
+
+    .filter-select:focus {
+      border-color: var(--color-black);
+    }
+
+    .filter-select:disabled {
+      background-color: #F3F4F6;
+      color: var(--color-gray-400);
+      cursor: not-allowed;
+      border-color: #E5E7EB;
+    }
+
+    .btn-search-black {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      border: none;
+      border-radius: var(--border-radius-pill);
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color var(--transition-fast);
+    }
+
+    .btn-search-black:hover {
+      background-color: #222222;
+    }
+
+    .link-clear-green {
+      color: var(--color-green-cta);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 12px;
+      transition: color var(--transition-fast);
+    }
+
+    .link-clear-green:hover {
+      color: var(--color-green-hover);
+    }
+
+    /* Área do Grid e Conteúdo Principal */
+    .hub-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    /* Componente Influencer Card - idêntico ao screenshot do usuário */
+    .influencer-card {
+      border: 1.5px solid var(--color-green-cta);
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      background-color: var(--color-white);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .influencer-card:hover {
+      border-color: var(--color-green-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 194, 75, 0.06);
+    }
+
+    /* Topo do Card: Avatar e Nome/Seguidores */
+    .inf-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .inf-avatar-round {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #E5E7EB;
+      flex-shrink: 0;
+    }
+
+    .inf-name-area {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .inf-name-area h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0;
+      color: var(--color-black);
+      line-height: 1.2;
+    }
+
+    .inf-followers-count {
+      font-size: 13px;
+      color: var(--color-gray-600);
+      font-weight: 500;
+    }
+
+    /* Linha de Localização */
+    .inf-location-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-black);
+    }
+
+    .flag-icon {
+      font-size: 16px;
+    }
+
+    .inf-location-text {
+      font-weight: 700;
+    }
+
+    /* Biografia com Limitação de 4 linhas */
+    .inf-bio-text {
+      font-size: 14px;
+      color: var(--color-gray-600);
+      line-height: 1.5;
+      margin: 0;
+      flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Cupons Disponíveis em Verde */
+    .inf-coupons-count {
+      font-size: 13px;
+      font-weight: 700;
+      color: #00b046;
+      margin-top: 4px;
+    }
+
+    /* Botão Preto de Perfil */
+    .inf-actions-area {
+      width: 100%;
+    }
+
+    .btn-access-profile {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: #111827;
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px;
+      border-radius: var(--border-radius-sm);
+      text-decoration: none;
+      transition: background-color var(--transition-fast);
+      border: none;
+    }
+
+    .btn-access-profile:hover {
+      background-color: #1F2937;
+    }
+
+    /* Badge Fino de Alliance na Base */
+    .inf-alliance-badge {
+      background-color: #EEFBCB;
+      color: var(--color-black);
+      border: 1.5px solid #C5E937;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: var(--border-radius-pill);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .inf-alliance-badge .stars {
+      color: var(--color-green-cta);
+      font-size: 11px;
+    }
+
+    /* Mensagem Sem Resultados */
+    .hub-no-results-msg {
+      text-align: center;
+      padding: 64px 24px;
+      background-color: #FAFBFD;
+      border: 2px dashed #E5E7EB;
+      border-radius: var(--border-radius-lg);
+      margin: 24px 0;
+      grid-column: 1 / -1;
+    }
+
+    .hub-no-results-msg h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--color-black);
+    }
+
+    .hub-no-results-msg p {
+      font-size: 15px;
+      color: var(--color-gray-600);
+    }
+
+    .hidden-hub-msg {
+      display: none !important;
+    }
+
+    /* Paginação */
+    .hub-pagination-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 56px;
+    }
+
+    .btn-load-more {
+      background-color: var(--color-white);
+      color: var(--color-black);
+      border: 1.5px solid var(--color-black);
+      border-radius: var(--border-radius-pill);
+      padding: 12px 36px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-load-more:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+
+    /* Rodapé do Site conforme o screenshot */
+    .site-footer-hub {
+      background-color: var(--color-white);
+      border-top: 1.5px solid #E5E7EB;
+      padding: 32px 0;
+      font-size: 13px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      color: var(--color-gray-600);
+      margin: 0;
+    }
+
+    .footer-nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav-link {
+      color: var(--color-gray-600);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-nav-link:hover {
+      color: var(--color-black);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho idêntico ao de parceiros.html (site-header site-header--transparent) -->
+  <header class="site-header site-header--transparent">
+    <div class="container">
+      <a href="index.html" class="logo-container" id="header-logo-link">
+        <img src="imagens/logo-perguntaprozeca.png" alt="Pergunta pro Zeca" class="logo-img">
+      </a>
+      <div class="header-right-area" style="display: flex; align-items: center; gap: 20px;">
+        <nav class="header-nav">
+          <a href="clube-vantagens.html" class="header-nav-link">Clube de Vantagens</a>
+          <a href="parceiros.html" class="header-nav-link">Parceiros</a>
+          <a href="influenciadores.html" class="header-nav-link">Influenciadores</a>
+          <a href="hub-influenciadores.html" class="header-nav-link active">Hub</a>
+        </nav>
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
+          <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
+          Pergunte no Whatsapp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section com Fundo Verde Piscina e Imagem infuencers-001.png -->
+  <section class="section-hero">
+    <div class="hero-container">
+      <div class="hero-content-left">
+        <span class="hero-eyebrow">Influenciadores Parceiros</span>
+        <h1 class="hero-title">Hub de Influenciadores</h1>
+        <p class="hero-subtitle">Conheça os influenciadores parceiros do Zeca e veja os cupons exclusivos que eles têm para você.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-pill-black">Cadastre grátis</a>
+          <a href="#" class="btn-pill-outline">Vantagens de verdade</a>
+        </div>
+      </div>
+      <div class="hero-image-right">
+        <img src="imagens/infuencers-001.png" alt="Influenciadores Zeca" class="hero-img-illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de Filtros (ux layout de filter-select da page clube-vantagens) -->
+  <section class="filters-section">
+    <div class="filters-bar">
+      
+      <!-- 1. Influenciador -->
+      <select class="filter-select" id="filter-influencer" aria-label="Filtrar por Influenciador">
+        <option value="all">Influenciador</option>
+        <option value="twocanada">Two Canada</option>
+        <option value="irmaoprezia">irmão Prezia</option>
+        <option value="diegoangel">Diego Angel</option>
+        <option value="thuanyamaro">Thuany Amaro</option>
+        <option value="jazzbond">Jazz Bond</option>
+        <option value="alessiahabibi">Alessia Habibi</option>
+        <option value="emilyhill">Emily Hill</option>
+        <option value="melissabrown">Melissa Brown</option>
+      </select>
+      
+      <!-- 2. Plataforma -->
+      <select class="filter-select" id="filter-platform" aria-label="Filtrar por Plataforma">
+        <option value="all">Plataforma</option>
+        <option value="Instagram">Instagram</option>
+        <option value="Youtube">Youtube</option>
+        <option value="Tik Tok">Tik Tok</option>
+      </select>
+      
+      <!-- 3. Seguidores -->
+      <select class="filter-select" id="filter-followers" aria-label="Filtrar por Seguidores">
+        <option value="all">Seguidores</option>
+        <option value="1k">Ate 1k</option>
+        <option value="5k">Até 5k</option>
+        <option value="10k">Até 10k</option>
+        <option value="50k">Até 50k</option>
+        <option value="100k">Até 100k</option>
+        <option value="500k">Até 500k</option>
+        <option value="1M">Mais de 1M</option>
+      </select>
+      
+      <!-- 4. País -->
+      <select class="filter-select" id="filter-country" aria-label="Filtrar por País">
+        <option value="all">País</option>
+        <option value="Canada">Canadá</option>
+        <option value="EUA">EUA</option>
+      </select>
+      
+      <!-- 5. Cidade -->
+      <select class="filter-select" id="filter-city" aria-label="Filtrar por Cidade" disabled>
+        <option value="all">Cidade</option>
+      </select>
+      
+      <!-- Botão Buscar -->
+      <button class="btn-search-black" id="btn-hub-buscar" type="button">Buscar</button>
+      
+      <!-- Link Limpar -->
+      <a href="#" class="link-clear-green" id="btn-hub-limpar">Limpar</a>
+      
+    </div>
+  </section>
+
+  <!-- Estrutura Principal de Grid -->
+  <main class="hub-layout" id="hub-content-section">
+    
+    <!-- Grid com Classe de Componente grid-3 -->
+    <section class="hub-grid-container">
+      <div class="grid-3" id="hub-grid">
+        <!-- Injetado dinamicamente via JS (js/hub.js) -->
+      </div>
+      
+      <!-- Mensagem Sem Resultados -->
+      <div id="hub-no-results" class="hub-no-results-msg hidden-hub-msg">
+        <h3>Nenhum influenciador encontrado</h3>
+        <p>Tente ajustar os filtros selecionados para encontrar outros parceiros.</p>
+      </div>
+    </section>
+
+    <!-- Paginação -->
+    <section class="hub-pagination-container" id="hub-pagination">
+      <!-- Injetado dinamicamente via JS -->
+    </section>
+
+  </main>
+
+  <!-- Rodapé Tradicional do Site conforme screenshot -->
+  <footer class="site-footer-hub">
+    <div class="footer-container">
+      <p class="footer-copy">© 2026 Pergunta pro Zeca.</p>
+      <div class="footer-nav-links">
+        <a href="clube-vantagens.html" class="footer-nav-link">Clube de Vantagens</a>
+        <a href="parceiros.html" class="footer-nav-link">Parceiros</a>
+        <a href="influenciadores.html" class="footer-nav-link">Influenciadores</a>
+        <a href="hub-influenciadores.html" class="footer-nav-link" style="font-weight: 700; color: var(--color-black);">Hub</a>
+        <a href="#" class="footer-nav-link">Media Kit</a>
+        <a href="termos.html" class="footer-nav-link">Termos</a>
+        <a href="privacidade.html" class="footer-nav-link">Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/hub.js"></script>
+</body>
+</html>

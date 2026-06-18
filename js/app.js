@@ -202,12 +202,110 @@ document.addEventListener("DOMContentLoaded", () => {
     initLandingPage();
   } else if (path.includes("clube-vantagens")) {
     initCatalogPage();
+  } else if (path.includes("influenciador-perfil")) {
+    initInfluencerPage();
   }
 });
 
 // Inicializadores de Eventos Globais
 function initGlobalEvents() {
-  // Inicialização global se necessário
+  const loginModal = document.getElementById("login-modal");
+  const cupomModal = document.getElementById("cupom-modal");
+  const loginForm = document.getElementById("login-form");
+  
+  if (loginModal || cupomModal) {
+    // Fechamento de Modais
+    document.getElementById("btn-close-login")?.addEventListener("click", () => closeModal(loginModal));
+    document.getElementById("btn-close-cupom")?.addEventListener("click", () => closeModal(cupomModal));
+    
+    window.addEventListener("click", (e) => {
+      if (e.target === loginModal) closeModal(loginModal);
+      if (e.target === cupomModal) closeModal(cupomModal);
+    });
+    
+    // Toggle Mostrar/Ocultar Senha no Login
+    document.getElementById("btn-toggle-pwd")?.addEventListener("click", function() {
+      const input = document.getElementById("login-password");
+      if (input && input.type === "password") {
+        input.type = "text";
+        this.textContent = "🙈";
+      } else if (input) {
+        input.type = "password";
+        this.textContent = "👁";
+      }
+    });
+    
+    // Submissão do Formulário de Login
+    if (loginForm) {
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("login-email").value;
+        
+        let nomeCliente = "CHARLES BAMAM MEDEIROS DE SOUZA";
+        if (email.toLowerCase().includes("charles")) {
+          nomeCliente = "CHARLES BAMAM MEDEIROS DE SOUZA";
+        } else {
+          const userPart = email.split("@")[0];
+          nomeCliente = userPart.charAt(0).toUpperCase() + userPart.slice(1) + " (Membro)";
+        }
+        
+        localStorage.setItem("zeca_cliente_nome", nomeCliente);
+        checkUserLoginStatus();
+        closeModal(loginModal);
+        
+        const headerJoinBtn = document.getElementById("btn-header-join");
+        if (headerJoinBtn) {
+          headerJoinBtn.textContent = "Quero participar";
+        }
+        
+        if (AppState.selectedCouponId !== null) {
+          openCupomModal(AppState.selectedCouponId);
+        }
+      });
+    }
+
+    // Acordeão do Cupom
+    const accordionTrigger = document.getElementById("accordion-trigger");
+    const accordionContent = document.getElementById("accordion-content");
+    if (accordionTrigger && accordionContent) {
+      accordionTrigger.addEventListener("click", () => {
+        accordionTrigger.classList.toggle("active");
+        if (accordionTrigger.classList.contains("active")) {
+          accordionContent.style.display = "flex";
+        } else {
+          accordionContent.style.display = "none";
+        }
+      });
+    }
+    
+    // Copiar link de indicação
+    const btnCopy = document.getElementById("btn-copy-link-action");
+    const btnCopyAnchor = document.getElementById("btn-copy-link-anchor");
+    const copyInput = document.getElementById("copy-link-input-field");
+    
+    const handleCopyLink = (e) => {
+      if (e) e.preventDefault();
+      if (copyInput) {
+        copyInput.select();
+        copyInput.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyInput.value)
+          .then(() => {
+            alert("Link de indicação copiado com sucesso!");
+          })
+          .catch(err => {
+            console.error("Falha ao copiar link: ", err);
+          });
+      }
+    };
+    
+    btnCopy?.addEventListener("click", handleCopyLink);
+    btnCopyAnchor?.addEventListener("click", handleCopyLink);
+    
+    // Salvar Print
+    document.getElementById("btn-salvar-print")?.addEventListener("click", () => {
+      window.print();
+    });
+  }
 }
 
 // Verifica e exibe estado de login no header
@@ -411,100 +509,6 @@ function initCatalogPage() {
   // Render inicial
   renderCoupons(CUPONS_DATA);
   
-  // Fechamento de Modais
-  document.getElementById("btn-close-login")?.addEventListener("click", () => closeModal(loginModal));
-  document.getElementById("btn-close-cupom")?.addEventListener("click", () => closeModal(cupomModal));
-  
-  window.addEventListener("click", (e) => {
-    if (e.target === loginModal) closeModal(loginModal);
-    if (e.target === cupomModal) closeModal(cupomModal);
-  });
-  
-  // Toggle Mostrar/Ocultar Senha no Login
-  document.getElementById("btn-toggle-pwd")?.addEventListener("click", function() {
-    const input = document.getElementById("login-password");
-    if (input.type === "password") {
-      input.type = "text";
-      this.textContent = "🙈";
-    } else {
-      input.type = "password";
-      this.textContent = "👁";
-    }
-  });
-  
-  // Submissão do Formulário de Login
-  if (loginForm) {
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const email = document.getElementById("login-email").value;
-      
-      // Simula login de sucesso usando o e-mail para deduzir um nome
-      let nomeCliente = "CHARLES BAMAM MEDEIROS DE SOUZA";
-      if (email.toLowerCase().includes("charles")) {
-        nomeCliente = "CHARLES BAMAM MEDEIROS DE SOUZA";
-      } else {
-        // Pega a primeira parte do email
-        const userPart = email.split("@")[0];
-        nomeCliente = userPart.charAt(0).toUpperCase() + userPart.slice(1) + " (Membro)";
-      }
-      
-      localStorage.setItem("zeca_cliente_nome", nomeCliente);
-      checkUserLoginStatus();
-      closeModal(loginModal);
-      
-      if (headerJoinBtn) {
-        headerJoinBtn.textContent = "Quero participar";
-      }
-      
-      // Se clicou em pegar cupom antes do login, abre o cupom agora
-      if (AppState.selectedCouponId !== null) {
-        openCupomModal(AppState.selectedCouponId);
-      }
-    });
-  }
-  
-  // Acordeão do Cupom
-  const accordionTrigger = document.getElementById("accordion-trigger");
-  const accordionContent = document.getElementById("accordion-content");
-  if (accordionTrigger && accordionContent) {
-    accordionTrigger.addEventListener("click", () => {
-      accordionTrigger.classList.toggle("active");
-      if (accordionTrigger.classList.contains("active")) {
-        accordionContent.style.display = "flex";
-      } else {
-        accordionContent.style.display = "none";
-      }
-    });
-  }
-  
-  // Copiar link de indicação
-  const btnCopy = document.getElementById("btn-copy-link-action");
-  const btnCopyAnchor = document.getElementById("btn-copy-link-anchor");
-  const copyInput = document.getElementById("copy-link-input-field");
-  
-  const handleCopyLink = (e) => {
-    if (e) e.preventDefault();
-    if (copyInput) {
-      copyInput.select();
-      copyInput.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(copyInput.value)
-        .then(() => {
-          alert("Link de indicação copiado com sucesso!");
-        })
-        .catch(err => {
-          console.error("Falha ao copiar link: ", err);
-        });
-    }
-  };
-  
-  btnCopy?.addEventListener("click", handleCopyLink);
-  btnCopyAnchor?.addEventListener("click", handleCopyLink);
-  
-  // Salvar Print
-  document.getElementById("btn-salvar-print")?.addEventListener("click", () => {
-    window.print();
-  });
-  
   // Botão do Banner Promocional Principal
   document.getElementById("btn-featured-cupom")?.addEventListener("click", () => {
     // Abre o cupom do Two Canada Experience (ID 6 na base de dados)
@@ -674,3 +678,132 @@ function closeModal(modal) {
   modal.classList.remove("active");
   document.body.style.overflow = ""; // destrava rolagem
 }
+
+window.openModal = openModal;
+window.closeModal = closeModal;
+
+let influencerCouponsLoaded = false;
+
+window.loadMoreCoupons = function() {
+  influencerCouponsLoaded = true;
+  const path = window.location.pathname.toLowerCase();
+  if (path.includes("influenciador-perfil")) {
+    const coupons = document.querySelectorAll(".horizontal-coupon-card");
+    coupons.forEach(coupon => {
+      coupon.classList.remove("coupon-hidden");
+    });
+    const btnLoadMore = document.getElementById("btn-load-more");
+    if (btnLoadMore) {
+      btnLoadMore.style.display = "none";
+    }
+  } else {
+    const hiddenCoupons = document.querySelectorAll(".coupon-hidden");
+    hiddenCoupons.forEach(coupon => {
+      coupon.classList.remove("coupon-hidden");
+    });
+    const btnLoadMore = document.getElementById("btn-load-more");
+    if (btnLoadMore) {
+      btnLoadMore.style.display = "none";
+    }
+  }
+};
+
+function initInfluencerPage() {
+  const filterCategory = document.getElementById("filter-category");
+  const filterCountry = document.getElementById("filter-country");
+  const filterCity = document.getElementById("filter-city");
+  
+  if (!filterCategory || !filterCountry || !filterCity) return;
+  
+  // Evento ao alterar país
+  filterCountry.addEventListener("change", () => {
+    const selectedCountry = filterCountry.value;
+    
+    // Reseta cidade
+    filterCity.innerHTML = '<option value="all">Todas as Cidades</option>';
+    
+    if (selectedCountry === "all") {
+      filterCity.disabled = true;
+    } else {
+      filterCity.disabled = false;
+      const cidades = CIDADES_POR_PAIS[selectedCountry] || [];
+      cidades.forEach(cidade => {
+        const option = document.createElement("option");
+        option.value = cidade;
+        option.textContent = cidade;
+        filterCity.appendChild(option);
+      });
+    }
+    
+    filterInfluencerCoupons();
+  });
+  
+  // Eventos ao alterar categoria ou cidade
+  filterCategory.addEventListener("change", filterInfluencerCoupons);
+  filterCity.addEventListener("change", filterInfluencerCoupons);
+}
+
+function filterInfluencerCoupons() {
+  const categoryVal = document.getElementById("filter-category").value;
+  const countryVal = document.getElementById("filter-country").value;
+  const cityVal = document.getElementById("filter-city").value;
+  const btnLoadMore = document.getElementById("btn-load-more");
+  const noMsg = document.getElementById("no-coupons-message");
+  
+  const hasActiveFilter = (categoryVal !== "all" || countryVal !== "all" || cityVal !== "all");
+  const coupons = document.querySelectorAll(".horizontal-coupon-card");
+  
+  if (!hasActiveFilter) {
+    // Caso em que nenhum filtro está ativo (Resete ou Estado Inicial)
+    coupons.forEach((coupon, index) => {
+      if (index < 3 || influencerCouponsLoaded) {
+        coupon.classList.remove("coupon-hidden");
+      } else {
+        coupon.classList.add("coupon-hidden");
+      }
+    });
+    
+    if (btnLoadMore) {
+      btnLoadMore.style.display = influencerCouponsLoaded ? "none" : "inline-block";
+    }
+    if (noMsg) {
+      noMsg.classList.add("coupon-hidden");
+    }
+    return;
+  }
+  
+  // Caso em que há pelo menos um filtro ativo
+  if (btnLoadMore) {
+    btnLoadMore.style.display = "none";
+  }
+  
+  let visibleCount = 0;
+  
+  coupons.forEach(coupon => {
+    const cardCategory = coupon.getAttribute("data-categoria");
+    const cardCountry = coupon.getAttribute("data-pais");
+    const cardCity = coupon.getAttribute("data-cidade");
+    
+    const matchCategory = (categoryVal === "all" || cardCategory === categoryVal);
+    const matchCountry = (countryVal === "all" || cardCountry === countryVal);
+    const matchCity = (cityVal === "all" || cardCity === cityVal);
+    
+    if (matchCategory && matchCountry && matchCity) {
+      coupon.classList.remove("coupon-hidden");
+      visibleCount++;
+    } else {
+      coupon.classList.add("coupon-hidden");
+    }
+  });
+  
+  if (noMsg) {
+    if (visibleCount === 0) {
+      noMsg.classList.remove("coupon-hidden");
+    } else {
+      noMsg.classList.add("coupon-hidden");
+    }
+  }
+}
+
+
+

@@ -965,6 +965,8 @@
   color: var(--color-whatsapp, #00b046);
 }
 
+
+
 /* Responsividade do menu */
 @media (max-width: 991px) {
   .header-nav {

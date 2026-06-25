@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuncie no Zeca - Para Empresas e Profissionais</title>
+  <meta name="description" content="Sua empresa recomendada pelo Zeca para brasileiros no Canadá e nos EUA. Faça parte da nossa curadoria de serviços confiáveis.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="shortcut icon" href="icones/zecafavicon.ico" type="image/x-icon">
+  
+  <style>
+    /* Estilos específicos da página de anúncio */
+    :root {
+      --color-brand-green-gradient: linear-gradient(135deg, #1E8C45 0%, #00C24B 100%);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    section:nth-of-type(even) {
+      background-color: var(--color-bg-light);
+    }
+
+    /* Hero Section */
+    .b2b-hero {
+      text-align: center;
+      padding: 100px 0 60px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: radial-gradient(circle at top, rgba(0, 194, 75, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    .b2b-hero .badge {
+      background-color: rgba(0, 194, 75, 0.1);
+      color: #1E8C45;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: var(--border-radius-pill);
+      margin-bottom: 24px;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .b2b-hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 800px;
+      color: var(--color-black);
+      letter-spacing: -0.5px;
+    }
+
+    .b2b-hero h1 span {
+      background: var(--color-brand-green-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .b2b-hero p.hero-subtitle {
+      font-size: 18px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      max-width: 720px;
+      margin-bottom: 36px;
+    }
+
+    .b2b-hero .ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-b2b-primary {
+      background: var(--color-brand-green-gradient);
+      color: var(--color-white);
+      padding: 14px 28px;
+      border-radius: var(--border-radius-lg);
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      box-shadow: 0 4px 14px rgba(0, 194, 75, 0.3);
+    }
+
+    .btn-b2b-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 194, 75, 0.4);
+    }
+
+    .btn-b2b-secondary {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      padding: 14px 28px;
+      border-radius: var(--border-radius-lg);
+      font-weight: 700;
+      font-size: 15px;
+      transition: background-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .btn-b2b-secondary:hover {
+      background-color: #222;
+      transform: translateY(-2px);
+    }
+
+    /* Seção de Título de Bloco */
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-header p {
+      font-size: 17px;
+      color: var(--color-text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Seção de Problema */
+    .problem-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .problem-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ff4a5a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .problem-desc {
+      font-size: 16px;
+      color: var(--color-text-main);
+      line-height: 1.6;
+    }
+
+    /* Como o Zeca Ajuda */
+    .how-zeca-works-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .how-zeca-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1E8C45;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .how-zeca-desc {
+      font-size: 16px;
+      color: var(--color-text-main);
+      line-height: 1.6;
+    }
+
+    /* Benefícios */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .benefit-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .benefit-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .benefit-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-black);
+    }
+
+    .benefit-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* Para quem é */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .category-item {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--color-black);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-fast);
+    }
+
+    .category-item:hover {
+      border-color: #00C24B;
+      color: #1E8C45;
+      background-color: rgba(0, 194, 75, 0.02);
+    }
+
+    /* O que sua empresa pode ter */
+    .features-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .features-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .feature-icon {
+      color: #00C24B;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .feature-text h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-black);
+      margin-bottom: 4px;
+    }
+
+    .feature-text p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+
+    /* Como funciona */
+    .steps-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .step-card {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 32px;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .step-number {
+      background: var(--color-brand-green-gradient);
+      color: var(--color-white);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-black);
+      margin-bottom: 6px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* Planos */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .plan-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-fast);
+    }
+
+    .plan-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .plan-card.highlight {
+      border: 2px solid #00C24B;
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 32px;
+      background: var(--color-brand-green-gradient);
+      color: var(--color-white);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--border-radius-pill);
+      text-transform: uppercase;
+    }
+
+    .plan-header h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: 12px;
+    }
+
+    .plan-header p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .plan-features {
+      margin-bottom: 32px;
+    }
+
+    .plan-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--color-text-main);
+    }
+
+    .plan-feature-check {
+      color: #00C24B;
+      font-weight: bold;
+    }
+
+    .btn-plan {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      border-radius: var(--border-radius-lg);
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--color-border);
+      background-color: var(--color-white);
+      transition: all var(--transition-fast);
+    }
+
+    .btn-plan:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      border-color: var(--color-black);
+    }
+
+    .plan-card.highlight .btn-plan {
+      background: var(--color-brand-green-gradient);
+      color: var(--color-white);
+      border: none;
+    }
+
+    .plan-card.highlight .btn-plan:hover {
+      opacity: 0.9;
+    }
+
+    /* FAQ */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-item details {
+      width: 100%;
+    }
+
+    .faq-item summary {
+      padding: 20px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-black);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      outline: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--color-text-muted);
+    }
+
+    .faq-item details[open] summary::after {
+      content: '−';
+    }
+
+    .faq-content {
+      padding: 0 24px 20px 24px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* Formulário */
+    .form-section {
+      background-color: var(--color-bg-light);
+    }
+
+    .form-container {
+      max-width: 640px;
+      margin: 0 auto;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-black);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      background-color: var(--color-white);
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+
+    .form-control:focus {
+      border-color: #00C24B;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 500px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--color-brand-green-gradient);
+      color: var(--color-white);
+      padding: 14px;
+      border-radius: var(--border-radius-lg);
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0, 194, 75, 0.2);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 194, 75, 0.3);
+    }
+  </style>
+</head>
+<body class="site-header--gradient">
+
+  <!-- Cabeçalho Simplificado -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="imagens/logo_zeca_h.png" alt="Logo Zeca" class="logo-img" onerror="this.style.display='none'">
+          <div class="logo-text" id="logoTextFallback">
+            <span class="sub">CONCIERGE DIGITAL</span>
+            <span class="main">Zeca</span>
+          </div>
+        </a>
+      </div>
+      <div>
+        <a href="#form-lead" class="btn btn-black" style="font-size: 13px; padding: 10px 20px;">Quero anunciar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="b2b-hero">
+      <div class="container">
+        <span class="badge">Para Empresas e Profissionais</span>
+        <h1>Sua empresa recomendada pelo <span>Zeca</span> para brasileiros no Canadá e nos EUA</h1>
+        <p class="hero-subtitle">O Zeca é um concierge digital no WhatsApp que ajuda brasileiros a encontrar serviços, profissionais, cupons e soluções confiáveis. Se sua empresa atende esse público, ela pode fazer parte da nossa curadoria.</p>
+        <div class="ctas">
+          <a href="#form-lead" class="btn-b2b-primary">Quero anunciar no Zeca</a>
+          <a href="#como-funciona" class="btn-b2b-secondary">Entender como funciona</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Seção de Problema -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>O desafio do público brasileiro no exterior</h2>
+          <p>Encontrar indicações confiáveis fora do Brasil não é uma tarefa simples.</p>
+        </div>
+        <div class="problem-box">
+          <div class="problem-title">
+            <span>⚠️</span> O problema das indicações soltas
+          </div>
+          <p class="problem-desc">
+            Brasileiros que vivem no Canadá e nos EUA precisam tomar decisões cruciais sobre moradia, saúde, imigração, educação, serviços e compras. No entanto, hoje eles dependem de grupos soltos em redes sociais, indicações perdidas ou pesquisas demoradas e inseguras no Google, sem saber realmente em quem podem confiar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Seção Como o Zeca Ajuda -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Como o Zeca resolve isso e ajuda sua empresa</h2>
+          <p>Conectamos seu negócio a quem realmente está buscando seu serviço.</p>
+        </div>
+        <div class="how-zeca-works-box">
+          <div class="how-zeca-title">
+            <span>💬</span> Recomendação Contextual e Confiável
+          </div>
+          <p class="how-zeca-desc">
+            O Zeca conversa diretamente com o usuário pelo WhatsApp. Ele entende a necessidade do brasileiro no momento exato em que ela surge e apresenta recomendações úteis e validadas de empresas e profissionais da nossa curadoria. Sua empresa é sugerida com contexto e alta relevância, exatamente quando o cliente mais precisa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Seção de Benefícios em Cards -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Benefícios de ser parceiro do Zeca</h2>
+          <p>Oportunidades de crescimento e conexão direta dentro de um ecossistema seguro.</p>
+        </div>
+        <div class="benefits-grid">
+          <!-- Card 1 -->
+          <div class="benefit-card">
+            <div class="benefit-icon">📈</div>
+            <h3>Mais visibilidade qualificada</h3>
+            <p>Seja visto por brasileiros que já estão ativamente procurando o serviço ou a categoria em que sua empresa atua.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="benefit-card">
+            <div class="benefit-icon">🎯</div>
+            <h3>Recomendação com contexto</h3>
+            <p>Em vez de banners genéricos, o Zeca recomenda sua empresa diretamente no fluxo de conversa e suporte ao usuário.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="benefit-card">
+            <div class="benefit-icon">🏷️</div>
+            <h3>Cupons e ofertas</h3>
+            <p>Cadastre cupons exclusivos para atrair mais clientes e incentivar a conversão de forma direta.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <h3>Ecossistema de confiança</h3>
+            <p>Sua marca associada a uma curadoria séria que preza pela entrega e qualidade de serviços na comunidade brasileira.</p>
+          </div>
+          <!-- Card 5 -->
+          <div class="benefit-card">
+            <div class="benefit-icon">📣</div>
+            <h3>Campanhas e embaixadores</h3>
+            <p>Acesso a oportunidades de divulgação combinada com nossa rede de criadores de conteúdo e embaixadores parceiros.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Seção Para Quem É -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Categorias recomendadas pelo Zeca</h2>
+          <p>Profissionais e empresas de diversos segmentos que atendem a comunidade brasileira.</p>
+        </div>
+        <div class="categories-grid">
+          <div class="category-item">✈️ Imigração</div>
+          <div class="category-item">🏠 Moradia</div>
+          <div class="category-item">🩺 Saúde</div>
+          <div class="category-item">🎓 Educação</div>
+          <div class="category-item">📊 Contabilidade</div>
+          <div class="category-item">🛡️ Seguros</div>
+          <div class="category-item">🍔 Restaurantes</div>
+          <div class="category-item">📍 Serviços Locais</div>
+          <div class="category-item">🗺️ Turismo</div>
+          <div class="category-item">💼 Consultorias</div>
+          <div class="category-item">🧀 Produtos Brasileiros</div>
+          <div class="category-item">🎉 Eventos</div>
+          <div class="category-item">💳 Serviços Financeiros</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Seção O que sua empresa pode ter -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>O que sua empresa pode ter no ecossistema</h2>
+          <p>Recursos e ferramentas para destacar seu negócio nas respostas do Zeca.</p>
+        </div>
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Perfil no ecossistema do Zeca</h4>
+              <p>Uma página de perfil dedicada ou presença no ecossistema consultado pelo concierge.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Exibição em categorias relevantes</h4>
+              <p>Sua empresa mapeada nas tags e buscas do segmento correspondente.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Recomendação no fluxo do concierge</h4>
+              <p>Respostas diretas no WhatsApp indicando seu serviço para o usuário interessado.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Cadastro de cupons e benefícios</h4>
+              <p>Espaço para divulgar vouchers, descontos e benefícios exclusivos aos usuários.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Botão de contato direto</h4>
+              <p>Links diretos que direcionam o cliente para o seu WhatsApp comercial, site ou Instagram.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Destaque em campanhas</h4>
+              <p>Participação opcional em promoções de datas comemorativas e informativos específicos.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <h4>Métricas e relatórios</h4>
+              <p>Possibilidade futura de acompanhar dados de cliques e volume de recomendações efetuadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Seção Como funciona -->
+    <section id="como-funciona">
+      <div class="container">
+        <div class="section-header">
+          <h2>Como funciona a curadoria</h2>
+          <p>Passos simples para sua empresa começar a ser recomendada pelo Zeca.</p>
+        </div>
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Envio dos dados</h3>
+              <p>Você preenche o formulário ao final desta página com as informações da sua empresa ou serviço.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Avaliação de adequação</h3>
+              <p>A equipe do Zeca analisa se a sua empresa faz sentido e entrega real valor para a comunidade brasileira.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Escolha do plano</h3>
+              <p>Você escolhe o plano de presença ideal para o seu momento ou campanhas com embaixadores.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Ativação do perfil</h3>
+              <p>Nossa equipe cadastra sua empresa e suas ofertas no ecossistema e base de conhecimento do Zeca.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>Recomendações ativas</h3>
+              <p>O Zeca passa a recomendar e guiar usuários em direção ao seu serviço no fluxo das conversas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Seção de Planos -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Opções de Presença no Zeca</h2>
+          <p>Escolha o nível de visibilidade e envolvimento da sua empresa com a nossa comunidade.</p>
+        </div>
+        <div class="plans-grid">
+          <!-- Plano 1 -->
+          <div class="plan-card">
+            <div class="plan-header">
+              <h3>Presença Local</h3>
+              <p>Ideal para profissionais liberais ou negócios locais que querem começar a ser recomendados na sua região.</p>
+            </div>
+            <div class="plan-features">
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Presença na base do Zeca</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Cadastro de 1 categoria principal</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Link direto de contato</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Suporte via e-mail</div>
+            </div>
+            <a href="#form-lead" class="btn-plan">Solicitar proposta</a>
+          </div>
+          <!-- Plano 2 -->
+          <div class="plan-card highlight">
+            <div class="plan-badge">Mais Recomendado</div>
+            <div class="plan-header">
+              <h3>Destaque com Benefícios</h3>
+              <p>Para empresas que buscam maior conversão oferecendo vantagens exclusivas aos usuários do Zeca.</p>
+            </div>
+            <div class="plan-features">
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Todos os benefícios da Presença Local</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Destaque nas recomendações da categoria</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Cadastro de cupons de descontos ou benefícios</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Suporte prioritário</div>
+            </div>
+            <a href="#form-lead" class="btn-plan">Solicitar proposta</a>
+          </div>
+          <!-- Plano 3 -->
+          <div class="plan-card">
+            <div class="plan-header">
+              <h3>Campanhas e Embaixadores</h3>
+              <p>Para marcas que buscam escala através de campanhas coordenadas com nossos influenciadores e embaixadores.</p>
+            </div>
+            <div class="plan-features">
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Todos os benefícios de Destaque</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Acesso ao portfólio de embaixadores do Zeca</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Ações conjuntas de divulgação</div>
+              <div class="plan-feature-item"><span class="plan-feature-check">✓</span> Relatório de desempenho</div>
+            </div>
+            <a href="#form-lead" class="btn-plan">Solicitar proposta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Perguntas frequentes</h2>
+          <p>Tire suas principais dúvidas sobre como funciona a parceria.</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <details>
+              <summary>Minha empresa aparece automaticamente?</summary>
+              <div class="faq-content">
+                Não. Apenas empresas e profissionais validados e aprovados por nossa equipe de curadoria entram na base de conhecimento do Zeca. Isso garante um ecossistema seguro e de alta qualidade para os brasileiros no exterior.
+              </div>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Preciso oferecer cupom?</summary>
+              <div class="faq-content">
+                Não é obrigatório, mas oferecer um cupom ou benefício exclusivo aumenta significativamente o interesse e a conversão dos usuários que recebem a recomendação do Zeca.
+              </div>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>O Zeca é um diretório de empresas?</summary>
+              <div class="faq-content">
+                Não, o Zeca é um concierge conversacional baseado em inteligência artificial. Ele conversa de forma fluida no WhatsApp com o usuário e entrega a resposta contextualizada, indicando os parceiros no momento ideal em que a dúvida ou necessidade é apresentada.
+              </div>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Posso anunciar se atendo brasileiros fora do Canadá e dos EUA?</summary>
+              <div class="faq-content">
+                Atualmente nosso foco e maior base de usuários ativos estão concentrados no Canadá e nos EUA. Se sua empresa atende brasileiros nessas regiões (mesmo operando do Brasil ou de forma 100% online), ela pode sim fazer parte.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CTA final + formulário simples -->
+    <section id="form-lead" class="form-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quer que sua empresa seja recomendada pelo Zeca?</h2>
+          <p>Se você atende brasileiros no Canadá ou nos EUA, preencha o formulário e vamos avaliar a melhor forma de colocar sua empresa dentro do ecossistema.</p>
+        </div>
+        <div class="form-container">
+          <form action="#" method="POST" onsubmit="alert('Obrigado pelo contato! Nossa equipe entrará em contato em breve.'); return false;">
+            <div class="form-group">
+              <label for="name">Nome completo *</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Nome da Empresa *</label>
+              <input type="text" id="company" name="company" class="form-control" placeholder="Nome da empresa ou negócio" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="category">Categoria do Serviço *</label>
+                <select id="category" name="category" class="form-control" required>
+                  <option value="">Selecione...</option>
+                  <option value="imigracao">Imigração</option>
+                  <option value="moradia">Moradia</option>
+                  <option value="saude">Saúde</option>
+                  <option value="educacao">Educação</option>
+                  <option value="contabilidade">Contabilidade</option>
+                  <option value="seguros">Seguros</option>
+                  <option value="restaurantes">Restaurantes / Alimentação</option>
+                  <option value="servicos_locais">Serviços locais</option>
+                  <option value="turismo">Turismo</option>
+                  <option value="consultorias">Consultorias</option>
+                  <option value="produtos_br">Produtos brasileiros</option>
+                  <option value="eventos">Comunidades e Eventos</option>
+                  <option value="financeiro">Serviços financeiros</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="location">País/Cidade de atuação *</label>
+                <input type="text" id="location" name="location" class="form-control" placeholder="Ex: Toronto, Canadá" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="whatsapp">WhatsApp *</label>
+                <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ex: +55 (11) 99999-9999" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Ex: contato@empresa.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="website">Site ou Instagram</label>
+              <input type="text" id="website" name="website" class="form-control" placeholder="Ex: www.suaempresa.com.br ou @suaempresa">
+            </div>
+
+            <div class="form-group">
+              <label for="description">Descrição do serviço *</label>
+              <textarea id="description" name="description" class="form-control" rows="4" placeholder="Descreva brevemente o que sua empresa faz e como atende os brasileiros" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="coupon">Deseja oferecer algum cupom ou benefício exclusivo aos usuários? *</label>
+              <select id="coupon" name="coupon" class="form-control" required>
+                <option value="">Selecione...</option>
+                <option value="sim">Sim, gostaria de oferecer</option>
+                <option value="nao">Não tenho interesse no momento</option>
+                <option value="talvez">Gostaria de entender melhor as opções</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Solicitar entrada no Zeca</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Pergunta pro Zeca.</p>
+      <div class="footer-links">
+        <a href="clube-vantagens.html">Clube de Vantagens</a>
+        <a href="embaixadores.html">Embaixadores</a>
+        <a href="parceiros.html">Para empresas</a>
+        <a href="#">Media Kit</a>
+        <a href="termos.html">Termos</a>
+        <a href="privacidade.html">Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

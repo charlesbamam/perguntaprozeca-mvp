@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pergunta pro Zeca - Seu concierge digital para brasileiros no exterior</title>
-  <meta name="description" content="Tire suas dúvidas sobre moradia, emprego, vistos, saúde e serviços no exterior com o Zeca, seu concierge digital inteligente.">
+  <title>Pergunta Pro Zeca | Recomendações confiáveis para brasileiros no exterior</title>
+  <meta name="description" content="Pergunte ao Zeca e encontre serviços, empresas, cupons e orientações para brasileiros no Canadá, nos EUA e em outros países, direto pelo WhatsApp.">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/components.css">
   <link rel="shortcut icon" href="icones/zecafavicon.ico" type="image/x-icon">
@@ -19,42 +19,100 @@
     }
     
     .home-hero h1 {
-      font-size: 40px;
+      font-size: 44px;
       font-weight: 800;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--color-black);
+      max-width: 800px;
     }
     
-    .home-hero p {
+    .home-hero h1 span {
+      background: linear-gradient(135deg, #1E8C45 0%, #00C24B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .home-hero p.hero-desc {
       color: var(--color-text-muted);
       font-size: 18px;
       margin-bottom: 32px;
-      max-width: 600px;
+      max-width: 720px;
+      line-height: 1.5;
     }
     
-    /* Caixa de Busca */
+    /* CTAs do Hero */
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .btn-hero-primary {
+      background-color: var(--color-whatsapp);
+      color: var(--color-white);
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: background-color var(--transition-fast), transform var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-hero-primary:hover {
+      background-color: var(--color-whatsapp-hover);
+      transform: translateY(-1px);
+    }
+    
+    .btn-hero-secondary {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: background-color var(--transition-fast), transform var(--transition-fast);
+    }
+    
+    .btn-hero-secondary:hover {
+      background-color: #222;
+      transform: translateY(-1px);
+    }
+    
+    /* Caixa de Busca (Menos bordas, mais espaço) */
     .search-box-container {
       width: 100%;
       max-width: 760px;
       position: relative;
       background: var(--color-white);
-      border: 2px solid var(--color-whatsapp);
+      border: 1px solid #e5e7eb;
       border-radius: var(--border-radius-lg);
       padding: 24px;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
       margin-bottom: 24px;
+      transition: all var(--transition-fast);
+    }
+    
+    .search-box-container:focus-within {
+      border-color: var(--color-whatsapp);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.12);
     }
     
     .search-box-container textarea {
       width: 100%;
-      height: 120px;
+      height: 100px;
       border: none;
       resize: none;
       outline: none;
       font-size: 16px;
       color: var(--color-text-main);
       background: transparent;
-      padding-bottom: 40px;
+      padding-bottom: 30px;
     }
     
     .search-box-container textarea::placeholder {
@@ -74,6 +132,8 @@
       justify-content: center;
       color: var(--color-white);
       transition: background-color var(--transition-fast);
+      border: none;
+      cursor: pointer;
     }
     
     .btn-send-search:hover {
@@ -87,93 +147,629 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 56px;
+      margin-bottom: 64px;
     }
     
     .search-tag {
-      background-color: #F3FBE2;
-      color: var(--color-text-main);
-      padding: 10px 20px;
+      background-color: #F8FAFC;
+      color: var(--color-text-muted);
+      border: 1px solid #E2E8F0;
+      padding: 8px 16px;
       border-radius: var(--border-radius-pill);
       font-size: 13px;
       font-weight: 500;
       transition: all var(--transition-fast);
-      border: 1px solid transparent;
     }
     
     .search-tag:hover {
       background-color: #E2F9D3;
       border-color: #C5E937;
+      color: var(--color-black);
       transform: translateY(-1px);
     }
+
+    /* Seções Gerais */
+    .home-section-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-black);
+      text-align: center;
+      margin-bottom: 12px;
+    }
     
-    /* Banner de Vantagens (Amarelo) */
-    .home-banner-club {
-      background-color: var(--color-primary-yellow);
-      border-radius: var(--border-radius-lg);
-      padding: 24px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 760px; /* Largura idêntica à do campo de busca/chat */
+    .home-section-subtitle {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 48px auto;
+      line-height: 1.5;
+    }
+    
+    /* Seção do Ecossistema (3 cards) */
+    .ecosystem-section {
+      padding: 80px 24px;
       width: 100%;
-      margin: 0 auto 40px auto;
-      text-align: left;
-      flex-wrap: wrap;
-      gap: 24px;
-      box-shadow: var(--shadow-sm);
+      background-color: #FFFEE0;
+      border-radius: 32px;
+      margin-bottom: 64px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(0, 0, 0, 0.05);
     }
     
-    .banner-club-left {
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      padding: 0 32px;
+    }
+    
+    .ecosystem-card {
+      background: var(--color-white);
+      padding: 32px 24px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      border: 1px solid #F1F5F9;
       display: flex;
-      align-items: center;
-      gap: 20px;
-      flex: 1;
-      min-width: 280px;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform var(--transition-fast);
     }
     
-    .banner-club-icon {
-      flex: 0 0 15%;
-      max-width: 15%;
+    .ecosystem-card:hover {
+      transform: translateY(-2px);
+    }
+    
+    .ecosystem-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background-color: rgba(30, 140, 69, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
     }
     
-    .banner-club-text h2 {
-      font-size: 22px;
+    .ecosystem-card h3 {
+      font-size: 18px;
       font-weight: 800;
       color: var(--color-black);
-      margin: 0;
-      margin-bottom: 4px;
-      line-height: 1.1;
+      margin-bottom: 12px;
     }
     
-    .banner-club-text p {
+    .ecosystem-card p {
       font-size: 14px;
-      color: #333;
-      font-weight: 500;
-      margin: 0;
-      line-height: 1.3;
+      color: var(--color-text-muted);
+      line-height: 1.5;
     }
     
-    .home-banner-club .btn-black {
-      padding: 14px 28px;
+    /* Seção de Benefícios (Cards Curtos sem bordas rígidas) */
+    .benefits-section {
+      padding: 64px 0;
+      width: 100%;
+      margin-bottom: 64px;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 0 16px;
+    }
+    
+    .benefit-item {
+      padding: 24px;
+      border-radius: 16px;
+      background-color: var(--color-white);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    
+    .benefit-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #E2F9D3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1E8C45;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .benefit-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-black);
+      margin-bottom: 6px;
+    }
+    
+    .benefit-content p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+    
+    /* Seção de Embaixadores na Home (Design Premium) */
+    .home-ambassadors-section {
+      width: 100%;
+      padding: 80px 24px;
+      margin-bottom: 80px;
+      text-align: center;
+    }
+    
+    .ambassadors-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #0D5C2E;
+      background-color: rgba(30, 140, 69, 0.08);
+      padding: 6px 16px;
+      border-radius: var(--border-radius-pill);
+      margin-bottom: 16px;
+    }
+    
+    /* Linha de apoio explicando o ecossistema (Pilares de Valor) */
+    .ambassadors-value-line {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    
+    .value-pill {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0D5C2E;
+      background-color: var(--color-white);
+      padding: 8px 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      border: 1px solid rgba(30, 140, 69, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* Slideshow Estilos */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 32px;
+      padding: 12px 4px;
+    }
+    
+    .ambassadors-track {
+      display: flex;
+      gap: 12px;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      width: max-content;
+    }
+    
+    .ambassador-home-card {
+      width: 270px;
+      background: #feffe9;
+      padding: 32px 24px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      border: 1px solid #F1F5F9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+      position: relative;
+      flex-shrink: 0;
+    }
+    
+    .ambassador-home-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      border-color: rgba(30, 140, 69, 0.15);
+    }
+    
+    /* Controles do Slideshow (Setas Circulares Discretas) */
+    .slideshow-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      margin-top: 16px;
+    }
+    
+    .btn-slideshow-control {
+      background-color: var(--color-white);
+      color: var(--color-black);
+      border: 1px solid #E2E8F0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    
+    .btn-slideshow-control:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      border-color: var(--color-black);
+      transform: scale(1.05);
+    }
+    
+    .btn-slideshow-control:active {
+      transform: scale(0.95);
+    }
+    
+    /* Selo oficial de Embaixador no topo do card */
+    .ambassador-official-badge {
+      position: absolute;
+      top: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #0D5C2E;
+      background-color: #E2F9D3;
+      padding: 4px 12px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+    
+    .avatar-container-home {
+      position: relative;
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #1E8C45, #C5E937, #00C24B);
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .ambassador-home-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--color-white);
+      background-color: #f3f4f6;
+    }
+    
+    .ambassador-home-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: 6px;
+    }
+    
+    .ambassador-home-location {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 600;
+    }
+    
+    .ambassador-home-nicho {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0D5C2E;
+      background-color: #FAFDF6;
+      border: 1px solid rgba(30, 140, 69, 0.2);
+      padding: 4px 12px;
+      border-radius: var(--border-radius-pill);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .ambassador-home-cupons {
+      font-size: 13px;
+      color: #0D5C2E;
+      background-color: #FAFDF6;
+      border: 1px dashed #1E8C45;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .btn-ambassador-profile {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-black);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    
+    .btn-ambassador-profile:hover {
+      color: #1E8C45;
+    }
+    
+    .ambassadors-footer-link {
+      margin-top: 16px;
+    }
+    
+    .ambassadors-footer-link .btn-outline {
+      border: 2px solid var(--color-black);
+      color: var(--color-black);
+      padding: 14px 36px;
+      border-radius: 12px;
+      font-weight: 800;
       font-size: 15px;
+      transition: all var(--transition-fast);
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+    
+    .ambassadors-footer-link .btn-outline:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    
+    /* Seção de Chamadas de Parcerias (Empresas & Embaixadores) */
+    .partnership-ctas-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-bottom: 80px;
+      padding: 0 16px;
+    }
+    
+    .partnership-cta-card {
+      background-color: #EBF5EC; /* Verde suave mais visível */
+      padding: 48px 32px;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    
+    .partnership-cta-card.companies {
+      background-color: #FFF8E7; /* Creme/Amarelo mais visível */
+    }
+    
+    .partnership-cta-card h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    
+    .partnership-cta-card p {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+    
+    .partnership-cta-card .btn {
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+    }
+    
+    
+    .hero-badge-ai {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #0D5C2E;
+      background-color: #E2F9D3; /* Verde marca mais evidente */
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 15px rgba(30, 140, 69, 0.1); /* Sombra leve */
+    }
+    
+    /* Seção de Tecnologia Inteligente */
+    .ai-tech-section {
+      padding: 80px 24px;
+      background-color: #FAFDF6;
+      border-radius: 32px;
+      margin-bottom: 64px;
+      border: 1px solid rgba(30, 140, 69, 0.06);
+      text-align: center;
+    }
+    
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 40px auto 0 auto;
+    }
+    
+    .tech-card {
+      background: var(--color-white);
+      padding: 32px 24px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+      border: 1px solid #F1F5F9;
+      text-align: left;
+      transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .tech-card:hover {
+      border-color: var(--color-whatsapp);
+      transform: translateY(-2px);
+    }
+    
+    .tech-card-icon {
+      font-size: 24px;
+      margin-bottom: 16px;
+      width: 48px;
+      height: 48px;
+      background-color: rgba(30, 140, 69, 0.06);
+      color: #1E8C45;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .tech-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-black);
+    }
+    
+    .tech-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+     
+    /* Seção O que pedir ao Zeca (Exemplos Práticos) */
+    .practical-examples-section {
+      padding: 64px 24px;
+      margin-bottom: 64px;
+      text-align: center;
+    }
+    
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .example-chip {
+      background-color: var(--color-white);
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+    }
+    
+    .example-chip:hover {
+      border-color: var(--color-whatsapp);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.08);
+    }
+    
+    .example-chip-icon {
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(30, 140, 69, 0.06);
+      color: #1E8C45;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .example-chip-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-black);
+    }
+    
+    /* CTA Final do Usuário Comum */
+    .final-user-cta-section {
+      background: linear-gradient(135deg, #1E8C45 0%, #00C24B 100%);
+      border-radius: 24px;
+      padding: 56px 32px;
+      text-align: center;
+      color: var(--color-white);
+      margin-bottom: 64px;
+      margin-top: 16px;
+      box-shadow: 0 12px 30px rgba(30, 140, 69, 0.15);
+    }
+    
+    .final-user-cta-section h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    
+    .final-user-cta-section p {
+      font-size: 17px;
+      opacity: 0.9;
+      margin-bottom: 28px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn-final-cta-whatsapp {
+      background-color: var(--color-white);
+      color: #1E8C45;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .btn-final-cta-whatsapp:hover {
+      background-color: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
     
     @media (max-width: 768px) {
       .home-hero {
-        padding: 48px 0;
+        padding: 48px 16px 32px 16px;
       }
       .home-hero h1 {
         font-size: 32px;
       }
-      .home-hero p {
+      .home-hero p.hero-desc {
         font-size: 16px;
       }
-      .home-banner-club {
-        padding: 24px;
+      .search-box-container {
+        padding: 16px;
+      }
+      .ecosystem-grid {
+        padding: 0 16px;
+      }
+      .ecosystem-section {
+        padding: 48px 0;
       }
     }
   </style>
@@ -189,11 +785,11 @@
       <div class="header-right-area">
         <nav class="header-nav">
           <a href="clube-vantagens.html" class="header-nav-link">Clube de Vantagens</a>
-          <a href="parceiros.html" class="header-nav-link">Parceiros</a>
-          <a href="influenciadores.html" class="header-nav-link">Influenciadores</a>
+          <a href="embaixadores.html" class="header-nav-link">Embaixadores</a>
+          <a href="parceiros.html" class="header-nav-link">Para empresas</a>
           <a href="hub-influenciadores.html" class="header-nav-link">Hub</a>
         </nav>
-        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Zeca!%20Quero%20encontrar%20recomenda%C3%A7%C3%B5es%20confi%C3%A1veis%20para%20brasileiros%20no%20exterior." target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
           <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
           Pergunte no Whatsapp
         </a>
@@ -204,49 +800,305 @@
   <!-- Corpo Principal -->
   <main class="container">
     <section class="home-hero">
-      <h1>O que você procura hoje?</h1>
-      <p>Pergunta pro Zeca, seu concierge digital para brasileiros no exterior.</p>
+      <div class="hero-badge-ai">🤖 Concierge com IA + curadoria humana</div>
+      <h1>Pergunte ao Zeca e encontre <span>recomendações confiáveis</span> no exterior</h1>
+      <p class="hero-desc">Encontre serviços, empresas, cupons e orientações para brasileiros no Canadá, nos EUA e em outros países — direto pelo WhatsApp, com IA, curadoria e recomendações de confiança.</p>
       
-      <!-- Caixa de Busca -->
-      <form action="#" class="search-box-container" id="search-form">
-        <textarea id="search-input" placeholder="Escreva aqui sua Pergunta pro Zeca..." aria-label="Digite sua pergunta"></textarea>
-        <button type="submit" class="btn-send-search" id="btn-submit-search" aria-label="Enviar pergunta">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="22" y1="2" x2="11" y2="13"></line>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-          </svg>
-        </button>
-      </form>
+      <!-- CTAs do Hero -->
+      <div class="hero-ctas">
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Zeca!%20Quero%20encontrar%20recomenda%C3%A7%C3%B5es%20confi%C3%A1veis%20para%20brasileiros%20no%20exterior." target="_blank" class="btn-hero-primary">
+          <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px;">
+          Falar com o Zeca
+        </a>
+        <a href="embaixadores.html" class="btn-hero-secondary">Conhecer embaixadores</a>
+      </div>
+    </section>
+
+    <!-- Bloco Explicando o Ecossistema -->
+    <section class="ecosystem-section">
+      <h2 class="home-section-title">Como funciona o Ecossistema do Zeca</h2>
+      <p class="home-section-subtitle">Conectamos brasileiros no exterior, empresas locais e criadores de conteúdo para que você encontre respostas, benefícios e recomendações de confiança pelo WhatsApp.</p>
       
-      <!-- Tags Sugeridas -->
-      <div class="tags-container">
-        <button class="search-tag" type="button">Apartamento para alugar</button>
-        <button class="search-tag" type="button">Cabeleireiro para crianças</button>
-        <button class="search-tag" type="button">Médico da família</button>
-        <button class="search-tag" type="button">Churrascaria</button>
-        <button class="search-tag" type="button">Petshop</button>
-        <button class="search-tag" type="button">Advogado de Imigração</button>
-        <button class="search-tag" type="button">Professor de Francês</button>
-        <button class="search-tag" type="button">Consultor de Carreira</button>
-        <button class="search-tag" type="button">Playground</button>
-        <button class="search-tag" type="button">Emprego</button>
-        <button class="search-tag" type="button">Comprar um carro</button>
-        <button class="search-tag" type="button">Reformar minha casa</button>
+      <div class="ecosystem-grid">
+        <!-- Card 1: Brasileiros -->
+        <div class="ecosystem-card">
+          <div class="ecosystem-icon">💬</div>
+          <h3>Brasileiros no exterior</h3>
+          <p>Encontram respostas, recomendações, cupons e serviços confiáveis de forma simples, pelo canal onde já conversam: o WhatsApp.</p>
+        </div>
+        
+        <!-- Card 2: Empresas -->
+        <div class="ecosystem-card">
+          <div class="ecosystem-icon">🏢</div>
+          <h3>Empresas parceiras</h3>
+          <p>Ganham visibilidade qualificada para brasileiros que precisam de orientação, serviços e soluções no Canadá, EUA e outros países.</p>
+        </div>
+        
+        <!-- Card 3: Embaixadores -->
+        <div class="ecosystem-card">
+          <div class="ecosystem-icon">✨</div>
+          <h3>Embaixadores</h3>
+          <p>Criadores de conteúdo ajudam o Zeca a ampliar o alcance de boas recomendações para suas comunidades.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Tecnologia Inteligente -->
+    <section class="ai-tech-section">
+      <h2 class="home-section-title">Tecnologia inteligente, recomendações mais humanas</h2>
+      <p class="home-section-subtitle" style="max-width: 800px; margin: 0 auto;">O Zeca usa IA para entender o contexto de cada pergunta, organizar possibilidades e encontrar caminhos úteis. Mas a confiança vem da curadoria, dos parceiros e dos embaixadores que conhecem a realidade dos brasileiros no exterior.</p>
+      
+      <div class="tech-grid">
+        <!-- Card 1 -->
+        <div class="tech-card">
+          <div class="tech-card-icon">🤖</div>
+          <h3>IA conversacional</h3>
+          <p>Entende perguntas em linguagem natural e ajuda a encontrar recomendações com mais contexto.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="tech-card">
+          <div class="tech-card-icon">🔍</div>
+          <h3>Curadoria de confiança</h3>
+          <p>Empresas, serviços e benefícios são organizados para facilitar escolhas mais seguras.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="tech-card">
+          <div class="tech-card-icon">⚡</div>
+          <h3>Recomendações no momento certo</h3>
+          <p>O Zeca conecta necessidade, localização, categoria e benefícios disponíveis para sugerir caminhos mais relevantes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Embaixadores Aprimorada (Design Premium com Slideshow) -->
+    <section class="home-ambassadors-section">
+      <span class="ambassadors-eyebrow">Embaixadores do Zeca</span>
+      <h2 class="home-section-title">Embaixadores que conectam brasileiros a boas recomendações</h2>
+      <p class="home-section-subtitle">Criadores de conteúdo que ajudam o Zeca a gerar confiança, alcance e oportunidades para brasileiros e empresas no exterior.</p>
+      
+      <!-- Linha de apoio do Ecossistema -->
+      <div class="ambassadors-value-line">
+        <div class="value-pill"><span>⚡</span> Mais alcance para empresas parceiras</div>
+        <div class="value-pill"><span>🤝</span> Mais confiança para brasileiros no exterior</div>
+        <div class="value-pill"><span>🌐</span> Mais conexão com oportunidades</div>
       </div>
       
-      <!-- Banner Clube de Vantagens (Amarelo) -->
-      <div class="home-banner-club">
-        <div class="banner-club-left">
-          <div class="banner-club-icon">
-            <img src="icones/promo-icon.png" alt="Desconto" style="width: 100%; max-width: 64px; height: auto; object-fit: contain;">
+      <!-- Slideshow Container -->
+      <div class="slideshow-container">
+        <div class="ambassadors-track" id="ambassadors-track">
+          
+          <!-- 1. Two Canada -->
+          <div class="ambassador-home-card">
+            <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
+            <div class="avatar-container-home">
+              <img src="imagens/inf_hub_twocanada.png" alt="Two Canada" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+            </div>
+            <div class="ambassador-home-name">Two Canada</div>
+            <div class="ambassador-home-location">🇨🇦 Calgary / Canadá</div>
+            <div class="ambassador-home-nicho">Família & Imigração</div>
+            <div class="ambassador-home-cupons">🏷️ 40 benefícios ativos</div>
+            <a href="influenciador-perfil.html" class="btn-ambassador-profile">Conhecer indicações</a>
           </div>
-          <div class="banner-club-text">
-            <h2>Clube de Vantagens do Zeca</h2>
-            <p>Que tal receber cupons de desconto exclusivos de produtos e serviços parceiros na sua cidade?</p>
+          
+          <!-- 2. Irmãos Prezia -->
+          <div class="ambassador-home-card">
+            <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
+            <div class="avatar-container-home">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80" alt="Irmãos Prezia" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+            </div>
+            <div class="ambassador-home-name">Irmãos Prezia</div>
+            <div class="ambassador-home-location">🇨🇦 Toronto / Canadá</div>
+            <div class="ambassador-home-nicho">Entretenimento & Vida Fora</div>
+            <div class="ambassador-home-cupons">🏷️ 120 benefícios ativos</div>
+            <a href="influenciador-perfil.html" class="btn-ambassador-profile">Conhecer indicações</a>
+          </div>
+          
+          <!-- 3. Thuany Amaro -->
+          <div class="ambassador-home-card">
+            <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
+            <div class="avatar-container-home">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80" alt="Thuany Amaro" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+            </div>
+            <div class="ambassador-home-name">Thuany Amaro</div>
+            <div class="ambassador-home-location">🇨🇦 Calgary / Canadá</div>
+            <div class="ambassador-home-nicho">Humor & Estilo de Vida</div>
+            <div class="ambassador-home-cupons">🏷️ 10 benefícios ativos</div>
+            <a href="influenciador-perfil.html" class="btn-ambassador-profile">Conhecer indicações</a>
+          </div>
+ 
+          <!-- 4. Diego Angel -->
+          <div class="ambassador-home-card">
+            <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
+            <div class="avatar-container-home">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Diego Angel" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+            </div>
+            <div class="ambassador-home-name">Diego Angel</div>
+            <div class="ambassador-home-location">🇺🇸 Orlando / EUA</div>
+            <div class="ambassador-home-nicho">Viagens & Orlando</div>
+            <div class="ambassador-home-cupons">🏷️ 25 benefícios ativos</div>
+            <a href="influenciador-perfil.html" class="btn-ambassador-profile">Conhecer indicações</a>
+          </div>
+ 
+          <!-- 5. Alessia Habibi -->
+          <div class="ambassador-home-card">
+            <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
+            <div class="avatar-container-home">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80" alt="Alessia Habibi" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+            </div>
+            <div class="ambassador-home-name">Alessia Habibi</div>
+            <div class="ambassador-home-location">🇺🇸 Miami / EUA</div>
+            <div class="ambassador-home-nicho">Moda & UGC</div>
+            <div class="ambassador-home-cupons">🏷️ 5 benefícios ativos</div>
+            <a href="influenciador-perfil.html" class="btn-ambassador-profile">Conhecer indicações</a>
+          </div>
+ 
+          <!-- 6. Emily Hill -->
+          <div class="ambassador-home-card">
+            <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
+            <div class="avatar-container-home">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80" alt="Emily Hill" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+            </div>
+            <div class="ambassador-home-name">Emily Hill</div>
+            <div class="ambassador-home-location">🇺🇸 Boston / EUA</div>
+            <div class="ambassador-home-nicho">Gastronomia & Vida Local</div>
+            <div class="ambassador-home-cupons">🏷️ 18 benefícios ativos</div>
+            <a href="influenciador-perfil.html" class="btn-ambassador-profile">Conhecer indicações</a>
+          </div>
+ 
+        </div>
+      </div>
+      
+      <!-- Controles do Slideshow -->
+      <div class="slideshow-controls">
+        <button class="btn-slideshow-control" id="btn-slideshow-prev">←</button>
+        <button class="btn-slideshow-control" id="btn-slideshow-next">→</button>
+      </div>
+      
+      <div class="ambassadors-footer-link">
+        <a href="hub-influenciadores.html" class="btn btn-outline">Explorar o Hub de Embaixadores</a>
+      </div>
+    </section>
+
+    <!-- Seção de Exemplos Práticos (O que pedir ao Zeca) -->
+    <section class="practical-examples-section">
+      <h2 class="home-section-title">O que você pode pedir ao Zeca?</h2>
+      <p class="home-section-subtitle">Use o WhatsApp para encontrar ajuda prática, recomendações confiáveis e benefícios pensados para brasileiros no exterior.</p>
+      
+      <div class="examples-grid">
+        <div class="example-chip">
+          <div class="example-chip-icon">🔍</div>
+          <span class="example-chip-text">Encontrar serviços confiáveis</span>
+        </div>
+        <div class="example-chip">
+          <div class="example-chip-icon">🏷️</div>
+          <span class="example-chip-text">Descobrir cupons e benefícios</span>
+        </div>
+        <div class="example-chip">
+          <div class="example-chip-icon">💼</div>
+          <span class="example-chip-text">Pedir indicação de profissionais</span>
+        </div>
+        <div class="example-chip">
+          <div class="example-chip-icon">📍</div>
+          <span class="example-chip-text">Receber orientação para sua cidade</span>
+        </div>
+        <div class="example-chip">
+          <div class="example-chip-icon">⭐</div>
+          <span class="example-chip-text">Ver recomendações de embaixadores</span>
+        </div>
+        <div class="example-chip">
+          <div class="example-chip-icon">🏢</div>
+          <span class="example-chip-text">Encontrar empresas que atendem brasileiros</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Benefícios -->
+    <section class="benefits-section">
+      <h2 class="home-section-title">Por que esse ecossistema faz sentido?</h2>
+      <p class="home-section-subtitle">Mais do que um diretório, o Zeca é um parceiro de confiança com inteligência conversacional.</p>
+      
+      <div class="benefits-grid">
+        <!-- Benefício 1 -->
+        <div class="benefit-item">
+          <div class="benefit-dot">✓</div>
+          <div class="benefit-content">
+            <h4>Recomendações com curadoria</h4>
+            <p>Apenas serviços e empresas avaliadas e validadas pela nossa rede de confiança.</p>
           </div>
         </div>
-        <a href="clube-landing.html" class="btn btn-black" id="btn-participar-clube">Quero participar</a>
+        
+        <!-- Benefício 2 -->
+        <div class="benefit-item">
+          <div class="benefit-dot">✓</div>
+          <div class="benefit-content">
+            <h4>Conversas pelo WhatsApp</h4>
+            <p>Sem formulários complexos. Respostas rápidas no canal que você usa todos os dias.</p>
+          </div>
+        </div>
+        
+        <!-- Benefício 3 -->
+        <div class="benefit-item">
+          <div class="benefit-dot">✓</div>
+          <div class="benefit-content">
+            <h4>Empresas brasileiras confiáveis</h4>
+            <p>Aproximamos você de prestadores que falam a sua língua e entendem as suas necessidades.</p>
+          </div>
+        </div>
+        
+        <!-- Benefício 4 -->
+        <div class="benefit-item">
+          <div class="benefit-dot">✓</div>
+          <div class="benefit-content">
+            <h4>Cupons e benefícios</h4>
+            <p>Economia real com vantagens negociadas diretamente por nossos parceiros.</p>
+          </div>
+        </div>
+        
+        <!-- Benefício 5 -->
+        <div class="benefit-item">
+          <div class="benefit-dot">✓</div>
+          <div class="benefit-content">
+            <h4>Embaixadores como ponte</h4>
+            <p>Criadores de conteúdo locais conectando e validando as parcerias da comunidade.</p>
+          </div>
+        </div>
+        
+        <!-- Benefício 6 -->
+        <div class="benefit-item">
+          <div class="benefit-dot">✓</div>
+          <div class="benefit-content">
+            <h4>Inteligência com contexto</h4>
+            <p>A IA ajuda o Zeca a entender melhor cada pergunta e a organizar recomendações mais úteis para cada situação.</p>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <!-- Chamadas de Parcerias (Empresas & Embaixadores) -->
+    <section class="partnership-ctas-section">
+      <!-- Empresas -->
+      <div class="partnership-cta-card companies">
+        <h3>Sua empresa pode ser recomendada pelo Zeca</h3>
+        <p>Se você tem uma empresa ou serviço voltado para brasileiros no Canadá, EUA ou outros países, o Zeca pode ajudar sua marca a ser encontrada por quem realmente precisa dela.</p>
+        <a href="anuncie-no-zeca.html" class="btn btn-hero-secondary">Solicitar entrada no Zeca</a>
+      </div>
+      
+      <!-- Embaixadores -->
+      <div class="partnership-cta-card">
+        <h3>Sua influência pode virar recomendação de valor</h3>
+        <p>Se você tem uma audiência brasileira que confia em você, o Zeca pode ajudar a transformar essa confiança em conexões, recomendações, cupons e novas oportunidades.</p>
+        <a href="embaixadores.html" class="btn btn-hero-primary" style="background-color: var(--color-black);">Quero ser embaixador</a>
+      </div>
+    </section>
+
+    <!-- Chamada final para o usuário comum -->
+    <section class="final-user-cta-section">
+      <h2>Ainda não sabe por onde começar?</h2>
+      <p>Pergunte ao Zeca no WhatsApp e encontre recomendações confiáveis para sua vida no exterior.</p>
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Zeca!%20Quero%20encontrar%20recomenda%C3%A7%C3%B5es%20confi%C3%A1veis%20para%20brasileiros%20no%20exterior." target="_blank" class="btn-final-cta-whatsapp">
+        <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px; filter: brightness(0) saturate(100%) invert(39%) sepia(85%) saturate(417%) hue-rotate(90deg) brightness(91%) contrast(85%);">
+        Perguntar agora
+      </a>
     </section>
   </main>
 
@@ -256,8 +1108,8 @@
       <p>© 2026 Pergunta pro Zeca.</p>
       <div class="footer-links">
         <a href="clube-vantagens.html">Clube de Vantagens</a>
-        <a href="parceiros.html">Parceiros</a>
-        <a href="influenciadores.html">Influenciadores</a>
+        <a href="embaixadores.html">Embaixadores</a>
+        <a href="parceiros.html">Para empresas</a>
         <a href="hub-influenciadores.html">Hub</a>
         <a href="#">Media Kit</a>
         <a href="termos.html">Termos</a>
@@ -267,5 +1119,88 @@
   </footer>
 
   <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("ambassadors-track");
+      const btnPrev = document.getElementById("btn-slideshow-prev");
+      const btnNext = document.getElementById("btn-slideshow-next");
+      
+      const cardWidth = 270;
+      const gap = 12;
+      const step = cardWidth + gap;
+      
+      let autoplayInterval;
+      let isTransitioning = false;
+      
+      function nextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+        track.style.transform = `translateX(-${step}px)`;
+        
+        setTimeout(() => {
+          track.style.transition = "none";
+          const firstCard = track.firstElementChild;
+          track.appendChild(firstCard);
+          track.style.transform = "translateX(0)";
+          isTransitioning = false;
+        }, 500);
+      }
+      
+      function prevSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        track.style.transition = "none";
+        const lastCard = track.lastElementChild;
+        track.insertBefore(lastCard, track.firstElementChild);
+        track.style.transform = `translateX(-${step}px)`;
+        
+        // force reflow
+        track.offsetHeight;
+        
+        track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+        track.style.transform = "translateX(0)";
+        
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 500);
+      }
+      
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextSlide, 3000);
+      }
+      
+      function stopAutoplay() {
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+        }
+      }
+      
+      if (btnNext) {
+        btnNext.addEventListener("click", () => {
+          nextSlide();
+          startAutoplay();
+        });
+      }
+      
+      if (btnPrev) {
+        btnPrev.addEventListener("click", () => {
+          prevSlide();
+          startAutoplay();
+        });
+      }
+      
+      const slideshowContainer = document.querySelector(".slideshow-container");
+      if (slideshowContainer) {
+        slideshowContainer.addEventListener("mouseenter", stopAutoplay);
+        slideshowContainer.addEventListener("mouseleave", startAutoplay);
+      }
+      
+      startAutoplay();
+    });
+  </script>
 </body>
 </html>

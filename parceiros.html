@@ -1842,10 +1842,10 @@
         <img src="imagens/logo-perguntaprozeca.png" alt="Pergunta pro Zeca" class="logo-img">
       </a>
       <div class="header-right-area" style="display: flex; align-items: center; gap: 20px;">
-                <nav class="header-nav">
+        <nav class="header-nav">
           <a href="clube-vantagens.html" class="header-nav-link">Clube de Vantagens</a>
-          <a href="parceiros.html" class="header-nav-link active">Parceiros</a>
-          <a href="influenciadores.html" class="header-nav-link">Influenciadores</a>
+          <a href="embaixadores.html" class="header-nav-link">Embaixadores</a>
+          <a href="parceiros.html" class="header-nav-link active">Para empresas</a>
           <a href="hub-influenciadores.html" class="header-nav-link">Hub</a>
         </nav>
         <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
@@ -2239,6 +2239,7 @@
         <div class="plan-card-ds priority" id="plano-destaque">
           <span class="plan-badge-ds">Mais visibilidade</span>
           <h3>Premium<span class="plan-stars-ds">★★★★</span></h3>
+          <div class="plan-price-ds" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--color-brand-green); margin: 12px 0;">$ 29.90 <span style="font-size: 14px; font-weight: 500; color: var(--color-text-muted);">USD / mês</span></div>
           <p class="plan-desc">Para quem quer ampliar exposição, gerar mais oportunidades e ocupar posições mais estratégicas nas recomendações do Zeca.</p>
           
           <div class="plan-features-list">
@@ -2256,7 +2257,7 @@
             </div>
             <div class="plan-feature-item">
               <img src="icones/check_2.svg" alt="Check">
-              <span>Crie e ative cupons, descontos e cashback para aumentar conversão e estimular novas compras.</span>
+              <span>Crie cupons promocionais, seja indicado pelos embaixadores e alcance mais audiência, participe de novos projetos do Zeca.</span>
             </div>
             <div class="plan-feature-item">
               <img src="icones/check_2.svg" alt="Check">
@@ -2272,7 +2273,7 @@
             </div>
             <div class="plan-feature-item">
               <img src="icones/check_2.svg" alt="Check">
-              <span>Entre antes em novos formatos, recursos e iniciativas comerciais.</span>
+              <span>Entre antes em novos formatos, recursos e initiatives comerciais.</span>
             </div>
             <div class="plan-feature-item">
               <img src="icones/check_2.svg" alt="Check">
@@ -2284,7 +2285,7 @@
             </div>
           </div>
           
-          <a href="https://wa.me/5500000000000" target="_blank" class="plan-btn-solid">Falar com um consultor</a>
+          <a href="#cadastro" class="plan-btn-solid" onclick="selectPlan('Premium')">Solicitar Plano Premium</a>
           <p style="font-size: 14px !important; color: var(--color-text-main); margin-top: 8px; margin-bottom: 0; text-align: center;">Analisamos categoria e região em até 1 dia útil.</p>
         </div>
 
@@ -2292,6 +2293,7 @@
         <div class="plan-card-ds" id="plano-presenca">
           <span class="plan-badge-ds" style="background-color: var(--color-brand-green-light); border-color: var(--color-black); color: var(--color-black);">Entrada gratuita</span>
           <h3>Basic</h3>
+          <div class="plan-price-ds" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--color-black); margin: 12px 0;">Gratuito</div>
           <p class="plan-desc">Para empresas e profissionais que querem entrar no Zeca e começar a receber visibilidade qualificada.</p>
           
           <div class="plan-features-list">
@@ -2305,7 +2307,7 @@
             </div>
             <div class="plan-feature-item">
               <img src="icones/check_2.svg" alt="Check">
-              <span>Seja recomendado quando houver compatibilidade real com a necessidade do usuário.</span>
+              <span>Seja recomendado pelo Zeca no Whatsapp quando houver compatibilidade real com a necessidade do usuário.</span>
             </div>
             <div class="plan-feature-item">
               <img src="icones/check_2.svg" alt="Check">
@@ -2313,7 +2315,7 @@
             </div>
           </div>
           
-          <a href="#cadastro" class="plan-btn-outline">Criar perfil gratuito</a>
+          <a href="#cadastro" class="plan-btn-outline" onclick="selectPlan('Basic')">Criar perfil gratuito</a>
           <p style="font-size: 14px !important; color: var(--color-text-main); margin-top: 8px; margin-bottom: 0; text-align: center;">Sem custo para começar.</p>
         </div>
       </div>
@@ -2557,6 +2559,15 @@
           </div>
 
           <div class="form-group-ds">
+            <label for="p-plan">Plano de Interesse</label>
+            <select id="p-plan" class="form-select-ds" required>
+              <option value="" disabled selected>Escolha o plano</option>
+              <option value="Basic">Basic - Gratuito</option>
+              <option value="Premium">Premium - $ 29.90 USD/mês</option>
+            </select>
+          </div>
+
+          <div class="form-group-ds">
             <label for="p-social">Site ou Instagram comercial</label>
             <input type="text" id="p-social" class="form-input-ds" placeholder="Ex: instagram.com/seunegocio" required>
           </div>
@@ -2613,8 +2624,8 @@
       <p>© 2026 Pergunta pro Zeca.</p>
       <div class="footer-links">
         <a href="clube-vantagens.html">Clube de Vantagens</a>
-        <a href="parceiros.html" style="font-weight: 700; color: var(--color-black);">Parceiros</a>
-        <a href="influenciadores.html">Influenciadores</a>
+        <a href="embaixadores.html">Embaixadores</a>
+        <a href="parceiros.html" style="font-weight: 700; color: var(--color-black);">Para empresas</a>
         <a href="hub-influenciadores.html">Hub</a>
         <a href="#">Media Kit</a>
         <a href="termos.html">Termos</a>
@@ -2624,5 +2635,13 @@
   </footer>
 
   <script src="js/app.js"></script>
+  <script>
+    function selectPlan(planValue) {
+      const planDropdown = document.getElementById("p-plan");
+      if (planDropdown) {
+        planDropdown.value = planValue;
+      }
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Backups locais (nunca enviar para produção)
+home-backup-*.html
+parceiros-backup-*.html
+*-backup-*.html
+
+# Documentos temporários
+docs/~$*.docx

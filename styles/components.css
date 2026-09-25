@@ -967,23 +967,21 @@
 
 
 /* --- COMPONENTES MOBILE DRAWER E NAVEGAÇÃO --- */
-.header-mobile-actions {
-  display: none;
-}
-
-.mobile-nav-backdrop,
-.mobile-nav-drawer {
-  display: none;
-}
-
-/* Responsividade do menu */
-@media (max-width: 991px) {
-  .header-nav {
-    display: none;
+@media (min-width: 769px) {
+  .header-mobile-actions,
+  .btn-menu-toggle,
+  .btn-wa-compact,
+  .mobile-nav-backdrop,
+  .mobile-nav-drawer {
+    display: none !important;
   }
 }
 
 @media (max-width: 768px) {
+  .header-nav {
+    display: none !important;
+  }
+
   .site-header {
     height: 68px;
     padding: 10px 0;
@@ -1004,7 +1002,7 @@
   }
 
   .header-mobile-actions {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 8px;
   }
@@ -1014,7 +1012,7 @@
     height: 44px;
     border-radius: 50%;
     background-color: var(--color-whatsapp);
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
@@ -1036,7 +1034,7 @@
   .btn-menu-toggle {
     width: 44px;
     height: 44px;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;

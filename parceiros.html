@@ -1079,13 +1079,43 @@
       font-size: 14px !important;
     }
 
+    .table-scroll-hint {
+      display: none;
+    }
+
     @media (max-width: 768px) {
+      .table-scroll-hint {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-brand-green);
+        background: #e8f9ee;
+        padding: 8px 18px;
+        border-radius: var(--border-radius-pill);
+        margin: 20px auto 8px auto;
+      }
       .plans-table-wrapper {
-        margin: 40px 16px;
+        margin: 12px 0 32px 0;
+        border-radius: 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .plans-table th, .plans-table td {
+        padding: 12px 14px;
+        font-size: 13px;
+      }
+      .plans-table th:not(:first-child), .plans-table td:not(:first-child) {
+        width: 100px;
+        min-width: 90px;
+      }
+      .plans-table td:first-child {
+        min-width: 170px;
       }
       .plans-algorithm-card {
-        margin: 40px 16px;
-        padding: 24px;
+        margin: 24px 0;
+        padding: 20px 16px;
       }
     }
 
@@ -1848,13 +1878,48 @@
           <a href="parceiros.html" class="header-nav-link active">Para empresas</a>
           <a href="hub-influenciadores.html" class="header-nav-link">Hub</a>
         </nav>
-        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp header-wa-desktop" id="btn-whatsapp-header">
           <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
           Pergunte no Whatsapp
         </a>
+        <div class="header-mobile-actions">
+          <a href="https://wa.me/5500000000000" target="_blank" class="btn-wa-compact" aria-label="WhatsApp Zeca">
+            <img src="icones/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <button type="button" class="btn-menu-toggle" id="btn-menu-toggle" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Abrir menu de navegação">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
+
+  <!-- Drawer de Navegação Mobile -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Menu principal de navegação" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="drawer-logo">
+        <img src="imagens/logo-perguntaprozeca.png" alt="Pergunta pro Zeca" class="drawer-logo-img">
+      </a>
+      <button type="button" class="btn-drawer-close" id="btn-drawer-close" aria-label="Fechar menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="clube-vantagens.html" class="drawer-nav-link">Clube de Vantagens</a>
+      <a href="embaixadores.html" class="drawer-nav-link">Embaixadores</a>
+      <a href="parceiros.html" class="drawer-nav-link active">Para empresas</a>
+      <a href="hub-influenciadores.html" class="drawer-nav-link">Hub</a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp drawer-btn-wa">
+        <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px;">
+        Pergunte no Whatsapp
+      </a>
+    </div>
+  </aside>
 
   <!-- 1. Hero Section (Fundo Verde Água Claro) -->
   <section class="section-hero">
@@ -1908,7 +1973,10 @@
 
   <!-- 3. Seção de Diferenciação (Fundo Cinza 100) -->
   <section class="section-diff">
-    <img src="imagens/zeca-pisca.png" alt="Zeca Pisca" class="zeca-pisca-badge">
+    <picture>
+      <source srcset="imagens/zeca-pisca.avif" type="image/avif">
+      <img src="imagens/zeca-pisca.png" alt="Zeca Pisca" class="zeca-pisca-badge" loading="lazy">
+    </picture>
     <div class="container">
       <span class="legal-eyebrow">DIFERENCIAÇÃO DA MARCA</span>
       <h2 class="section-title">O Zeca não é um site de busca. O Zeca conversa.</h2>
@@ -2050,7 +2118,10 @@
         </div>
       </div>
       <div class="proof-image-wrapper">
-        <img src="imagens/relevanvia-zeca.png" alt="O Zeca aproxima seu negócio de quem já tem intenção" class="proof-image">
+        <picture>
+          <source srcset="imagens/relevanvia-zeca.avif" type="image/avif">
+          <img src="imagens/relevanvia-zeca.png" alt="O Zeca aproxima seu negócio de quem já tem intenção" class="proof-image" loading="lazy">
+        </picture>
       </div>
     </div>
   </section>
@@ -2321,6 +2392,10 @@
       </div>
 
       <!-- Tabela Comparativa -->
+      <div class="table-scroll-hint">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <span>Arraste para os lados para comparar os planos</span>
+      </div>
       <div class="plans-table-wrapper">
         <table class="plans-table">
           <thead>
@@ -2421,7 +2496,10 @@
     <div class="cupons-showcase-section">
       <!-- Imagem do Zeca à esquerda -->
       <div class="cupons-showcase-image">
-        <img src="imagens/zeca-promo22.png" alt="Zeca Cupons">
+        <picture>
+          <source srcset="imagens/zeca-promo22.avif" type="image/avif">
+          <img src="imagens/zeca-promo22.png" alt="Zeca Cupons" loading="lazy">
+        </picture>
       </div>
       
       <!-- Conteúdo à direita -->

@@ -193,6 +193,7 @@ const AppState = {
 document.addEventListener("DOMContentLoaded", () => {
   checkUserLoginStatus();
   initGlobalEvents();
+  initMobileNav();
   
   // Identifica a página atual
   const path = window.location.pathname.toLowerCase();
@@ -206,6 +207,60 @@ document.addEventListener("DOMContentLoaded", () => {
     initInfluencerPage();
   }
 });
+
+// Inicializador do Menu Mobile Drawer
+function initMobileNav() {
+  const toggleBtn = document.getElementById("btn-menu-toggle");
+  const drawer = document.getElementById("mobile-nav-drawer");
+  const backdrop = document.getElementById("mobile-nav-backdrop");
+  const closeBtn = document.getElementById("btn-drawer-close");
+
+  if (!toggleBtn || !drawer || !backdrop) return;
+
+  function openDrawer() {
+    drawer.classList.add("active");
+    backdrop.classList.add("active");
+    document.body.classList.add("drawer-open");
+    toggleBtn.setAttribute("aria-expanded", "true");
+    drawer.setAttribute("aria-hidden", "false");
+    closeBtn?.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove("active");
+    backdrop.classList.remove("active");
+    document.body.classList.remove("drawer-open");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    drawer.setAttribute("aria-hidden", "true");
+    toggleBtn.focus();
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = drawer.classList.contains("active");
+    if (isOpen) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  closeBtn?.addEventListener("click", closeDrawer);
+  backdrop.addEventListener("click", closeDrawer);
+
+  // Fechar com ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && drawer.classList.contains("active")) {
+      closeDrawer();
+    }
+  });
+
+  // Fechar ao clicar em qualquer link de navegação dentro do menu
+  drawer.querySelectorAll(".drawer-nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      closeDrawer();
+    });
+  });
+}
 
 // Inicializadores de Eventos Globais
 function initGlobalEvents() {

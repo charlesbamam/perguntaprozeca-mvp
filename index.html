@@ -754,22 +754,117 @@
     
     @media (max-width: 768px) {
       .home-hero {
-        padding: 48px 16px 32px 16px;
+        padding: 32px 0 24px 0;
       }
       .home-hero h1 {
-        font-size: 32px;
+        font-size: 28px;
+        line-height: 1.25;
       }
       .home-hero p.hero-desc {
-        font-size: 16px;
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+      .hero-ctas {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+      .hero-ctas .btn-hero-primary,
+      .hero-ctas .btn-hero-secondary {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+        padding: 12px 20px;
       }
       .search-box-container {
         padding: 16px;
+        margin-bottom: 16px;
       }
-      .ecosystem-grid {
-        padding: 0 16px;
+      .search-box-container textarea {
+        font-size: 16px !important;
+        height: 80px;
+      }
+      .tags-container {
+        gap: 8px;
+        margin-bottom: 40px;
+      }
+      .search-tag {
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 14px;
+        font-size: 13px;
       }
       .ecosystem-section {
-        padding: 48px 0;
+        padding: 32px 16px;
+        border-radius: 20px;
+        margin-bottom: 48px;
+      }
+      .ecosystem-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 16px;
+      }
+      .benefits-section {
+        padding: 40px 0;
+        margin-bottom: 40px;
+      }
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 16px;
+      }
+      .partnership-ctas-section {
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 20px;
+        margin-bottom: 48px;
+      }
+      .partnership-card {
+        padding: 24px 20px;
+      }
+      .partnership-btn {
+        width: 100%;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .examples-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .final-user-cta-section {
+        padding: 40px 20px;
+        border-radius: 20px;
+      }
+      .ambassador-home-card {
+        width: 250px;
+        max-width: calc(100vw - 64px);
+        padding: 24px 16px;
+      }
+      .btn-slideshow-control {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      .home-section-title {
+        font-size: 24px;
+      }
+      .home-section-subtitle {
+        font-size: 15px;
+        margin-bottom: 32px;
       }
     }
   </style>
@@ -789,13 +884,48 @@
           <a href="parceiros.html" class="header-nav-link">Para empresas</a>
           <a href="hub-influenciadores.html" class="header-nav-link">Hub</a>
         </nav>
-        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Zeca!%20Quero%20encontrar%20recomenda%C3%A7%C3%B5es%20confi%C3%A1veis%20para%20brasileiros%20no%20exterior." target="_blank" class="btn btn-whatsapp" id="btn-whatsapp-header">
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Zeca!%20Quero%20encontrar%20recomenda%C3%A7%C3%B5es%20confi%C3%A1veis%20para%20brasileiros%20no%20exterior." target="_blank" class="btn btn-whatsapp header-wa-desktop" id="btn-whatsapp-header">
           <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px;">
           Pergunte no Whatsapp
         </a>
+        <div class="header-mobile-actions">
+          <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Zeca!%20Quero%20encontrar%20recomenda%C3%A7%C3%B5es%20confi%C3%A1veis%20para%20brasileiros%20no%20exterior." target="_blank" class="btn-wa-compact" aria-label="WhatsApp Zeca">
+            <img src="icones/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <button type="button" class="btn-menu-toggle" id="btn-menu-toggle" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Abrir menu de navegação">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
+
+  <!-- Drawer de Navegação Mobile -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Menu principal de navegação" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="drawer-logo">
+        <img src="imagens/logo-perguntaprozeca.png" alt="Pergunta pro Zeca" class="drawer-logo-img">
+      </a>
+      <button type="button" class="btn-drawer-close" id="btn-drawer-close" aria-label="Fechar menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="clube-vantagens.html" class="drawer-nav-link">Clube de Vantagens</a>
+      <a href="embaixadores.html" class="drawer-nav-link">Embaixadores</a>
+      <a href="parceiros.html" class="drawer-nav-link">Para empresas</a>
+      <a href="hub-influenciadores.html" class="drawer-nav-link">Hub</a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Zeca!%20Quero%20encontrar%20recomenda%C3%A7%C3%B5es%20confi%C3%A1veis%20para%20brasileiros%20no%20exterior." target="_blank" class="btn btn-whatsapp drawer-btn-wa">
+        <img src="icones/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px;">
+        Pergunte no Whatsapp
+      </a>
+    </div>
+  </aside>
 
   <!-- Corpo Principal -->
   <main class="container">
@@ -891,7 +1021,7 @@
           <div class="ambassador-home-card">
             <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
             <div class="avatar-container-home">
-              <img src="imagens/inf_hub_twocanada.png" alt="Two Canada" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+              <img src="imagens/inf_hub_twocanada.png" alt="Two Canada" class="ambassador-home-avatar" loading="lazy" onerror="this.src='imagens/ic_zeca_011.png'">
             </div>
             <div class="ambassador-home-name">Two Canada</div>
             <div class="ambassador-home-location">🇨🇦 Calgary / Canadá</div>
@@ -904,7 +1034,7 @@
           <div class="ambassador-home-card">
             <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
             <div class="avatar-container-home">
-              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80" alt="Irmãos Prezia" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80" alt="Irmãos Prezia" class="ambassador-home-avatar" loading="lazy" onerror="this.src='imagens/ic_zeca_011.png'">
             </div>
             <div class="ambassador-home-name">Irmãos Prezia</div>
             <div class="ambassador-home-location">🇨🇦 Toronto / Canadá</div>
@@ -917,7 +1047,7 @@
           <div class="ambassador-home-card">
             <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
             <div class="avatar-container-home">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80" alt="Thuany Amaro" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80" alt="Thuany Amaro" class="ambassador-home-avatar" loading="lazy" onerror="this.src='imagens/ic_zeca_011.png'">
             </div>
             <div class="ambassador-home-name">Thuany Amaro</div>
             <div class="ambassador-home-location">🇨🇦 Calgary / Canadá</div>
@@ -930,7 +1060,7 @@
           <div class="ambassador-home-card">
             <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
             <div class="avatar-container-home">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Diego Angel" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Diego Angel" class="ambassador-home-avatar" loading="lazy" onerror="this.src='imagens/ic_zeca_011.png'">
             </div>
             <div class="ambassador-home-name">Diego Angel</div>
             <div class="ambassador-home-location">🇺🇸 Orlando / EUA</div>
@@ -943,7 +1073,7 @@
           <div class="ambassador-home-card">
             <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
             <div class="avatar-container-home">
-              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80" alt="Alessia Habibi" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80" alt="Alessia Habibi" class="ambassador-home-avatar" loading="lazy" onerror="this.src='imagens/ic_zeca_011.png'">
             </div>
             <div class="ambassador-home-name">Alessia Habibi</div>
             <div class="ambassador-home-location">🇺🇸 Miami / EUA</div>
@@ -956,7 +1086,7 @@
           <div class="ambassador-home-card">
             <span class="ambassador-official-badge">★ Embaixador do Zeca</span>
             <div class="avatar-container-home">
-              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80" alt="Emily Hill" class="ambassador-home-avatar" onerror="this.src='imagens/ic_zeca_011.png'">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80" alt="Emily Hill" class="ambassador-home-avatar" loading="lazy" onerror="this.src='imagens/ic_zeca_011.png'">
             </div>
             <div class="ambassador-home-name">Emily Hill</div>
             <div class="ambassador-home-location">🇺🇸 Boston / EUA</div>
@@ -1124,17 +1254,22 @@
       const track = document.getElementById("ambassadors-track");
       const btnPrev = document.getElementById("btn-slideshow-prev");
       const btnNext = document.getElementById("btn-slideshow-next");
+      const slideshowContainer = document.querySelector(".slideshow-container");
       
-      const cardWidth = 270;
       const gap = 12;
-      const step = cardWidth + gap;
+      function getStep() {
+        if (!track || !track.firstElementChild) return 282;
+        return track.firstElementChild.offsetWidth + gap;
+      }
       
       let autoplayInterval;
+      let resumeTimeout;
       let isTransitioning = false;
       
       function nextSlide() {
-        if (isTransitioning) return;
+        if (isTransitioning || !track || !track.firstElementChild) return;
         isTransitioning = true;
+        const step = getStep();
         
         track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
         track.style.transform = `translateX(-${step}px)`;
@@ -1149,8 +1284,9 @@
       }
       
       function prevSlide() {
-        if (isTransitioning) return;
+        if (isTransitioning || !track || !track.lastElementChild) return;
         isTransitioning = true;
+        const step = getStep();
         
         track.style.transition = "none";
         const lastCard = track.lastElementChild;
@@ -1170,31 +1306,72 @@
       
       function startAutoplay() {
         stopAutoplay();
-        autoplayInterval = setInterval(nextSlide, 3000);
+        autoplayInterval = setInterval(nextSlide, 3500);
       }
       
       function stopAutoplay() {
         if (autoplayInterval) {
           clearInterval(autoplayInterval);
+          autoplayInterval = null;
         }
+      }
+
+      function pauseAutoplayTemporarily(ms = 8000) {
+        stopAutoplay();
+        if (resumeTimeout) clearTimeout(resumeTimeout);
+        resumeTimeout = setTimeout(() => {
+          startAutoplay();
+        }, ms);
       }
       
       if (btnNext) {
         btnNext.addEventListener("click", () => {
           nextSlide();
-          startAutoplay();
+          pauseAutoplayTemporarily(6000);
         });
       }
       
       if (btnPrev) {
         btnPrev.addEventListener("click", () => {
           prevSlide();
-          startAutoplay();
+          pauseAutoplayTemporarily(6000);
         });
       }
       
-      const slideshowContainer = document.querySelector(".slideshow-container");
+      // Touch e Swipe para Mobile
       if (slideshowContainer) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        slideshowContainer.addEventListener("touchstart", (e) => {
+          stopAutoplay();
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchEndX = touchStartX;
+          touchEndY = touchStartY;
+        }, { passive: true });
+
+        slideshowContainer.addEventListener("touchmove", (e) => {
+          touchEndX = e.touches[0].clientX;
+          touchEndY = e.touches[0].clientY;
+        }, { passive: true });
+
+        slideshowContainer.addEventListener("touchend", () => {
+          const deltaX = touchStartX - touchEndX;
+          const deltaY = touchStartY - touchEndY;
+          // Dispara swipe se movimento horizontal for maior que 40px e maior que vertical
+          if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0) {
+              nextSlide();
+            } else {
+              prevSlide();
+            }
+          }
+          pauseAutoplayTemporarily(8000);
+        });
+
         slideshowContainer.addEventListener("mouseenter", stopAutoplay);
         slideshowContainer.addEventListener("mouseleave", startAutoplay);
       }

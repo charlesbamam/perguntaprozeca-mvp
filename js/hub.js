@@ -228,6 +228,16 @@
     const filterCity = document.getElementById("filter-city");
     const btnBuscar = document.getElementById("btn-hub-buscar");
     const btnLimpar = document.getElementById("btn-hub-limpar");
+    const btnFiltersToggle = document.getElementById("btn-filters-toggle");
+    const filtersBar = document.getElementById("hub-filters-bar");
+
+    // Toggle de filtros no mobile
+    if (btnFiltersToggle && filtersBar) {
+      btnFiltersToggle.addEventListener("click", () => {
+        const isOpen = filtersBar.classList.toggle("is-open");
+        btnFiltersToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
 
     // Evento ao alterar país
     if (filterCountry && filterCity) {
@@ -401,7 +411,7 @@
     return `
       <div class="influencer-card">
         <div class="inf-card-header">
-          <img src="${inf.avatar}" alt="${displayName}" class="inf-avatar-round" onerror="this.src='imagens/ic_zeca_011.png'">
+          <img src="${inf.avatar}" alt="${displayName}" class="inf-avatar-round" loading="lazy" onerror="this.src='imagens/ic_zeca_011.png'">
           <div class="inf-name-area">
             <h3>${displayName}</h3>
             <span class="inf-followers-count">${inf.seguidoresText}</span>

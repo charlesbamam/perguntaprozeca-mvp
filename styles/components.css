@@ -6,7 +6,6 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
@@ -967,10 +966,318 @@
 
 
 
+/* --- COMPONENTES MOBILE DRAWER E NAVEGAÇÃO --- */
+.header-mobile-actions {
+  display: none;
+}
+
+.mobile-nav-backdrop,
+.mobile-nav-drawer {
+  display: none;
+}
+
 /* Responsividade do menu */
 @media (max-width: 991px) {
   .header-nav {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 68px;
+    padding: 10px 0;
+  }
+
+  .site-header .container {
+    padding: 0 16px;
+  }
+
+  .logo-img {
+    width: 115px;
+    height: auto;
+    max-height: 44px;
+  }
+
+  .header-wa-desktop {
+    display: none !important;
+  }
+
+  .header-mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-wa-compact {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-whatsapp);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-decoration: none;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .btn-wa-compact img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .btn-wa-compact:hover,
+  .btn-wa-compact:active {
+    background-color: var(--color-whatsapp-hover);
+    transform: scale(1.05);
+  }
+
+  .btn-menu-toggle {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    flex-shrink: 0;
+    padding: 0;
+  }
+
+  .btn-menu-toggle:focus-visible {
+    outline: 2px solid var(--color-whatsapp);
+    outline-offset: 2px;
+  }
+
+  .hamburger-bar {
+    width: 22px;
+    height: 2.5px;
+    background-color: #111111;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .mobile-nav-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-nav-drawer {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 290px;
+    max-width: 85vw;
+    background: #ffffff;
+    z-index: 9999;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .mobile-nav-drawer.active {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .drawer-logo-img {
+    width: 115px;
+    height: auto;
+    max-height: 42px;
+    object-fit: contain;
+  }
+
+  .btn-drawer-close {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-light);
+    border-radius: 50%;
+    color: #111111;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    padding: 0;
+  }
+
+  .btn-drawer-close:hover,
+  .btn-drawer-close:focus-visible {
+    background: var(--color-border);
+    outline: 2px solid var(--color-black);
+  }
+
+  .drawer-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .drawer-nav-link {
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    transition: all 0.15s ease;
+  }
+
+  .drawer-nav-link:hover,
+  .drawer-nav-link:focus-visible,
+  .drawer-nav-link.active {
+    background: #f0fdf4;
+    color: var(--color-whatsapp);
+    border-left-color: var(--color-whatsapp);
+    outline: none;
+  }
+
+  .drawer-footer {
+    padding: 20px;
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+  }
+
+  .drawer-btn-wa {
+    width: 100%;
+    min-height: 48px;
+    font-size: 15px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  body.drawer-open {
+    overflow: hidden !important;
+    touch-action: none;
+  }
+
+  /* Evita auto-zoom indesejado no iOS Safari */
+  input, select, textarea,
+  .form-control, .form-input-ds, .form-select-ds, .form-textarea-ds,
+  .form-group-input input, .form-group-input select,
+  .filter-select {
+    font-size: 16px !important;
+  }
+  
+  button[type="submit"], .btn-submit, .btn-submit-ds, .btn-form, .btn-login-submit {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  /* Modais no Mobile */
+  .modal-overlay {
+    padding: 12px;
+  }
+  .modal-container {
+    border-radius: 20px;
+    max-height: 92vh;
+    width: 100%;
+  }
+  .modal-close {
+    width: 44px;
+    height: 44px;
+    top: 12px;
+    right: 12px;
+    font-size: 18px;
+  }
+  .cupom-modal-content {
+    padding: 24px 16px 20px 16px;
+  }
+  .login-modal-content {
+    padding: 32px 18px;
+  }
+  .cupom-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .cupom-promo-details {
+    min-width: 0;
+    width: 100%;
+  }
+  .cupom-code {
+    font-size: 22px;
+  }
+  .social-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .btn-print {
+    min-height: 48px;
+  }
+  .btn-grab {
+    min-height: 48px;
+  }
+  
+  /* Touch targets gerais */
+  .btn {
+    min-height: 44px;
+  }
+  .accordion-title {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .user-logout-btn {
+    padding: 8px 0;
+    font-size: 13px;
+  }
+}
+
+/* Tratamento para orientação paisagem em celulares com pouca altura */
+@media (max-height: 520px) and (orientation: landscape) {
+  .site-header {
+    height: 56px !important;
+    padding: 6px 0 !important;
+  }
+  .modal-container {
+    max-height: 96vh;
+  }
+  .section-hero, .home-hero, .hero-section {
+    padding-top: 70px !important;
+    padding-bottom: 24px !important;
+  }
+  .home-hero h1, .hero-title {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
   }
 }
 

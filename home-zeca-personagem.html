@@ -364,111 +364,405 @@
     }
 
     /* ==========================================================================
-       2. O QUE VOCÊ PODE PEDIR AO ZECA? (COM POSES REAIS DO PERSONAGEM)
+       2. O QUE VOCÊ PODE PEDIR AO ZECA? (SHOWCASE / SLIDESHOW DO ZECA)
+       Zeca protagonista visual em destaque: 40-45% imagem, 55-60% conteúdo
        ========================================================================== */
     .practical-examples-section {
       padding: 72px 0;
       background-color: var(--zeca-white);
     }
 
-    .examples-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    .zeca-showcase-container {
       margin-top: 36px;
-    }
-
-    .example-zeca-card {
-      background-color: var(--zeca-white);
+      background: #FFFFFF;
       border: 1px solid var(--zeca-border);
-      border-radius: var(--zeca-radius-card);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      transition: all var(--transition-fast);
-      box-shadow: var(--zeca-shadow-sm);
-      text-align: left;
+      border-radius: var(--zeca-radius-lg);
+      padding: 36px 40px;
+      box-shadow: var(--zeca-shadow-card);
+      position: relative;
     }
 
-    .example-zeca-card:hover {
-      border-color: var(--zeca-green);
-      transform: translateY(-3px);
-      box-shadow: var(--zeca-shadow-hover);
-    }
-
-    .example-card-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 14px;
-      width: 100%;
-    }
-
-    .example-zeca-avatar-wrap {
-      width: 68px;
-      height: 68px;
-      border-radius: 16px;
-      background: var(--zeca-green-subtle);
-      border: 1px solid rgba(0, 194, 75, 0.15);
+    /* Abas Superiores de Categoria */
+    .zeca-showcase-tabs {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
-      flex-shrink: 0;
+      gap: 12px;
+      margin-bottom: 36px;
+      overflow-x: auto;
+      padding: 4px 4px 10px 4px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .example-zeca-avatar-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    .zeca-showcase-tabs::-webkit-scrollbar {
+      display: none;
     }
 
-    .example-card-header h3 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--zeca-dark);
-      margin: 0;
-      line-height: 1.3;
-    }
-
-    .example-query-quote {
+    .zeca-tab-btn {
       background: #F8FAFC;
-      border-left: 3px solid var(--zeca-green);
-      padding: 8px 12px;
-      border-radius: 0 8px 8px 0;
-      font-size: 13px;
+      border: 1px solid var(--zeca-border);
+      border-radius: var(--zeca-radius-pill);
+      padding: 10px 22px;
+      font-size: 14px;
       font-weight: 600;
-      color: #334155;
-      font-style: italic;
-      margin-bottom: 10px;
+      color: var(--zeca-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+    }
+
+    .zeca-tab-btn:hover {
+      border-color: var(--zeca-green);
+      color: var(--zeca-dark);
+      background: #F1F5F9;
+    }
+
+    .zeca-tab-btn:focus-visible {
+      outline: 2px solid var(--zeca-green);
+      outline-offset: 2px;
+    }
+
+    .zeca-tab-btn.active {
+      background: var(--zeca-green);
+      color: #FFFFFF;
+      border-color: var(--zeca-green);
+      box-shadow: 0 4px 14px rgba(0, 194, 75, 0.28);
+      font-weight: 700;
+    }
+
+    /* Palco dos Slides */
+    .zeca-showcase-stage {
+      position: relative;
+      min-height: 420px;
+    }
+
+    .zeca-showcase-slide {
+      display: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .zeca-showcase-slide.active {
+      display: grid;
+      grid-template-columns: 44% 56%;
+      align-items: center;
+      gap: 40px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Coluna Visual do Zeca */
+    .zeca-visual-col {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
       width: 100%;
+    }
+
+    .zeca-shape-backdrop {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
+      background: radial-gradient(circle, rgba(0, 194, 75, 0.12) 0%, rgba(197, 233, 55, 0.10) 100%);
+      z-index: 1;
+      transition: transform 0.4s ease;
+    }
+
+    .zeca-showcase-slide.active:hover .zeca-shape-backdrop {
+      transform: scale(1.04);
+    }
+
+    .zeca-character-img {
+      position: relative;
+      z-index: 2;
+      width: auto;
+      max-width: 100%;
+      height: 390px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Coluna de Conteúdo */
+    .zeca-content-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      z-index: 2;
+    }
+
+    .zeca-content-category-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--zeca-green-deep);
+      background: var(--zeca-green-soft);
+      padding: 5px 12px;
+      border-radius: var(--zeca-radius-pill);
+      margin-bottom: 12px;
+    }
+
+    .zeca-content-title {
+      font-size: clamp(24px, 2.5vw, 32px);
+      font-weight: 800;
+      color: var(--zeca-dark);
+      line-height: 1.25;
+      margin: 0 0 16px 0;
+      letter-spacing: -0.01em;
+    }
+
+    .zeca-content-example-box {
+      background: #F8FAFC;
+      border: 1px solid var(--zeca-border);
+      border-left: 4px solid var(--zeca-green);
+      border-radius: 4px 14px 14px 14px;
+      padding: 12px 18px;
+      margin-bottom: 16px;
+      width: 100%;
+      max-width: 520px;
       box-sizing: border-box;
     }
 
-    .example-card-desc {
-      font-size: 13px;
-      color: var(--zeca-muted);
-      line-height: 1.5;
-      margin-bottom: 14px;
-      flex-grow: 1;
+    .zeca-example-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--zeca-green-dark);
+      margin-bottom: 4px;
     }
 
-    .example-card-action {
+    .zeca-example-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1E293B;
+      font-style: italic;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .zeca-content-description {
+      font-size: 15px;
+      color: var(--zeca-muted);
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+      max-width: 500px;
+    }
+
+    .zeca-content-cta {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 13px;
+      gap: 10px;
+      background-color: var(--zeca-green);
+      color: #FFFFFF;
+      font-size: 15px;
       font-weight: 700;
-      color: var(--zeca-green-deep);
+      padding: 14px 28px;
+      border-radius: var(--zeca-radius-pill);
       text-decoration: none;
-      transition: gap var(--transition-fast);
-      margin-top: auto;
+      transition: all var(--transition-fast);
+      box-shadow: 0 6px 18px rgba(0, 194, 75, 0.28);
     }
 
-    .example-zeca-card:hover .example-card-action {
-      gap: 10px;
+    .zeca-content-cta:hover {
+      background-color: var(--zeca-green-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0, 194, 75, 0.35);
+    }
+
+    /* Barra Inferior com Controles */
+    .zeca-showcase-bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--zeca-border-light);
+    }
+
+    .zeca-nav-arrow-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--zeca-border);
+      background: #FFFFFF;
+      color: var(--zeca-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+
+    .zeca-nav-arrow-btn:hover {
+      border-color: var(--zeca-green);
       color: var(--zeca-green);
+      background: var(--zeca-green-soft);
+      transform: scale(1.05);
+    }
+
+    .zeca-nav-arrow-btn:focus-visible {
+      outline: 2px solid var(--zeca-green);
+      outline-offset: 2px;
+    }
+
+    .zeca-nav-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .zeca-nav-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #CBD5E1;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+
+    .zeca-nav-dot:hover {
+      background: #94A3B8;
+    }
+
+    .zeca-nav-dot:focus-visible {
+      outline: 2px solid var(--zeca-green);
+      outline-offset: 2px;
+    }
+
+    .zeca-nav-dot.active {
+      background: var(--zeca-green);
+      width: 26px;
+      border-radius: 10px;
+    }
+
+    /* Responsividade do Showcase */
+    @media (max-width: 900px) {
+      .zeca-showcase-slide.active {
+        grid-template-columns: 48% 52%;
+        gap: 28px;
+      }
+
+      .zeca-character-img {
+        height: 320px;
+      }
+
+      .zeca-shape-backdrop {
+        width: 260px;
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .practical-examples-section {
+        padding: 56px 0;
+      }
+
+      .zeca-showcase-container {
+        padding: 20px 16px;
+        border-radius: var(--zeca-radius-card);
+        margin-top: 24px;
+      }
+
+      .zeca-showcase-tabs {
+        justify-content: flex-start;
+        margin-bottom: 20px;
+        gap: 8px;
+      }
+
+      .zeca-tab-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+      }
+
+      .zeca-showcase-stage {
+        min-height: auto;
+      }
+
+      .zeca-showcase-slide.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .zeca-visual-col {
+        min-height: auto;
+        height: 250px;
+      }
+
+      .zeca-shape-backdrop {
+        width: 210px;
+        height: 210px;
+      }
+
+      .zeca-character-img {
+        height: 240px;
+      }
+
+      .zeca-content-col {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      .zeca-content-category-tag {
+        margin-bottom: 8px;
+      }
+
+      .zeca-content-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .zeca-content-example-box {
+        text-align: left;
+        max-width: 100%;
+        margin-bottom: 14px;
+      }
+
+      .zeca-content-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .zeca-content-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 20px;
+        box-sizing: border-box;
+      }
+
+      .zeca-showcase-bottom-bar {
+        margin-top: 20px;
+        padding-top: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .zeca-showcase-slide {
+        transition: none !important;
+      }
+      .zeca-shape-backdrop {
+        transition: none !important;
+      }
     }
 
     /* ==========================================================================
@@ -1181,89 +1475,161 @@
     </section>
 
     <!-- ==========================================================================
-         2. O QUE VOCÊ PODE PEDIR AO ZECA? (COM DIFERENTES POSES DO ZECA)
+         2. O QUE VOCÊ PODE PEDIR AO ZECA? (SHOWCASE / SLIDESHOW DO ZECA)
          ========================================================================== -->
     <section class="practical-examples-section" id="o-que-pedir">
       <div class="container">
         <h2 class="home-section-title">O que você pode pedir ao Zeca?</h2>
         <p class="home-section-subtitle">Use o WhatsApp para encontrar ajuda prática, recomendações confiáveis e benefícios pensados para brasileiros no exterior.</p>
 
-        <div class="examples-cards-grid">
+        <div class="zeca-showcase-container" id="zeca-showcase" role="region" aria-roledescription="carousel" aria-label="Showcase de situações de uso do Zeca">
 
-          <!-- Caso 1: Encontrar serviços confiáveis (Zeca analisando/procurando) -->
-          <div class="example-zeca-card">
-            <div class="example-card-header">
-              <div class="example-zeca-avatar-wrap">
-                <img src="imagens/relevanvia-zeca.png" alt="Zeca procurando serviços">
+          <!-- Abas de Categoria -->
+          <nav class="zeca-showcase-tabs" role="tablist" aria-label="Categorias de ajuda do Zeca">
+            <button class="zeca-tab-btn active" role="tab" id="zeca-tab-0" aria-selected="true" aria-controls="zeca-slide-0" data-slide-index="0" type="button">
+              Serviços
+            </button>
+            <button class="zeca-tab-btn" role="tab" id="zeca-tab-1" aria-selected="false" aria-controls="zeca-slide-1" data-slide-index="1" type="button">
+              Benefícios
+            </button>
+            <button class="zeca-tab-btn" role="tab" id="zeca-tab-2" aria-selected="false" aria-controls="zeca-slide-2" data-slide-index="2" type="button">
+              Profissionais
+            </button>
+            <button class="zeca-tab-btn" role="tab" id="zeca-tab-3" aria-selected="false" aria-controls="zeca-slide-3" data-slide-index="3" type="button">
+              Sua cidade
+            </button>
+            <button class="zeca-tab-btn" role="tab" id="zeca-tab-4" aria-selected="false" aria-controls="zeca-slide-4" data-slide-index="4" type="button">
+              Empresas
+            </button>
+          </nav>
+
+          <!-- Palco dos Slides -->
+          <div class="zeca-showcase-stage" id="zeca-slides-stage">
+
+            <!-- Slide 1: Serviços -->
+            <article class="zeca-showcase-slide active" id="zeca-slide-0" role="tabpanel" aria-labelledby="zeca-tab-0" data-index="0">
+              <div class="zeca-visual-col">
+                <div class="zeca-shape-backdrop"></div>
+                <img src="imagens/zeca/zeca-servicos.png" alt="Zeca indicando serviços confiáveis" class="zeca-character-img" loading="eager">
               </div>
-              <h3>Encontrar serviços confiáveis</h3>
-            </div>
-            <div class="example-query-quote">"Preciso de uma boa oficina em Calgary."</div>
-            <p class="example-card-desc">Oficinas mecânicas, reformas, transporte e profissionais com histórico positivo de atendimento para brasileiros.</p>
-            <a href="https://wa.me/5584992240770?text=Preciso+de+uma+boa+oficina+em+Calgary" target="_blank" class="example-card-action">
-              Pedir recomendação →
-            </a>
+              <div class="zeca-content-col">
+                <span class="zeca-content-category-tag">Serviços e Manutenção</span>
+                <h3 class="zeca-content-title">Encontrar serviços confiáveis</h3>
+                <div class="zeca-content-example-box">
+                  <div class="zeca-example-label">Exemplo de pergunta:</div>
+                  <p class="zeca-example-text">“Preciso de uma boa oficina em Calgary.”</p>
+                </div>
+                <p class="zeca-content-description">Encontre serviços e empresas que atendem brasileiros perto de você.</p>
+                <a href="https://wa.me/5584992240770?text=Preciso+de+uma+boa+oficina+em+Calgary" target="_blank" rel="noopener noreferrer" class="zeca-content-cta">
+                  <img src="icones/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" aria-hidden="true">
+                  <span>Pedir recomendação</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Slide 2: Benefícios -->
+            <article class="zeca-showcase-slide" id="zeca-slide-1" role="tabpanel" aria-labelledby="zeca-tab-1" data-index="1" hidden>
+              <div class="zeca-visual-col">
+                <div class="zeca-shape-backdrop"></div>
+                <img src="imagens/zeca/zeca-beneficios.png" alt="Zeca apresentando cupons e benefícios" class="zeca-character-img" loading="lazy">
+              </div>
+              <div class="zeca-content-col">
+                <span class="zeca-content-category-tag">Cupons e Benefícios</span>
+                <h3 class="zeca-content-title">Descobrir cupons e benefícios</h3>
+                <div class="zeca-content-example-box">
+                  <div class="zeca-example-label">Exemplo de pergunta:</div>
+                  <p class="zeca-example-text">“Quais descontos estão disponíveis no Clube?”</p>
+                </div>
+                <p class="zeca-content-description">Descubra cupons e benefícios disponíveis no ecossistema do Zeca.</p>
+                <a href="https://wa.me/5584992240770?text=Quais+cupons+e+beneficios+estao+disponiveis%3F" target="_blank" rel="noopener noreferrer" class="zeca-content-cta">
+                  <img src="icones/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" aria-hidden="true">
+                  <span>Ver benefícios</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Slide 3: Profissionais -->
+            <article class="zeca-showcase-slide" id="zeca-slide-2" role="tabpanel" aria-labelledby="zeca-tab-2" data-index="2" hidden>
+              <div class="zeca-visual-col">
+                <div class="zeca-shape-backdrop"></div>
+                <img src="imagens/zeca/zeca-profissionais.png" alt="Zeca indicando profissionais especializados" class="zeca-character-img" loading="lazy">
+              </div>
+              <div class="zeca-content-col">
+                <span class="zeca-content-category-tag">Especialistas e Consultoria</span>
+                <h3 class="zeca-content-title">Pedir indicação de profissionais</h3>
+                <div class="zeca-content-example-box">
+                  <div class="zeca-example-label">Exemplo de pergunta:</div>
+                  <p class="zeca-example-text">“Busco um contador brasileiro em Toronto.”</p>
+                </div>
+                <p class="zeca-content-description">Encontre profissionais que entendem as necessidades de brasileiros no exterior.</p>
+                <a href="https://wa.me/5584992240770?text=Busco+um+contador+brasileiro+em+Toronto" target="_blank" rel="noopener noreferrer" class="zeca-content-cta">
+                  <img src="icones/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" aria-hidden="true">
+                  <span>Encontrar profissional</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Slide 4: Sua cidade -->
+            <article class="zeca-showcase-slide" id="zeca-slide-3" role="tabpanel" aria-labelledby="zeca-tab-3" data-index="3" hidden>
+              <div class="zeca-visual-col">
+                <div class="zeca-shape-backdrop"></div>
+                <img src="imagens/zeca/zeca-cidade.png" alt="Zeca mostrando mapa e indicações da cidade" class="zeca-character-img" loading="lazy">
+              </div>
+              <div class="zeca-content-col">
+                <span class="zeca-content-category-tag">Localização e Região</span>
+                <h3 class="zeca-content-title">Encontrar ajuda na sua cidade</h3>
+                <div class="zeca-content-example-box">
+                  <div class="zeca-example-label">Exemplo de pergunta:</div>
+                  <p class="zeca-example-text">“Onde encontro atendimento em português perto de mim?”</p>
+                </div>
+                <p class="zeca-content-description">Encontre serviços, empresas e informações úteis na região onde você vive.</p>
+                <a href="https://wa.me/5584992240770?text=Onde+encontro+atendimento+em+portugues+perto+de+mim%3F" target="_blank" rel="noopener noreferrer" class="zeca-content-cta">
+                  <img src="icones/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" aria-hidden="true">
+                  <span>Explorar minha região</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Slide 5: Empresas -->
+            <article class="zeca-showcase-slide" id="zeca-slide-4" role="tabpanel" aria-labelledby="zeca-tab-4" data-index="4" hidden>
+              <div class="zeca-visual-col">
+                <div class="zeca-shape-backdrop"></div>
+                <img src="imagens/zeca/zeca-empresas.png" alt="Zeca apresentando empresas que atendem brasileiros" class="zeca-character-img" loading="lazy">
+              </div>
+              <div class="zeca-content-col">
+                <span class="zeca-content-category-tag">Comércios e Parceiros</span>
+                <h3 class="zeca-content-title">Encontrar empresas que atendem brasileiros</h3>
+                <div class="zeca-content-example-box">
+                  <div class="zeca-example-label">Exemplo de pergunta:</div>
+                  <p class="zeca-example-text">“Quais empresas locais atendem brasileiros?”</p>
+                </div>
+                <p class="zeca-content-description">Descubra empresas e estabelecimentos que podem atender às suas necessidades.</p>
+                <a href="https://wa.me/5584992240770?text=Quero+conhecer+empresas+que+atendem+brasileiros" target="_blank" rel="noopener noreferrer" class="zeca-content-cta">
+                  <img src="icones/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" aria-hidden="true">
+                  <span>Conhecer empresas</span>
+                </a>
+              </div>
+            </article>
+
           </div>
 
-          <!-- Caso 2: Descobrir cupons e benefícios (Zeca com cupom/desconto) -->
-          <div class="example-zeca-card">
-            <div class="example-card-header">
-              <div class="example-zeca-avatar-wrap">
-                <img src="imagens/zeca-promo22.png" alt="Zeca com cupons e benefícios">
-              </div>
-              <h3>Descobrir cupons e benefícios</h3>
-            </div>
-            <div class="example-query-quote">"Quais descontos estão disponíveis no Clube?"</div>
-            <p class="example-card-desc">Economia real com cupons exclusivos para restaurantes, salões, câmbio e compras do cotidiano.</p>
-            <a href="https://wa.me/5584992240770?text=Quais+cupons+e+beneficios+estao+disponiveis%3F" target="_blank" class="example-card-action">
-              Ver cupons ativos →
-            </a>
-          </div>
+          <!-- Barra Inferior com Controles -->
+          <div class="zeca-showcase-bottom-bar">
+            <button class="zeca-nav-arrow-btn" id="zeca-prev-btn" type="button" aria-label="Caso anterior" title="Caso anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </button>
 
-          <!-- Caso 3: Pedir indicação de profissionais (Zeca indicando especialista) -->
-          <div class="example-zeca-card">
-            <div class="example-card-header">
-              <div class="example-zeca-avatar-wrap">
-                <img src="imagens/zeca-hero-partner.png" alt="Zeca indicando profissional">
-              </div>
-              <h3>Pedir indicação de profissionais</h3>
+            <div class="zeca-nav-dots" role="tablist" aria-label="Indicadores dos slides">
+              <button class="zeca-nav-dot active" type="button" aria-label="Slide 1 de 5" data-slide-index="0"></button>
+              <button class="zeca-nav-dot" type="button" aria-label="Slide 2 de 5" data-slide-index="1"></button>
+              <button class="zeca-nav-dot" type="button" aria-label="Slide 3 de 5" data-slide-index="2"></button>
+              <button class="zeca-nav-dot" type="button" aria-label="Slide 4 de 5" data-slide-index="3"></button>
+              <button class="zeca-nav-dot" type="button" aria-label="Slide 5 de 5" data-slide-index="4"></button>
             </div>
-            <div class="example-query-quote">"Busco um contador brasileiro em Toronto."</div>
-            <p class="example-card-desc">Especialistas em contabilidade, direito de imigração, saúde e moradia que entendem a realidade de quem mora fora.</p>
-            <a href="https://wa.me/5584992240770?text=Busco+um+contador+brasileiro+em+Toronto" target="_blank" class="example-card-action">
-              Encontrar profissional →
-            </a>
-          </div>
 
-          <!-- Caso 4: Receber orientação para sua cidade (Zeca indicando localização) -->
-          <div class="example-zeca-card">
-            <div class="example-card-header">
-              <div class="example-zeca-avatar-wrap">
-                <img src="imagens/agree-zeca.png" alt="Zeca orientando sobre a cidade">
-              </div>
-              <h3>Receber orientação para sua cidade</h3>
-            </div>
-            <div class="example-query-quote">"Onde encontro atendimento em português perto de mim?"</div>
-            <p class="example-card-desc">Orientações práticas sobre regiões, bairros e comércios que atendem a comunidade brasileira na sua localidade.</p>
-            <a href="https://wa.me/5584992240770?text=Onde+encontro+atendimento+em+portugues+perto+de+mim%3F" target="_blank" class="example-card-action">
-              Explorar região →
-            </a>
-          </div>
-
-          <!-- Caso 5: Encontrar empresas que atendem brasileiros (Zeca apresentando catálogo) -->
-          <div class="example-zeca-card">
-            <div class="example-card-header">
-              <div class="example-zeca-avatar-wrap">
-                <!-- ASSET ZECA A SUBSTITUIR: Zeca apresentando catálogo de empresas -->
-                <img src="imagens/zeca-partnet.01.png" alt="Zeca apresentando empresas">
-              </div>
-              <h3>Empresas que atendem brasileiros</h3>
-            </div>
-            <div class="example-query-quote">"Quais empresas locais atendem brasileiros?"</div>
-            <p class="example-card-desc">Comércios e serviços preparados para prestar suporte no seu idioma e com a atenção que você espera.</p>
-            <a href="https://wa.me/5584992240770?text=Quero+conhecer+empresas+que+atendem+brasileiros" target="_blank" class="example-card-action">
-              Conhecer empresas →
-            </a>
+            <button class="zeca-nav-arrow-btn" id="zeca-next-btn" type="button" aria-label="Próximo caso" title="Próximo caso">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
           </div>
 
         </div>
@@ -1513,5 +1879,179 @@
   </footer>
 
   <script src="js/app.js"></script>
+  <script>
+    (function() {
+      var showcase = document.getElementById('zeca-showcase');
+      if (!showcase) return;
+
+      var tabs = showcase.querySelectorAll('.zeca-tab-btn');
+      var slides = showcase.querySelectorAll('.zeca-showcase-slide');
+      var dots = showcase.querySelectorAll('.zeca-nav-dot');
+      var prevBtn = document.getElementById('zeca-prev-btn');
+      var nextBtn = document.getElementById('zeca-next-btn');
+      var stage = document.getElementById('zeca-slides-stage');
+
+      var currentIndex = 0;
+      var totalSlides = slides.length;
+      var autoplayTimer = null;
+      var autoplayInterval = 7000;
+      var userInteracted = false;
+
+      function goToSlide(index, isUserAction) {
+        if (isUserAction) {
+          userInteracted = true;
+          stopAutoplay();
+        }
+
+        if (index < 0) {
+          index = totalSlides - 1;
+        } else if (index >= totalSlides) {
+          index = 0;
+        }
+
+        currentIndex = index;
+
+        // Update slides
+        for (var i = 0; i < totalSlides; i++) {
+          if (i === currentIndex) {
+            slides[i].removeAttribute('hidden');
+            slides[i].classList.add('active');
+          } else {
+            slides[i].classList.remove('active');
+            slides[i].setAttribute('hidden', '');
+          }
+        }
+
+        // Update tabs
+        for (var j = 0; j < tabs.length; j++) {
+          if (j === currentIndex) {
+            tabs[j].classList.add('active');
+            tabs[j].setAttribute('aria-selected', 'true');
+            if (tabs[j].scrollIntoView) {
+              tabs[j].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+          } else {
+            tabs[j].classList.remove('active');
+            tabs[j].setAttribute('aria-selected', 'false');
+          }
+        }
+
+        // Update dots
+        for (var k = 0; k < dots.length; k++) {
+          if (k === currentIndex) {
+            dots[k].classList.add('active');
+          } else {
+            dots[k].classList.remove('active');
+          }
+        }
+      }
+
+      function nextSlide() {
+        goToSlide(currentIndex + 1, false);
+      }
+
+      function prevSlide() {
+        goToSlide(currentIndex - 1, true);
+      }
+
+      function startAutoplay() {
+        var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion || userInteracted) return;
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, autoplayInterval);
+      }
+
+      function stopAutoplay() {
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+
+      // Tab clicks
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var targetIndex = parseInt(tab.getAttribute('data-slide-index'), 10);
+          goToSlide(targetIndex, true);
+        });
+      });
+
+      // Dot clicks
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          var targetIndex = parseInt(dot.getAttribute('data-slide-index'), 10);
+          goToSlide(targetIndex, true);
+        });
+      });
+
+      // Arrow buttons
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          prevSlide();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          goToSlide(currentIndex + 1, true);
+        });
+      }
+
+      // Keyboard navigation
+      showcase.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          goToSlide(currentIndex + 1, true);
+        }
+      });
+
+      // Touch swipe support (stage)
+      if (stage) {
+        var touchStartX = 0;
+        var touchStartY = 0;
+        var touchEndX = 0;
+        var touchEndY = 0;
+
+        stage.addEventListener('touchstart', function(e) {
+          if (e.changedTouches && e.changedTouches[0]) {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+          }
+        }, { passive: true });
+
+        stage.addEventListener('touchend', function(e) {
+          if (e.changedTouches && e.changedTouches[0]) {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            var diffX = touchEndX - touchStartX;
+            var diffY = touchEndY - touchStartY;
+
+            if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+              if (diffX < 0) {
+                goToSlide(currentIndex + 1, true);
+              } else {
+                prevSlide();
+              }
+            }
+          }
+        }, { passive: true });
+      }
+
+      // Pause on hover
+      showcase.addEventListener('mouseenter', function() {
+        if (!userInteracted) stopAutoplay();
+      });
+
+      showcase.addEventListener('mouseleave', function() {
+        if (!userInteracted) startAutoplay();
+      });
+
+      // Start autoplay initially
+      startAutoplay();
+    })();
+  </script>
 </body>
 </html>

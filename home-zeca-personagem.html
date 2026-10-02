@@ -1024,9 +1024,10 @@
 
     .three-paths-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr 0.95fr;
-      gap: 20px;
-      margin-top: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 860px;
+      margin: 40px auto 0 auto;
+      gap: 24px;
       align-items: stretch;
     }
 
@@ -1784,7 +1785,7 @@
     </section>
 
     <!-- ==========================================================================
-       6. ECOSSISTEMA EM EXPANSÃO (3 CAMINHOS CLAROS: USUÁRIO, EMPRESA E V2)
+       6. ECOSSISTEMA EM EXPANSÃO (2 CAMINHOS CLAROS: QUEM PRECISA DE AJUDA E EMPRESAS)
        ========================================================================== -->
     <section class="three-paths-section" id="caminhos">
       <div class="container">
@@ -1793,7 +1794,7 @@
 
         <div class="three-paths-grid">
 
-          <!-- CAMINHO 1: PRECISO DE AJUDA (Destaque Principal) -->
+          <!-- CAMINHO 1: PRECISO DE AJUDA (Para quem mora fora) -->
           <div class="path-card-refined primary-path">
             <span class="path-card-top-tag tag-primary">Caminho 1 • Para quem mora fora</span>
             <h3>Preciso de ajuda</h3>
@@ -1807,7 +1808,7 @@
             </a>
           </div>
 
-          <!-- CAMINHO 2: TENHO UMA EMPRESA (Comercial / MVP) -->
+          <!-- CAMINHO 2: TENHO UMA EMPRESA (Para empresas) -->
           <div class="path-card-refined business-path">
             <span class="path-card-top-tag tag-business">Caminho 2 • Para empresas</span>
             <h3>Tenho uma empresa</h3>
@@ -1818,20 +1819,6 @@
             </div>
             <a href="anuncie-no-zeca.html" class="btn-path-action btn-path-secondary">
               Quero anunciar no Zeca
-            </a>
-          </div>
-
-          <!-- CAMINHO 3: SOU CRIADOR DE CONTEÚDO (Visão Futura / V2) -->
-          <div class="path-card-refined creator-path">
-            <span class="path-card-top-tag tag-v2">Caminho 3 • Próxima fase (V2)</span>
-            <h3>Sou criador de conteúdo</h3>
-            <p>Na próxima fase do produto, criadores de conteúdo e embaixadores terão um canal dedicado para levar benefícios e vantagens à sua comunidade.</p>
-            <div class="path-card-zeca-snippet">
-              <img src="imagens/zeca-pisca.png" alt="Zeca para criadores de conteúdo">
-              <span>Construindo parcerias para a expansão futura da nossa rede.</span>
-            </div>
-            <a href="embaixadores.html" class="btn-path-action btn-path-v2">
-              Conhecer visão para criadores
             </a>
           </div>
 

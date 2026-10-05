@@ -252,48 +252,50 @@
     /* Vitrine Visual Integrada do Zeca e Diálogo no Hero */
     .hero-zeca-showcase {
       width: 100%;
-      max-width: 760px;
+      max-width: 800px;
       background: var(--zeca-white);
       border: 1px solid var(--zeca-border);
       border-radius: var(--zeca-radius-lg);
       padding: 24px 28px;
       box-shadow: var(--zeca-shadow-card);
       display: grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 34% 66%;
       gap: 24px;
       align-items: center;
       text-align: left;
       margin-top: 10px;
+      box-sizing: border-box;
     }
 
-    .hero-zeca-showcase-char {
+    .hero-zeca-visual {
+      position: relative;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      text-align: center;
-      background: var(--zeca-green-subtle);
-      border: 1px solid rgba(0, 194, 75, 0.15);
-      border-radius: 20px;
-      padding: 16px 12px;
+      justify-content: center;
+      height: 250px;
+      width: 100%;
+      overflow: visible;
+    }
+
+    .hero-zeca-backdrop {
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50% 46% 54% 46% / 48% 52% 48% 52%;
+      background: radial-gradient(circle, rgba(0, 194, 75, 0.13) 0%, rgba(197, 233, 55, 0.10) 100%);
+      z-index: 1;
     }
 
     .hero-zeca-img {
-      width: 110px;
-      height: 110px;
+      position: relative;
+      z-index: 2;
+      height: 250px;
+      max-width: 100%;
       object-fit: contain;
-      margin-bottom: 8px;
-    }
-
-    .hero-zeca-badge-name {
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--zeca-green-deep);
-    }
-
-    .hero-zeca-badge-sub {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--zeca-muted);
+      object-position: center bottom;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+      user-select: none;
+      pointer-events: none;
     }
 
     .hero-zeca-chat-dialog {
@@ -1290,17 +1292,22 @@
         gap: 16px;
       }
 
-      .hero-zeca-showcase-char {
-        flex-direction: row;
-        gap: 14px;
-        text-align: left;
-        padding: 12px 14px;
+      .hero-zeca-visual {
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-zeca-backdrop {
+        width: 160px;
+        height: 160px;
       }
 
       .hero-zeca-img {
-        width: 64px;
-        height: 64px;
-        margin-bottom: 0;
+        height: 200px;
+        max-width: 65%;
       }
 
       .steps-clean-grid {
@@ -1446,12 +1453,11 @@
             </a>
           </div>
 
-          <!-- Demonstração Direta da Conversa com o Zeca (Leve e sem poluição) -->
+          <!-- Demonstração Direta da Conversa com o Zeca (Protagonismo do Personagem) -->
           <div class="hero-zeca-showcase">
-            <div class="hero-zeca-showcase-char">
-              <img src="imagens/zeca-boasvindas 1.png" alt="Zeca, o concierge dos brasileiros no exterior" class="hero-zeca-img">
-              <span class="hero-zeca-badge-name">Zeca</span>
-              <span class="hero-zeca-badge-sub">No seu WhatsApp</span>
+            <div class="hero-zeca-visual">
+              <div class="hero-zeca-backdrop"></div>
+              <img src="imagens/zeca/zeca-profissionais.png" alt="Zeca apresentando indicação de profissional" class="hero-zeca-img">
             </div>
 
             <div class="hero-zeca-chat-dialog">
